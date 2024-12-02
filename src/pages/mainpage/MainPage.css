@@ -1,0 +1,20 @@
+.navbar .nav-link {
+    font-size: 1.1rem;  /* 글자 크기 */
+    padding: 20px; /* 글자간의 간격 */
+    color: black; /* 글자 색상 */
+}
+
+.navbar .nav-link:hover {
+    background-color: #575757; /* hover 시 배경 색상 */
+}
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    z-index: 9999;
+}
+
+#title {
+}
