@@ -10,8 +10,9 @@ import {
     Legend,
     RadarController,
 } from 'chart.js';
+import '../Record.css'; // CSS 파일 추가
 
-// 필요한 요소들을 Chart.js에 등록
+
 ChartJS.register(
     RadialLinearScale,
     PointElement,
@@ -44,13 +45,23 @@ const RadarChart = () => {
                 angleLines: {
                     display: false,
                 },
-                suggestedMin: 0,
+                suggestedMin: 50,
                 suggestedMax: 100,
+            },
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Exercise Performance',
             },
         },
     };
 
-    return <Radar data={data} options={options} />;
+    return (
+        <div className="radar-chart-container">
+            <Radar data={data} options={options} />
+        </div>
+    );
 };
 
 export default RadarChart;
