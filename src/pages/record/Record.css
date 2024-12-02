@@ -1,1 +1,13 @@
-/* 종원님 기록창 css 입니다 */
+/* RadarChart.css */
+.radar-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9; /* 배경색 */
+    margin: 0; /* 중앙 정렬 */
+    padding: 0 auto;
+}
+
+.radar-chart-container canvas {
+    margin: auto; /* 중앙 정렬 */
+}
