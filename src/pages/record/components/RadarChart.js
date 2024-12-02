@@ -29,7 +29,11 @@ const RadarChart = () => {
         datasets: [
             {
                 label: 'My First Dataset',
+<<<<<<< HEAD
                 data: [65, 59, 90, 81, 56, 55],
+=======
+                data: [65, 59, 900, 81, 56, 55],
+>>>>>>> ab50fbf6b2b5a4cc6e5019b574da65de0f2c9791
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',

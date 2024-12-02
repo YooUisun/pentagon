@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* RadarChart.css */
 .radar-chart-container {
     display: flex;
@@ -11,3 +12,11 @@
 .radar-chart-container canvas {
     margin: auto; /* 중앙 정렬 */
 }
+=======
+/* 종원님 기록창 css 입니다 */
+
+.container {
+    width: 300px;
+    height: 300px;
+}
+>>>>>>> ab50fbf6b2b5a4cc6e5019b574da65de0f2c9791
