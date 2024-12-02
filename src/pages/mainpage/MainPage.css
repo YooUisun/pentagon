@@ -1,20 +1,60 @@
-.navbar .nav-link {
-    font-size: 1.1rem;  /* 글자 크기 */
-    padding: 20px; /* 글자간의 간격 */
-    color: black; /* 글자 색상 */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.navbar .nav-link:hover {
-    background-color: #575757; /* hover 시 배경 색상 */
+.header {
+    background-color: black;
+    height: 70px;
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.side-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 40%;
-    z-index: 9999;
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-#title {
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.nav-links {
+    position: flex;
+    justify-content: space-between;
+}
+
+.side-navlink{
+    font-size: 1.4rem;  /* 글자 크기 */
+    padding: 15px; /* 글자간의 간격 */
+    color: #A09A9A; /* 글자 색상 */
+    text-decoration: none;
+}
+
+.side-navlink:hover {
+    color: white !important;
+}
+
+#introduce-page {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets/image/mainpage1.jpg');
+    background-size: 100% 100%;
+    background-position: 'center';
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mainpage_title {
+    font-size: 3.5rem;
+    color: white;
+}
+
