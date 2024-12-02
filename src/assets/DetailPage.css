@@ -4,59 +4,78 @@
     box-sizing: border-box;
 }
 
-/* 메인 컨테이너 */
+/* DetailPage.js */
+/* 전체 컨테이너 */
 .mn-container {
     width: 100vw;
-    background-color: gray;
-    /* display: flex;
+    background-color: #252525;
+    display: flex;
     flex-flow: row wrap;
-    justify-content: center; */
+    justify-content: center;
 }
 
 /* 코스이름 */
 .mn-container .page-title {
     width: 80%;
     margin: 0 auto;
-    height: 100px;
-    border: 1px solid black;
-    color: red;
+    height: 150px;
+    color: white;
+    font-size: 30px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .mn-container .contentWrap {
-    /* width: 80%;
-    height: 500px; */
+    max-width: 95%;
     border: 2px solid blue;
     display: flex;
     justify-content: space-around;
 }
 
+/* 운동 1개 컨테이너 */
 .mn-container .contentWrap .contContainer {
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
+    margin: 10px;
     border: 2px solid lightblue;
-
-    /* display: flex;
-    justify-content: center; */
+    color: white;
+    text-align: center;
 }
 
+/* 운동이름 */
 .mn-container .contentWrap .contTitle {
-    width: 100%;
+    /* width: 100%; */
     height: 100px;
-    border: 1px solid yellow;
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* 이미지 */
 .mn-container .contentWrap .contImg {
     width: 100%;
-    height: 100px;
-    /* border: 1px solid yellow; */
-    background-color: blueviolet;
+    max-height: 75%;
 }
 
+/* 운동설명 */
 .mn-container .contentWrap .contText {
-    width: 100%;
+    /* width: 100%; */
     height: 100px;
-    border: 1px solid red;
+    padding: 10px;
+    border: 2px solid red;
+}
+
+
+
+/* ExDetail.js */
+.dc-container {
+    width: 95%;
+    height: 500px;
+    padding: 10px;
+    border: 2px solid orange;
 }
