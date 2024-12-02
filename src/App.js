@@ -1,15 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // 스타일시트가 필요하다면 포함
+import RecordMain from './pages/RecordMain'; // RecordMain을 올바르게 임포트
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        </p>
-      </header>
-    </div>
+    <>
+      <RecordMain /> {/* RecordMain 컴포넌트를 정상적으로 렌더링 */}
+    </>
   );
 }
 
