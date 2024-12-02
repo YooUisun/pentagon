@@ -5,17 +5,22 @@
 
 .header {
     background-color: black;
+    width: 100%;
     height: 70px;
     border-bottom: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed; /* 헤더 부분을 스크롤을 내려도 고정 */
+    z-index: 9999; /* 헤더 부분이 화면에서 맨 위에 위치하도록 설정 */
 }
 
 .navbar {
     width: 100%;
     display: flex;
     justify-content: center;
+
+
 }
 
 .navbar-container {
@@ -50,11 +55,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    filter: brightness(70%);
 }
 
 .mainpage_title {
-    font-size: 3.5rem;
-    color: white;
+    font-size: 2.7rem;
+    color: #5584AC;
 }
 
