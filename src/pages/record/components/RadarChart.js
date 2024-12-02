@@ -8,19 +8,30 @@ import {
     Filler,
     Tooltip,
     Legend,
+    RadarController,
 } from 'chart.js';
 
-ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
+// 필요한 요소들을 Chart.js에 등록
+ChartJS.register(
+    RadialLinearScale,
+    PointElement,
+    LineElement,
+    Filler,
+    Tooltip,
+    Legend,
+    RadarController
+);
 
 const RadarChart = () => {
     const data = {
-        labels: [ 'Running', 'Swimming', 'Cycling', 'Climbing', 'Jumping', 'Walking' ],
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [
             {
-                label: 'Activity Level',
-                data: [ 65, 59, 90, 85, 56, 40 ],
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                label: 'My First Dataset',
+                data: [65, 59, 90, 81, 56, 55],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
             },
         ],
@@ -28,13 +39,13 @@ const RadarChart = () => {
 
     const options = {
         responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Radar Chart Example',
+        scales: {
+            r: {
+                angleLines: {
+                    display: false,
+                },
+                suggestedMin: 0,
+                suggestedMax: 100,
             },
         },
     };
