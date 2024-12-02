@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
+
+
 import './App.css';
+import DoughnutChart from './pages/record/components/DoughnutChart';
+import LineChart from './pages/record/components/LineChart';
+import BarChart from './pages/record/components/BarChart';
+import RadarChart from './pages/record/components/RadarChart';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+      <DoughnutChart />
+      <LineChart />
+      <BarChart />
+      <RadarChart />
+    </>
+
   );
 }
 
