@@ -1,12 +1,15 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';  // Routes와 Route 임포트
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
-import { useNavigate } from 'react-router-dom';
-import '../../assets/ExerciseMain.css';
+import { Link } from 'react-router-dom';  // Link 컴포넌트 사용
+import DetailPage from './DetailPage';  // 디테일 페이지 임포트
 import lowLevelImage from '../../assets/image/low-level.jpg';
 import midLevelImage from '../../assets/image/mid-level.jpg';
 import highLevelImage from '../../assets/image/high-level.jpg';
+import { useNavigate } from 'react-router-dom';
+import '../../assets/ExerciseMain.css';
 
 function ExerciseMain() {
     let navigate = useNavigate(); // useNavigate 훅 사용
@@ -17,40 +20,49 @@ function ExerciseMain() {
 
     return (
         <div>
-            <Row className="justify-content-center centered-row">
-                <Card className="m-4" style={{ width: '22rem' }} >
-                    <Card.Img variant="top" src={lowLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
-                    <Card.Body>
-                        <Card.Title>초급 프로그램</Card.Title>
-                        <Card.Text>
-                            내용
-                        </Card.Text>
-                        <Button variant="danger" onClick={DetailClick}>자세히 알아보기</Button>
-                    </Card.Body>
-                </Card>
+            {/* Routes를 사용하여 경로에 따라 컴포넌트를 렌더링 */}
+            <Routes>
+                {/* 기본 경로 '/'에서 ExerciseMain을 렌더링 */}
+                <Route path="/" element={
+                    <Row className="justify-content-center centered-row">
+                        <Card className="m-4" style={{ width: '22rem' }} >
+                            <Card.Img variant="top" src={lowLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
+                            <Card.Body>
+                                <Card.Title>초급 프로그램</Card.Title>
+                                <Card.Text>내용</Card.Text>
+                                <Link to="/details">
+                                    <Button variant="secondary">자세히 알아보기</Button>
+                                </Link>
+                            </Card.Body>
+                        </Card>
 
-                <Card className="m-4" style={{ width: '22rem' }} >
-                    <Card.Img variant="top" src={midLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
-                    <Card.Body>
-                        <Card.Title>중급 프로그램</Card.Title>
-                        <Card.Text>
-                            내용
-                        </Card.Text>
-                        <Button variant="success" onClick={DetailClick}>자세히 알아보기</Button>
-                    </Card.Body>
-                </Card>
+                        <Card className="m-4" style={{ width: '22rem' }} >
+                            <Card.Img variant="top" src={midLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
+                            <Card.Body>
+                                <Card.Title>중급 프로그램</Card.Title>
+                                <Card.Text>내용</Card.Text>
+                                <Link to="/details">
+                                    <Button variant="secondary">자세히 알아보기</Button>
+                                </Link>
+                            </Card.Body>
+                        </Card>
 
-                <Card className="m-4" style={{ width: '22rem' }} >
-                    <Card.Img variant="top" src={highLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
-                    <Card.Body>
-                        <Card.Title>고급 프로그램</Card.Title>
-                        <Card.Text>
-                            내용
-                        </Card.Text>
-                        <Button variant="secondary" onClick={DetailClick}>자세히 알아보기</Button>
-                    </Card.Body>
-                </Card>
-            </Row>
+                        <Card className="m-4" style={{ width: '22rem' }} >
+                            <Card.Img variant="top" src={highLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
+                            <Card.Body>
+                                <Card.Title>고급 프로그램</Card.Title>
+                                <Card.Text>내용</Card.Text>
+                                <Link to="/details">
+                                    <Button variant="secondary">자세히 알아보기</Button>
+                                </Link>
+                            </Card.Body>
+                        </Card>
+                    </Row>
+                } />
+
+                {/* '/details' 경로에서 DetailPage 컴포넌트를 렌더링 */}
+                <Route path="/details" element={<DetailPage />} />
+            </Routes>
         </div>
     );
 }
