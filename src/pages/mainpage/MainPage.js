@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*메인페이지*/
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
@@ -23,3 +24,6 @@ function MainPage() {
 }
 
 export default MainPage;
+=======
+/* 메인페이지 작업 시작 */
+>>>>>>> ba48d62169a23e753ad03fdc86c30f197c12cf7a
