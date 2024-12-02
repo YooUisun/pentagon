@@ -18,7 +18,7 @@ const BarChart = () => {
         datasets: [
             {
                 label: 'Sales',
-                data: [ 1200, 1900, 3000, 5000, 2000, 3000 ],
+                data: [ 1200, 19000, 3000, 5000, 2000, 3000 ],
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
