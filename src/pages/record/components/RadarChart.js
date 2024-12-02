@@ -18,7 +18,7 @@ const RadarChart = () => {
         datasets: [
             {
                 label: 'Activity Level',
-                data: [ 65, 59, 90, 81, 56, 40 ],
+                data: [ 65, 59, 90, 85, 56, 40 ],
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1,

@@ -19,7 +19,7 @@ const LineChart = () => {
         datasets: [
             {
                 label: 'Revenue',
-                data: [ 1500, 2000, 1800, 2200, 2500, 3000 ],
+                data: [ 1500, 2000, 1900, 2200, 2500, 3000 ],
                 fill: false,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
