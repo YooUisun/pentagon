@@ -31,6 +31,7 @@ const LineChart = () => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio : false,
         plugins: {
             legend: {
                 position: 'top',
@@ -42,7 +43,10 @@ const LineChart = () => {
         },
     };
 
-    return <Line data={data} options={options} />;
-};
+    return  (
+        <div className='chart'>
+            <Line data={data} options={options} />;
+        </div>
+    )};
 
 export default LineChart;

@@ -22,12 +22,15 @@ const BarChart = () => {
                 backgroundColor: 'rgba(75, 192, 192, 0.5)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
+                barThickness: 18
             },
         ],
     };
 
     const options = {
-        responsive: true,
+        responsive: true, // 부모요소 크기에 맞게 동적으로 조절
+        maintainAspectRatio : false,
+        // aspectRatio: 2,
         plugins: {
             legend: {
                 position: 'top',
@@ -39,7 +42,11 @@ const BarChart = () => {
         },
     };
 
-    return <Bar data={data} options={options} />;
+    return (
+        <div className='chart'>
+            <Bar data={data} options={options} />
+        </div>
+    );
 };
 
 export default BarChart;

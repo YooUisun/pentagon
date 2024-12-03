@@ -1,22 +1,165 @@
-<<<<<<< HEAD
-/* RadarChart.css */
 .radar-chart-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9; /* 배경색 */
-    margin: 0; /* 중앙 정렬 */
+    background-color: #f9f9f9;
+    /* 배경색 */
+    margin: 0;
+    /* 중앙 정렬 */
     padding: 0 auto;
 }
 
 .radar-chart-container canvas {
-    margin: auto; /* 중앙 정렬 */
+    margin: auto;
+    /* 중앙 정렬 */
 }
-=======
-/* 종원님 기록창 css 입니다 */
 
-.container {
-    width: 300px;
-    height: 300px;
+
+/* 종원 12월 3일 작업 */
+
+/* 차트 style */
+.chart {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
 }
->>>>>>> ab50fbf6b2b5a4cc6e5019b574da65de0f2c9791
+
+.doughNutChart {
+    width: 45%;
+    max-width: 600px;
+    height: 400px;
+    margin: auto;
+}
+
+.radarChart {
+    width: 45%;
+    max-width: 600px;
+    height: 400px;
+}
+
+/* RecordMain Page */
+.recordMain {
+    width: 100vw;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* 요일 컨테이너 style */
+.day_container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    text-align: center;
+    font-size: 20px;
+}
+
+/* 요일 내부 날짜 버튼 style */
+.btn_round {
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background-color: #80C4E9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+/* 캘린더 style */
+.calendar_container {
+    width: 70vw;
+    height: 300px;
+    border: 1px solid black;
+}
+
+
+
+/* 기록 모달창 style */
+.recordModal_container {
+    width: 70vw;
+    border: 1px solid black;
+    text-align: center;
+}
+.recordModal_content_detail {
+    height: 100px;
+    border-bottom: 1px solid black;
+}
+
+.recordModal_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    border-bottom: 1px solid black;
+}
+
+
+/* 통계 style */
+.stats_container {
+    width: 100vw;
+    border: 3px solid blue;
+}
+
+.stats_header_calendar {
+    width: 80%;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.stats_content_container {
+    width: 80%;
+    border: 3px solid green;
+}
+
+.stats_content_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 2px solid red;
+    flex-wrap: wrap;
+}
+
+.stats_content_main div {
+    width: 100%;
+    display: flex;
+
+}
+
+.stats_content_box {
+    height: 200px;
+    border-radius: 20px;
+    border: 1px solid black;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.stats_content_chart {
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px
+}
+
+.stats_content_bottom {
+    width: 80%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    border-radius: 20px;
+}
