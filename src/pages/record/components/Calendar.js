@@ -1,7 +1,7 @@
 
 
 
-export default function Calendar () {
+export default function Calendar (props) {
 
 
 
@@ -9,6 +9,10 @@ export default function Calendar () {
 
         <div className="calendar_container">
             달력 기능
+            <br/>
+            <button onClick={props.onOff_detail}>
+                달력 날짜 random 입력
+            </button>
         </div>
     )
 }
