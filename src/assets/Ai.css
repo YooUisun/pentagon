@@ -1,0 +1,26 @@
+.aiback {
+    margin-top: 70px;
+    background-image: url('./image/aiback.jpg');
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 위치 */    
+    position: relative;
+    
+    
+}
+
+.cardImg{
+    height: 220px !important;
+    object-fit: cover !important;
+    width: 50% !important;
+}
+
+.aiRespon{
+    display: flex ;
+    align-items: center;
+    position: relative;
+}
+
+.aiRespon2{
+    width: 50% !important;
+    padding-left: 20px !important;
+}
