@@ -5,7 +5,7 @@
 }
 
 /* DetailPage.js */
-/* 전체 컨테이너 */
+/* detailpage 전체 컨테이너 */
 .mn-container {
     width: 100vw;
     background-color: #252525;
@@ -34,7 +34,7 @@
     justify-content: space-around;
 }
 
-/* 운동 1개 컨테이너 */
+/* 운동컴포넌트 컨테이너 */
 .mn-container .contentWrap .contContainer {
     width: 100%;
     /* height: 500px; */
@@ -56,7 +56,7 @@
     align-items: center;
 }
 
-/* 이미지 */
+/* 운동이미지 */
 .mn-container .contentWrap .contImg {
     width: 100%;
     max-height: 75%;
@@ -73,9 +73,54 @@
 
 
 /* ExDetail.js */
+/* description 전체컨테이너 */
 .dc-container {
     width: 95%;
-    height: 500px;
+    /* height: 500px; */
     padding: 10px;
     border: 2px solid orange;
+    color: white;
+
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: center; */
+}
+
+/* 운동 방법 이미지 */
+.dc-container .dcImg {
+    margin-bottom: 25px;
+
+    max-width: 100%;
+    max-height: 75%;
+}
+
+/* 운동 간단설명 */
+.dc-container .dcText {
+    padding: 25px;
+    color: orange;
+    font-size: 20px;
+}
+
+/* 글 간격 */
+/* 운동이름 */
+.dc-container h1 {
+    margin-bottom: 50px;
+    font-size: 36px;
+}
+
+/* 상세 제목 */
+.dc-container h2 {
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+
+/* 텍스트 컨테이너 */
+.dc-container div {
+    margin-bottom: 50px;
+}
+
+/* 상세 텍스트 */
+.dc-container p {
+    margin-bottom: 25px;
+    font-size: 18px;
 }
