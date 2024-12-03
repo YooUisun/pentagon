@@ -25,7 +25,10 @@ function MainPage() {
             </header>
         </div>
         <div id="introduce-page">
-            <h1 className="mainpage_title">운동에 관한 모든 것, The Pentagon. 펜타곤은 각종 소요층이 요구하는 운동 정보와 본인의 의지로 이뤄낸 운동 레코드 서비스를 제공하는 사이트입니다.</h1>
+            <div className="background"></div>
+            <h1 className="mainpage_title">
+            운동에 관한 모든 것, The Pentagon. 펜타곤은 각종 소요층이 요구하는 운동 정보와 본인의 의지로 이뤄낸 운동 레코드 서비스를 제공하는 사이트입니다.
+            </h1>
         </div>
         </>
         
