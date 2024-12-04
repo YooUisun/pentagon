@@ -1,54 +1,76 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; 
+import { Routes, Route } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
-import { Link } from 'react-router-dom';  
-import DetailPage from './DetailPage';  
-import lowLevelImage from '../../assets/image/low-level.jpg';
-import midLevelImage from '../../assets/image/mid-level.jpg';
-import highLevelImage from '../../assets/image/high-level.jpg';
+import { Link } from 'react-router-dom';
+import DetailPage from './DetailPage';
+import lowLevelImage from '../../assets/image/low-level.mp4';
+import midLevelImage from '../../assets/image/mid-level.mp4';
+import highLevelImage from '../../assets/image/high-level.webp';
 import '../../assets/ExerciseMain.css';
 import NavBar from '../../components/NavBar';
 import Ai from '../ai/Ai';
+import LoginPage from '../login/LoginPage';
 
-function ExerciseMain() {    
+
+function ExerciseMain() {
 
     return (
         <div>
-        <NavBar />
+            <NavBar />
             {/* Routes를 사용하여 경로에 따라 컴포넌트를 렌더링 */}
             <Routes>
-                {/* 기본 경로 '/'에서 ExerciseMain을 렌더링 */}                
-                <Route path="/" element={                    
+                {/* 기본 경로 '/'에서 ExerciseMain을 렌더링 */}
+                <Route path="/" element={
                     <Row className="justify-content-center centered-row">
-                        <Card className="m-4" style={{ width: '22rem', backgroundColor:'#526D82'}} >
-                            <Card.Img variant="top" src={lowLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
+                        <Card className="m-4" style={{ width: '22rem' }} >
+                            {/* <Card.Img variant="top" src={lowLevelImage} style={{ height: '220px', objectFit: 'cover' }} /> */}
+                            <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                                <video
+                                    src={lowLevelImage}
+                                    type="video/mp4"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    autoPlay
+                                    loop
+                                    muted
+                                />
+                            </div>
                             <Card.Body>
                                 <Card.Title>초급 프로그램</Card.Title>
-                                <Card.Text>내용</Card.Text>
+                                <Card.Text>근력 및 근 지구력 향상을 통한 대근육 발달과정</Card.Text>
                                 <Link to="/details">
-                                    <Button variant="info">자세히 알아보기</Button>
+                                    <Button variant="primary">자세히 알아보기</Button>
                                 </Link>
                             </Card.Body>
                         </Card>
 
-                        <Card className="m-4" style={{ width: '22rem', backgroundColor:'#5584AC'}} >
-                            <Card.Img variant="top" src={midLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
+                        <Card className="m-4" style={{ width: '22rem' }} >
+                            {/* <Card.Img variant="top" src={midLevelImage} style={{ height: '220px', objectFit: 'cover' }} /> */}
+                            <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                                <video
+                                    src={midLevelImage}
+                                    type="video/mp4"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    autoPlay
+                                    loop
+                                    muted
+                                />
+                            </div>
                             <Card.Body>
                                 <Card.Title>중급 프로그램</Card.Title>
-                                <Card.Text>내용</Card.Text>
+                                <Card.Text>프리웨이트 기구를 통한 근육 강화와 덤벨과 바벨을 통한 세부근육 발달과정</Card.Text>
                                 <Link to="/details">
-                                    <Button variant="danger">자세히 알아보기</Button>
+                                    <Button variant="primary">자세히 알아보기</Button>
                                 </Link>
                             </Card.Body>
                         </Card>
 
-                        <Card className="m-4" style={{ width: '22rem', backgroundColor:'#47597E'}} >
+                        <Card className="m-4" style={{ width: '22rem' }} >
                             <Card.Img variant="top" src={highLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
                             <Card.Body>
                                 <Card.Title>고급 프로그램</Card.Title>
-                                <Card.Text>내용</Card.Text>
+                                <Card.Text>대,소 근육밸런스와 근육의 조화발달, 프리웨이트를 이용한 발달 과정</Card.Text>
                                 <Link to="/details">
                                     <Button variant="primary">자세히 알아보기</Button>
                                 </Link>
@@ -62,6 +84,7 @@ function ExerciseMain() {
                 {/* '/details' 경로에서 DetailPage 컴포넌트를 렌더링 */}
                 <Route path="/details" element={<DetailPage />} />
                 <Route path="/Ai" element={<Ai />} />
+                <Route path="/Login" element={<LoginPage />} />
             </Routes>
         </div>
     );

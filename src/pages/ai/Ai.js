@@ -81,13 +81,13 @@ function Ai() {
                 setLoading(false); // 로딩 상태 종료
             }
         };     
-        await retryRequest(1, 0);    
+        await retryRequest(1, 0);
     };
 
     return (
         <div style={{ marginTop: '70px' }}>
             <Row className="justify-content-center aiback">
-                <Card style={{ width: '60rem', margin: '15px', height: '230px' }} className="d-flex flex-row ">
+                <Card style={{ width: '60rem', margin: '17px', height: '230px' }} className="d-flex flex-row ">
                     <Card.Img variant="top" src={Horseking} className='cardImg' />
                     <Card.Body style={{ height: '100px' }}>
                         <Card.Title>말왕 트레이너</Card.Title>
@@ -120,7 +120,7 @@ function Ai() {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '60rem', margin: '15px', height: '230px' }} className="d-flex flex-row">
+                <Card style={{ width: '60rem', margin: '17px', height: '230px' }} className="d-flex flex-row">
                     <Card.Img variant="top" src={Kimegg} className='cardImg' />
                     <Card.Body style={{ height: '100px' }}>
                         <Card.Title>김계란 트레이너</Card.Title>
@@ -153,7 +153,7 @@ function Ai() {
                     </Card.Body>
                 </Card>
 
-                <Card style={{ width: '60rem', margin: '15px', height: '230px' }} className="d-flex flex-row">
+                <Card style={{ width: '60rem', margin: '17px', height: '230px' }} className="d-flex flex-row">
                     <Card.Img variant="top" src={Kimjongguk} className='cardImg' />
                     <Card.Body style={{ height: '100px' }}>
                         <Card.Title>김종국 트레이너</Card.Title>
