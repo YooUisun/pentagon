@@ -27,9 +27,13 @@
     align-items: center;
 }
 
+.mn-container .page-title h1{
+    color: #FFED00;
+}
+
 .mn-container .contentWrap {
     max-width: 95%;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     justify-content: space-around;
 }
@@ -37,16 +41,23 @@
 /* 운동컴포넌트 컨테이너 */
 .mn-container .contentWrap .contContainer {
     width: 100%;
-    /* height: 500px; */
     margin: 10px;
-    border: 2px solid lightblue;
     color: white;
     text-align: center;
+    background-color: black;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #2949ff;
+    }
+
+    &.active {
+        background-color: #2949ff;
+    }
 }
 
 /* 운동이름 */
 .mn-container .contentWrap .contTitle {
-    /* width: 100%; */
     height: 100px;
     font-size: 30px;
     font-weight: bold;
@@ -54,6 +65,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    color: #ff6600;
+    
 }
 
 /* 운동이미지 */
@@ -64,10 +78,9 @@
 
 /* 운동설명 */
 .mn-container .contentWrap .contText {
-    /* width: 100%; */
     height: 100px;
     padding: 10px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 
@@ -76,18 +89,21 @@
 /* description 전체컨테이너 */
 .dc-container {
     width: 95%;
-    /* height: 500px; */
     padding: 10px;
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     color: white;
 
-    /* display: flex;
-    flex-flow: row wrap;
-    justify-content: center; */
+    display: flex;
+    flex-direction: column;
+}
+
+.dc-container h1 {
+    color: #366cff;
 }
 
 /* 운동 방법 이미지 */
 .dc-container .dcImg {
+    margin: 0 auto;
     margin-bottom: 25px;
 
     max-width: 100%;

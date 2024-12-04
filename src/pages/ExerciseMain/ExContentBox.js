@@ -3,7 +3,9 @@ function ExContentBox( {contentData, setContentData, index, getId} ) {
 
     return (
         <>
-            <div className='contContainer' onClick={() => {
+            <div
+                className={'contContainer' + (contentData[index].flag ? ' active' : '')}
+                onClick={() => {
                 // 버튼 누른 인덱스 flag = true
                 // 다른 인덱스들은 모두 false로 바꾸기
                 let temp = [...contentData];

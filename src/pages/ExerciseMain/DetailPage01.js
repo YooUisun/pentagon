@@ -5,9 +5,14 @@ import ExContentBox from './ExContentBox';
 import { useState } from 'react';
 import DcData from './DcData';
 
-function DetailPage() {
+function DetailPage01() {
     let image = testimage;
 
+    // easy : 푸시업, 싯업
+    // normal : 벤치프레스, 데드리프트, 밴드스텝업
+    // hard : 벤치프레스, 바벨스쿼트, 바벨로우
+
+    // 운동 컴포넌트에 들어갈 데이터(ExContentBox)
     let [contentData, setContentData] = useState([
         {
             id: '001',
@@ -42,7 +47,7 @@ function DetailPage() {
         <>
             <div className='mn-container'>
                 <div className='page-title'>
-                    <h1>초급자 코스</h1>
+                    <h1>초급자 프로그램</h1>
                 </div>
                 <div className='contentWrap'>
                     {/* 운동 컴포넌트 */}
@@ -79,4 +84,4 @@ function DetailPage() {
     )
 }
 
-export default DetailPage;
+export default DetailPage01;
