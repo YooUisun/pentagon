@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import '../../assets/LoginPage.css';
 
 function LoginPage() {
@@ -24,14 +23,16 @@ function LoginPage() {
         setEmail(event.currentTarget.value); //현재 입력중인 값 Email에 저장
     }
     let onPasswordHandler = (event) => {
-        setPassword(event.currentTarget.value);
+        setPassword(event.currentTarget.value); //현재 입력중인 값 Password에 저장
     }
     let handleLogin = (event) => {
-        event.preventDefault(); //폼 제출시 새로고침 방지
+        
         if (Email == '') {
             error();
+            event.preventDefault();  //폼 제출시 새로고침 방지
         } else if (Password == '') {
             error2();
+            event.preventDefault();
         }        
     };
     return (

@@ -12,6 +12,8 @@ import '../../assets/ExerciseMain.css';
 import NavBar from '../../components/NavBar';
 import Ai from '../ai/Ai';
 import LoginPage from '../login/LoginPage';
+import SigninPage from '../signin/SigninPage';
+import Footer from '../../components/Footer';
 
 
 function ExerciseMain() {
@@ -78,14 +80,15 @@ function ExerciseMain() {
                         </Card>
                     </Row>
                 } />
-
                 {/* NavBar에서 운동 눌렀을때 이동 하도록 설정 */}
                 <Route path="/" element={<ExerciseMain />} />
                 {/* '/details' 경로에서 DetailPage 컴포넌트를 렌더링 */}
                 <Route path="/details" element={<DetailPage />} />
                 <Route path="/Ai" element={<Ai />} />
                 <Route path="/Login" element={<LoginPage />} />
+                <Route path="/Signin" element={<SigninPage />} />
             </Routes>
+            <Footer/>
         </div>
     );
 }
