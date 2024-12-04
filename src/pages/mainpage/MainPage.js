@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
 import backgroundvideo from '../../assets/video/MaintitleVideo.mp4'
-import Footer from './Footer'; // Footer 컴포넌트 import.
+import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
 
 
 function MainPage() {
