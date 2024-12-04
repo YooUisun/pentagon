@@ -3,6 +3,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
 import backgroundvideo from '../../assets/video/MaintitleVideo.mp4'
+import title2 from '../../assets/image/page2title.jpg';
 import Header from '../../components/Header'; // Header 컴포넌트 import.
 import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
 
@@ -29,18 +30,29 @@ function MainPage() {
                 운동에 관한 모든 것, Pentagon.
                 </h1>
                 <h2 className="mainpage_title2">
-                펜타곤은 각종 소요층이 요구하는 운동 정보와 운동 레코드 서비스를 제공합니다. 펜타곤과 함께 당신의 새로운 하루들을 시작해보세요.
+                펜타곤은 각종 소요층이 요구하는 운동 정보와 운동 레코드 서비스를 제공합니다.
+                펜타곤과 함께 당신의 새로운 하루들을 시작해보세요.
                 </h2>
+                <button></button>
             </div>
         </Container>
         <Container id="introduce-page2">
-            <h1>
-                운동 메인
-            </h1>
-            <h3>
-            운동 메인에서는 초급,중급,고급 영역의 운동들과 그 운동의 방식들을 소개해드립니다.
-            본인의 역량과 상황에 맞게 알맞은 운동들을 선택하여 건강한 하루를 시작해보세요.
-            </h3>
+            <div className="content2">
+                <h1 className="page2-title">
+                    운동 프로그램
+                </h1>
+                <p className="page2-description">
+                    과학적인 기반의 통합 개인화된 훈련 프로그램을 안내하며, 각 코스별로 웰빙, 신체 및 스포츠 수행 목표를 충족하는 프로그램을 설계하여 소개해드립니다.
+                </p>
+                <p className="page2-description"> 
+                    초급, 중급, 고급 프로그램 세분화된 운동 프로그램등을 통해 자신을 몸과 정신을 기쁘게 하는 경험을 누려보세요.
+                </p>
+                <button className="learn-more-button">자세히 보기</button> {/* 버튼 누르면 운동 메인 페이지로 */}
+            </div>
+            <div className="logoimage1">
+                <img src={title2} alt="Logoimage" style={{ width: '400px', height: '450px' }}/>
+            </div>
+            
         </Container>
         <Container id="introduce-page3">
             <h1>
