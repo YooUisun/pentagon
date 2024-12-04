@@ -2,40 +2,19 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
-import backgroundvideo from '../../assets/video/MaintitleVideo.mp4'
 import title2 from '../../assets/image/page2title.jpg';
 import Header from '../../components/Header'; // Header 컴포넌트 import.
 import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
+import ContentOne from '../../components/ContentOne'; // Content1 컴포넌트 import.
 
 
 function MainPage() {
     return (
-        
         <> {/* 여러 부모 요소를 사용하기 위함 */}
         {/* 헤더 영역 */}
         <Header/>;
         {/* 비디오 배경이 포함된 콘텐츠 영역 */}
-        <Container id="introduce-page1">
-            <div className="background">
-                <video 
-                    autoPlay
-                    loop 
-                    muted 
-                    playsInline>
-                    <source src={backgroundvideo} type='video/mp4'/>
-                </video>
-            </div>
-            <div className="title-container">
-                <h1 className="mainpage_title">
-                운동에 관한 모든 것, Pentagon.
-                </h1>
-                <h2 className="mainpage_title2">
-                펜타곤은 각종 소요층이 요구하는 운동 정보와 운동 레코드 서비스를 제공합니다.
-                펜타곤과 함께 당신의 새로운 하루들을 시작해보세요.
-                </h2>
-                <button></button>
-            </div>
-        </Container>
+        <ContentOne/>;
         <Container id="introduce-page2">
             <div className="content2">
                 <h1 className="page2-title">
