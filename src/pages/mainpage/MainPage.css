@@ -54,6 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* 동영상이 화면 밖으로 넘어가지 않도록 처리 */
 }
 
 #introduce-page .background {
@@ -62,18 +63,39 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../assets/image/mainpage1.jpg');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(50%);
     z-index: -1; /* 텍스트보다 뒤에 배치 */
+    overflow: hidden;
+}
+
+#introduce-page .background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+#introduce-page .title-container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
 #introduce-page h1 {
-    z-index: 1;
-    color: white;
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
 }
+
+#introduce-page h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #ccc;
+}
+
+
 
 
 
