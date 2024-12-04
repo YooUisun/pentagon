@@ -10,7 +10,13 @@ a {
 #introduce-page3 {
     width: 100%;
     height: 100vh;
-    background-color: lightblue;
+    background-image: url('../../assets/image/page3title.jpg');
+    background-size: cover;
+    filter: brightness(40%);
+}
+
+.content3 {
+    color: white;
 }
 
 #introduce-page4 {
