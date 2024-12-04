@@ -37,7 +37,7 @@ function LoginPage() {
     };
     return (
         <div className='loginBox'>
-            <form className='formStyle'>
+            <form className='loginStyle'>
                 <label>Email</label>
                 <input type="text" className="inputField" value={Email} onChange={onEmailHandler}></input>
                 <label>Password</label>
