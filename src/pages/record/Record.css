@@ -107,20 +107,25 @@
     width: 100%;
     border: 1px solid black;
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 50px 0 0 0;
 }
 
 .recordModal_content_detail {
-    height: 55px;
+    height: 60px;
     border-bottom: 1px solid black;
+    
 }
-
+/* -------------------------------------- */
 .recordModal_content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     height: 80px;
-    border-bottom: 1px solid black;
+}
+/* 제출버튼 */
+.summit_button {
+    justify-content: right; /* 오른쪽 정렬 */
+    text-align: right;
 }
 
 /* 통계 style */
