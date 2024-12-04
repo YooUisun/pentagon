@@ -1,22 +1,266 @@
-<<<<<<< HEAD
-/* RadarChart.css */
+.contents {
+    display: flex;
+    flex-direction: row;
+    height: 95%;
+}
+
+.myWork {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+}
+
+.statisticContent {
+    width: 100%;
+    margin: 20px 0;
+}
+
 .radar-chart-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9; /* 배경색 */
-    margin: 0; /* 중앙 정렬 */
+    background-color: #f9f9f9;
+    /* 배경색 */
+    margin: 0;
+    /* 중앙 정렬 */
     padding: 0 auto;
 }
 
-.radar-chart-container canvas {
-    margin: auto; /* 중앙 정렬 */
+/* 기록페이지 백그라운드 */
+.recordMain {
+    background-color: #ffffff;
+    text-align: left;
+    align-items: center;
+    margin: auto;
 }
-=======
-/* 종원님 기록창 css 입니다 */
 
-.container {
-    width: 300px;
-    height: 300px;
+
+.radar-chart-container canvas {
+    margin: auto;
+    /* 중앙 정렬 */
 }
->>>>>>> ab50fbf6b2b5a4cc6e5019b574da65de0f2c9791
+
+/* 종원 12월 3일 작업 */
+
+/* 차트 style */
+.chart {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+}
+
+.doughNutChart {
+    width: 45%;
+    max-width: 600px;
+    height: 400px;
+    margin: auto;
+}
+
+.radarChart {
+    width: 45%;
+    max-width: 600px;
+    height: 400px;
+}
+
+/* RecordMain Page */
+.recordMain {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+}
+
+/* 요일 컨테이너 style */
+.day_container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    text-align: center;
+    font-size: 20px;
+}
+
+/* 요일 내부 날짜 버튼 style */
+.btn_round {
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background-color: #80c4e9;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 캘린더 style */
+.calendar_container {
+    width: 70vw;
+    height: 300px;
+    border: 1px solid black;
+}
+
+/* 기록 모달창 style */
+.recordModal_container {
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.recordModal_content_detail {
+    height: 55px;
+    border-bottom: 1px solid black;
+}
+
+.recordModal_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 80px;
+    border-bottom: 1px solid black;
+}
+
+/* 통계 style */
+.stats_container {
+    width: 100%;
+    height: 100%;
+    border: 3px solid blue;
+}
+
+.stats_header_calendar {
+    width: 100%;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.stats_content_container {
+    width: 100%;
+    border: 3px solid green;
+}
+
+.stats_content_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 2px solid red;
+    flex-wrap: wrap;
+    height: 560px;
+}
+
+.stats_content_main div {
+    width: 100%;
+    display: flex;
+}
+
+.stats_content_box {
+    height: 200px;
+    border-radius: 20px;
+    border: 1px solid black;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.stats_content_chart {
+    height: 560px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+.stats_content_bottom {
+    width: 100%;
+    height: 560px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+/* ---------------------------------------------------------- */
+
+/* 의선 캘린더 css  */
+
+/* 캘린더 백그라운드  */
+.calendar-container {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #313649;
+    color: #fff;
+    border-radius: 10px
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    background-color: #313649;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.calendar-header button:hover {
+    background-color: black;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7일씩 그리드 */
+    grid-gap: 10px;
+    margin-top: 5px;
+}
+
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #1B1833;
+    border-radius: 5px;
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-day span {
+    font-size: 1rem;
+}
+
+.calendar-day:hover {
+    background: gray;
+}
+
+/* 운동 했다는 표시  */
+.workout-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #05c46b;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+}

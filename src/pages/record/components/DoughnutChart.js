@@ -39,6 +39,7 @@ const DoughnutChart = () => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',
@@ -50,7 +51,11 @@ const DoughnutChart = () => {
         },
     };
 
-    return <Doughnut data={data} options={options} />;
+    return (
+        <div className='doughNutChart'>
+            <Doughnut data={data} options={options} />
+        </div>
+    )
 };
 
 export default DoughnutChart;
