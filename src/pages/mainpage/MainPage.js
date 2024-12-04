@@ -3,6 +3,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
 import backgroundvideo from '../../assets/video/MaintitleVideo.mp4'
+import Header from '../../components/Header'; // Header 컴포넌트 import.
 import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
 
 
@@ -11,23 +12,7 @@ function MainPage() {
         
         <> {/* 여러 부모 요소를 사용하기 위함 */}
         {/* 헤더 영역 */}
-        <div>
-            <header className="header">
-                <Navbar className="navbar">
-                    <Container className="navbar-container">
-                        <Navbar.Brand style={{ color: 'white', marginLeft: '50px' }}><h1>Pentagon</h1></Navbar.Brand>
-                            <Nav className="nav-links" style={{ marginRight: '50px' }}>
-                                <Nav.Link className="side-navlink">운동</Nav.Link>
-                                <Nav.Link className="side-navlink">기록</Nav.Link>
-                                <Nav.Link className="side-navlink">상담</Nav.Link>
-                                <Nav.Link className="side-navlink">로그인</Nav.Link>
-                                <Nav.Link className="side-navlink">회원가입</Nav.Link>
-                            </Nav>
-                    </Container>
-                </Navbar>
-            </header>
-        </div>
-
+        <Header/>;
         {/* 비디오 배경이 포함된 콘텐츠 영역 */}
         <Container id="introduce-page1">
             <div className="background">
