@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 배경 */
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+
+    background-color: #3639e454;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 모달 컨테이너 */
+.background .modal-container {
+    width: 450px;
+    height: 550px;
+    padding: 10px;
+    background-color: white;
+
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+}
+
+/* 제목 */
+.background .modal-container .modalTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    height: 50px;
+    border: 2px solid red;
+}
+
+/* 이전,다음날로 이동 */
+.background .modal-container .changeDay {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+
+    border: 1px solid green;
+
+    &.left {
+        left: 0px;
+    }
+
+    &.right {
+        right: 0px;
+    }
+
+    &:hover {
+        background-color: #bdbdbd;
+    }
+}
+
+.background .modal-container .modalTitle h3{
+    
+}

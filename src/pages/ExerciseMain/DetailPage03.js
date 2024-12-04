@@ -4,6 +4,7 @@ import ExDescription from './ExDescription';
 import ExContentBox from './ExContentBox';
 import { useState } from 'react';
 import DcData from './DcData';
+import DetailModal from './DetailModal';
 
 function DetailPage03() {
     let image = testimage;
@@ -39,17 +40,21 @@ function DetailPage03() {
         }
     ]);
     
-        // 운동가이드 설명칸 데이터
-        // 해당 난이도 객체들만 dcData로 복사
-        let [dcData, setDcData] = useState(DcData.filter(DcData => DcData.difficulty == 'hard'));
-        
-        // contentData.flag : true인 id값 가져오기
-        let [idValue, setidValue] = useState(
-            contentData.filter(item => item.flag === true).map(item => item.id)
-        );
-        const getId = ()=>{
-            setidValue(contentData.filter(item => item.flag === true).map(item => item.id));
-        }
+    // 운동가이드 설명칸 데이터
+    // 해당 난이도 객체들만 dcData로 복사
+    let [dcData, setDcData] = useState(DcData.filter(DcData => DcData.difficulty == 'hard'));
+    
+    // contentData.flag : true인 id값 가져오기
+    let [idValue, setidValue] = useState(
+        contentData.filter(item => item.flag === true).map(item => item.id)
+    );
+    const getId = ()=>{
+        setidValue(contentData.filter(item => item.flag === true).map(item => item.id));
+    }
+
+    // Modal창 열림/닫힘
+    let [isModalOpen, setIsModalOpen] = useState(false);
+    const toggleModal = ()=>{ setIsModalOpen(!isModalOpen); }
 
     return (
         <>
@@ -85,6 +90,18 @@ function DetailPage03() {
                             /> : null
                         )
                     })
+                }
+
+                <div style={{width: '100%', alignItems: 'center', textAlign: 'center'}}>
+                <button
+                    type='button'
+                    style={{width: '100px', height: '50px'}}
+                    onClick={toggleModal}
+                >Modal</button>
+                </div>
+
+                {
+                    isModalOpen && <DetailModal toggleModal={toggleModal}/>
                 }
             </div>
 
