@@ -2,10 +2,7 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
-import Header from '../../components/Header'; // Header 컴포넌트 import.
-import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
-import ContentOne from '../../components/ContentOne'; // Content1 컴포넌트 import.
-import ContentTwo from '../../components/ContentTwo'; // Content2 컴포넌트 import.
+import Footer from './Footer' // Footer 컴포넌트 import.
 
 
 function MainPage() {
@@ -35,17 +32,7 @@ function MainPage() {
         </Container>
 
         {/* Footer 컴포넌트 */}
-        <Container>
-        <Footer />
-        </Container>
-        { /*
-        <Container id="footer">
-        <h4 className="font-form">상호명 및 호스팅 서비스 제공 : ㈜펜타곤</h4>
-        <br></br>
-        <p className="font-form">사업자 등록번호: 123-45-67890 | 대표이사 : 유의선</p>
-        <p className="font-form">충청남도 천안시 동남구 대흥로 215 7층</p>
-        <p className="font-form">Copyright ⓒ Pentagon Co., Ltd. All Rights Reserved. </p>
-        </Container> */ }
+        <Footer/>
         </>
         
     )
