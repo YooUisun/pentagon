@@ -2,7 +2,10 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
-import Footer from './Footer' // Footer 컴포넌트 import.
+import Header from '../../components/Header' // Footer 컴포넌트 import.
+import Footer from '../../components/Footer' // Footer 컴포넌트 import.
+import ContentOne from '../../components/ContentOne' // Footer 컴포넌트 import.
+import ContentTwo from '../../components/ContentTwo' // Footer 컴포넌트 import.
 
 
 function MainPage() {
