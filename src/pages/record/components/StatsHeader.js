@@ -1,12 +1,23 @@
+import { useState } from "react"
 
 
+export default function StatsHeader({ totalHour, totalSet }) {
 
-export default function StatsHeader() {
+
 
     return (
-        <div className="stats_header_calendar">
-            <h1> 통계</h1>
-            <div>주단위 달력기능</div>
+        <div style={{ height: '25%' }}>
+            <div className="stats_content_main">
+                <div>
+                    <div className="stats_content_box">총 시간
+                        <p>{totalHour}</p>
+                        
+                    </div>
+                    <div className="stats_content_box">총 세트수
+                        <p>{totalSet}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
