@@ -104,10 +104,11 @@
 /* 운동 방법 이미지 */
 .dc-container .dcImg {
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 
-    max-width: 100%;
-    max-height: 75%;
+    max-width: 65%;
+    /* max-height: 75%; */
 }
 
 /* 운동 간단설명 */
