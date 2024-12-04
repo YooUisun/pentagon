@@ -5,7 +5,7 @@ function Calendar({ onValueChange }) {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [selectDay, setSelectDay] = useState(new Date().getDay());
   // 운동 기록이 있는 날짜 (예시)
-  const workoutDays = [2, 5, 12, 20];
+  const workoutDays = [2,3];
 
   const handlePrevMonth = () => {
     if (currentMonth === 0) {

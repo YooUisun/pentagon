@@ -3,39 +3,35 @@ import DoughnutChart from "./DoughnutChart";
 import LineChart from "./LineChart";
 import RadarChart from "./RadarChart";
 import StatsHeader from "./StatsHeader";
-import RecordModal from "./RecordModal";
-
-import StatatisticWeeksChart from "./StatatisticWeeksChart";
+import StatatisticWorkInfo from "./StatatisticWorkInfo";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { useState } from "react";
-import Statatistic1RM from "./Statatistic1RM";
+import {useState} from "react";
 
-export default function Statistics({ totalHour, totalSet }) {
+export default function Statistics() {
 
 
     return (
         <div className="stats_container">
-            <StatsHeader totalHour={totalHour} totalSet={totalSet} />
-
-            <div className="stats_content_container" >
-
+            <StatsHeader />
+            <div className="stats_content_container">
+                <h1>일반</h1>
                 <Tabs>
                     <TabList>
-                        <Tab>운동 일지</Tab>
-                        <Tab>기록 그래프</Tab>
+                        <Tab>차트</Tab>
+                        <Tab>차트</Tab>
                     </TabList>
 
                     <TabPanel>
                         <section>
-                            <div>운동일지추가</div>
+                            <StatatisticWorkInfo/>
                         </section>
                     </TabPanel>
 
                     <TabPanel>
                         <section className="stats_content_chart">
-                            <RadarChart />
-                            <DoughnutChart />
+                            <RadarChart/>
+                            <DoughnutChart/>
                         </section>
                     </TabPanel>
                 </Tabs>
