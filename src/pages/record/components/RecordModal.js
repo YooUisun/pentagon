@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
 
-export default function RecordModal({ value }) {
+export default function RecordModal({ value, dataUpdate }) {
     // 상태 관리
-    const [time, setTime] = useState(""); // 기간 입력값
-    const [sets, setSets] = useState(""); // 세트 입력값
-    const [weight, setWeight] = useState(""); // 무게 입력값
+    const [ title, setTitle ] = useState(''); //운동 입력값
+    const [ time, setTime ] = useState(""); // 기간 입력값
+    const [ sets, setSets ] = useState(""); // 세트 입력값
+    const [ weight, setWeight ] = useState(""); // 무게 입력값
+    // const [newWorkoutList, setNewWorkoutList] = useState([]); // 총 데이터 입력
+
+    // 운동 입력 핸들러
+    const handleTitleChange = (e) => {
+        const title = e.target.value;
+        setTitle(title);
+    }
 
     // 시간 입력 핸들러
     const handleTimeChange = (e) => {
@@ -38,13 +46,26 @@ export default function RecordModal({ value }) {
         }
     };
 
+
     // 제출 핸들러: 입력값 초기화
     const handleSubmit = () => {
         // 입력값을 모두 초기화
+
+        const newRecord = {
+
+            title: title,
+            time: time,
+            sets: sets,
+            weight: weight
+        }
+
+        dataUpdate(newRecord);
+
         setTime("");
         setSets("");
         setWeight("");
-        console.log("제출 완료! 입력값이 초기화되었습니다.");
+
+        console.log(newRecord);
     };
 
     return (
@@ -52,19 +73,47 @@ export default function RecordModal({ value }) {
             <div className="recordModal_content_detail">
                 오늘의 운동
                 <br />
-                <select name="upper" id="">
-                    <optgroup label="상체">
-                        <option value="Push_up">푸쉬업</option>
-                        <option value="Sit_up">싯업</option>
-                        <option value="Bench_press">벤치프레스</option>
-                        <option value="Dead_lift">데드리프트</option>
-                        <option value="Over_head_Press">오버헤드 프레스</option>
-                        <option value="Barbell_row">바벨로우</option>
+                <select name="upper" onChange={handleTitleChange}>
+                    <optgroup label="어깨">
+                        <option value="밀리터리 프레스">밀리터리 프레스</option>
+                        <option value="사이드 레터럴 레이즈">사이드 레터럴 레이즈</option>
+                        <option value="페이스 풀">페이스 풀</option>
+                        <option value="아놀드 프레스">아놀드 프레스</option>
                     </optgroup>
-                    <optgroup label="하체">
-                        <option value="Band_Step_up">밴드 스텝업</option>
-                        <option value="Babel_squat">바벨스쿼트</option>
+
+                    <optgroup label="팔">
+                        <option value="바벨 컬">바벨 컬</option>
+                        <option value="해머 컬">해머 컬</option>
+                        <option value="트라이셉스 푸쉬다운">트라이셉스 푸쉬다운</option>
                     </optgroup>
+
+                    <optgroup label="가슴">
+                        <option value="벤치 프레스">벤치 프레스</option>
+                        <option value="푸쉬업">푸쉬업</option>
+                        <option value="인클라인 벤치 프레스">인클라인 벤치 프레스</option>
+                        <option value="케이블 크로스오버">케이블 크로스오버</option>
+                    </optgroup>
+
+                    <optgroup label="등">
+                        <option value="풀업">풀업</option>
+                        <option value="바벨 로우">바벨 로우</option>
+                        <option value="랫 풀다운">랫 풀다운</option>
+                        <option value="데드리프트">데드리프트</option>
+                    </optgroup>
+
+                    <optgroup label="복근">
+                        <option value="크런치">크런치</option>
+                        <option value="레그 레이즈">레그 레이즈</option>
+                        <option value="플랭크">플랭크</option>
+                        <option value="바이시클 크런치">바이시클 크런치</option>
+                    </optgroup>
+
+                    <optgroup label="허벅지">
+                        <option value="스쿼트">스쿼트</option>
+                        <option value="런지">런지</option>
+                        <option value="레그 프레스">레그 프레스</option>
+                    </optgroup>
+
                 </select>
             </div>
 

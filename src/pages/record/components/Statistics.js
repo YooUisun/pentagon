@@ -6,12 +6,11 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {useState} from "react";
 
-export default function Statistics() {
-
+export default function Statistics( {data, setData} ) {
 
     return (
         <div className="stats_container">
-            <StatsHeader />
+            <StatsHeader data={data}/>
             <div className="stats_content_container">
                 <h1>일반</h1>
                 <Tabs>
@@ -22,7 +21,7 @@ export default function Statistics() {
 
                     <TabPanel>
                         <section>
-                            <StatatisticWorkInfo/>
+                            <StatatisticWorkInfo data={data} setData={setData}/>
                         </section>
                     </TabPanel>
 
