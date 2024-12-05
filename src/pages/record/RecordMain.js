@@ -3,6 +3,7 @@ import Calendar from "./components/Calendar";
 import RecordModal from "./components/RecordModal";
 import { useState } from "react";
 import WorkoutList from "./data/WorkoutList";
+import Statistics from "./components/Statistics";
 
 export default function RecordMain() {
 

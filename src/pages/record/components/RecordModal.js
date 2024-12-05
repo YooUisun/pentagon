@@ -51,22 +51,47 @@ export default function RecordModal({ value }) {
             <div className="recordModal_content_detail">
                 오늘의 운동
                 <br />
-                <select name="upper" id="">
-                    <optgroup label="상체">
-                        <option value="Push_up">푸쉬업</option>
-                        <option value="Sit_up">싯업</option>
-                        <option value="Bench_press">벤치프레스</option>
-                        <option value="Dead_lift">데드리프트</option>
-                        <option value="Over_head_Press">오버헤드 프레스</option>
-                        <option value="Barbell_row">바벨로우</option>
+                <select name="Health" id="Health">
+                    <optgroup label="어깨">
+                    <option value="Military_Press">밀리터리 프레스</option>
+                    <option value="lateral_Raise">사이드 레터럴 레이즈</option>
+                    <option value="Face_Pull">페이스 풀</option>
+                    <option value="Arnold_Press">아놀드 프레스</option>
+
                     </optgroup>
-                    <optgroup label="하체">
-                        <option value="Band_Step_up">밴드 스텝업</option>
-                        <option value="Babel_squat">바벨스쿼트</option>
+                    <optgroup label="팔">
+                    <option value="Babel_Curl">바벨 컬</option>
+                    <option value="Hammer_curl">해머 컬</option>
+                    <option value="Triceps_Push_Down">트라이셉스 푸쉬다운</option>
+                    </optgroup>
+                    <optgroup label="가슴">
+                    <option value="Bench_Press">벤치 프레스</option>
+                    <option value="Push_Up">푸쉬업</option>
+                    <option value="Incline_Bench_Press">인클라인 벤치 프레스</option>
+                    <option value="cable_crossover">케이블 크로스오버</option>
+
+                    </optgroup>
+                    <optgroup label="등">
+                    <option value="Pull_Up">풀업</option>
+                    <option value="Babel_Row">바벨 로우</option>
+                    <option value="lat-Pulldown">랫 풀다운</option>
+                    <option value="Dead_Lift">데드리프트</option>
+
+                    </optgroup>
+                    <optgroup label="복근">
+                    <option value="Crunch">크런치</option>
+                    <option value="Leg_raise">레그 레이즈</option>
+                    <option value="Plank">플랭크</option>
+                    <option value="Bicycle_Maneuver">바이시클 크런치</option>
+
+                    </optgroup>
+                    <optgroup label="허벅지">
+                    <option value="squat">스쿼트</option>
+                    <option value="Lunge">런지</option>
+                    <option value="Leg_press">레그 프레스</option>
                     </optgroup>
                 </select>
             </div>
-
             <div className="recordModal_content_detail">
                 날짜선택
                 <div>{value}</div>
@@ -79,7 +104,7 @@ export default function RecordModal({ value }) {
                     <div>운동시간(Min)</div>
                     <input
                         type="number"
-                        placeholder="00"
+                        placeholder="최소 1분 이상"
                         value={time}
                         onChange={handleTimeChange}
                     />

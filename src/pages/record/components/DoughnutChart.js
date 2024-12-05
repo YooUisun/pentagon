@@ -11,7 +11,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = () => {
     const data = {
-        labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange' ],
+        labels: [ '가슴', '허벅지', '이두', '삼두', '어깨', '엉덩이' ],
         datasets: [
             {
                 label: 'Votes',
@@ -32,7 +32,7 @@ const DoughnutChart = () => {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)',
                 ],
-                borderWidth: 1,
+                borderWidth: 2,
             },
         ],
     };
@@ -46,7 +46,7 @@ const DoughnutChart = () => {
             },
             title: {
                 display: true,
-                text: 'Doughnut Chart Example',
+                text: 'Doughnut Chart',
             },
         },
     };

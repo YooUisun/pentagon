@@ -2,20 +2,27 @@
     display: flex;
     flex-direction: row;
     height: 95%;
+    background-color: #24283f;
+
 }
 
 .myWork {
     display: flex;
     flex-direction: column;
     margin: 20px 20px;
+    
 }
 
+.statisticContent {
+    width: 100%;
+    margin: 20px 0;
+}
 
 .radar-chart-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #bb1c1c;
     /* 배경색 */
     margin: 0;
     /* 중앙 정렬 */
@@ -104,13 +111,15 @@
     border: 1px solid black;
     text-align: center;
     margin: 50px 0 0 0;
+    color: white;
 }
 
 .recordModal_content_detail {
     height: 60px;
     border-bottom: 1px solid black;
-    
+
 }
+
 /* -------------------------------------- */
 .recordModal_content {
     display: flex;
@@ -118,17 +127,17 @@
     justify-content: space-around;
     height: 80px;
 }
+
 /* 제출버튼 */
 .summit_button {
-    justify-content: right; /* 오른쪽 정렬 */
     text-align: right;
 }
 
 /* 통계 style */
 .stats_container {
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     height: 100%;
-    
+    color: white;
 }
 
 /* .stats_header_calendar {
@@ -192,10 +201,10 @@
 /* 캘린더 백그라운드  */
 .calendar-container {
     width: 100%;
-    height: 500px;
+    height: 430px;
     margin: 0 auto;
     padding: 20px;
-    background: #313649;
+    background-color: #292E49;
     color: #fff;
     border-radius: 10px
 }
