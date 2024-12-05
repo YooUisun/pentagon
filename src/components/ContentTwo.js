@@ -1,11 +1,10 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 import './ContentTwo.css';
 import title2 from '../../src/assets/image/page2title.jpg';
 
 function ContentTwo() {
     return (
-        <Container id="introduce-page2">
+        <div id="introduce-page2">
         <div className="content2">
             <h1 className="page2-title">
                 운동 프로그램 페이지
@@ -21,7 +20,7 @@ function ContentTwo() {
             <div className="logoimage1">
                 <img src={title2} alt="Logoimage" style={{ width: '400px', height: '450px' }}/>
             </div>
-        </Container>
+        </div>
     )
 }
 export default ContentTwo;

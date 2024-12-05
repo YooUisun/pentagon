@@ -1,0 +1,70 @@
+.signContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./image/login.webp');
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 위치 */    
+    position: relative;
+}
+.signinBox{
+    margin-top: 80px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 800px; 
+    border: 2px solid black;
+    flex-direction: column;
+    background-color: white;
+}
+
+.formStyle{
+    width: 400px;
+    display: flex;
+    flex-direction: column;    
+    font-size: 18px;
+    color: black;
+}
+
+.inputField{
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
+.phone {
+    display: flex;
+    align-items: center;    
+}
+
+.phone select{
+    margin-right: 20px; /* 간격 조정 */
+    width: 30%;
+}
+#email{
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
+
+#password{
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
+
+.hide{
+    display: none;
+}
+.mismatch{
+    display: none;
+}
+.mismatch.show{
+    display: block;
+}
+
+.infoText{
+    display: flex !important;
+    justify-content: space-between;
+}

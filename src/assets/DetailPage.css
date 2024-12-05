@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* DetailPage.js */
+/* detailpage 전체 컨테이너 */
+.mn-container {
+    width: 100vw;
+    background-color: #252525;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+/* 코스이름 */
+.mn-container .page-title {
+    width: 80%;
+    margin: 0 auto;
+    height: 150px;
+    color: white;
+    font-size: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mn-container .page-title h1{
+    color: #FFED00;
+}
+
+.mn-container .contentWrap {
+    max-width: 95%;
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 운동컴포넌트 컨테이너 */
+.mn-container .contentWrap .contContainer {
+    width: 100%;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    background-color: black;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #2949ff;
+    }
+
+    &.active {
+        background-color: #2949ff;
+    }
+}
+
+/* 운동이름 */
+.mn-container .contentWrap .contTitle {
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ff6600;
+    
+}
+
+/* 운동이미지 */
+.mn-container .contentWrap .contImg {
+    width: 100%;
+    max-height: 75%;
+}
+
+/* 운동설명 */
+.mn-container .contentWrap .contText {
+    height: 100px;
+    padding: 10px;
+    /* border: 2px solid red; */
+}
+
+
+
+/* ExDetail.js */
+/* description 전체컨테이너 */
+.dc-container {
+    width: 95%;
+    padding: 10px;
+    /* border: 2px solid orange; */
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dc-container h1 {
+    color: #366cff;
+}
+
+/* 운동 방법 이미지 */
+.dc-container .dcImg {
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    max-width: 100%;
+    max-height: 75%;
+}
+
+/* 운동 간단설명 */
+.dc-container .dcText {
+    padding: 25px;
+    color: orange;
+    font-size: 20px;
+}
+
+/* 글 간격 */
+/* 운동이름 */
+.dc-container h1 {
+    margin-bottom: 50px;
+    font-size: 36px;
+}
+
+/* 상세 제목 */
+.dc-container h2 {
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+
+/* 텍스트 컨테이너 */
+.dc-container div {
+    margin-bottom: 50px;
+}
+
+/* 상세 텍스트 */
+.dc-container p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
