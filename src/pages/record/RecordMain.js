@@ -1,10 +1,10 @@
 import "./Record.css";
 
-import CalendarHeader from "./components/CalendarHeader";
 import Calendar from "./components/Calendar";
 import RecordModal from "./components/RecordModal";
 import Statistics from "./components/Statistics";
 import { useState } from "react";
+import WorkoutList from "./data/WorkoutList";
 
 export default function RecordMain() {
 
@@ -16,21 +16,18 @@ export default function RecordMain() {
         setSelectDay(value);
     };
 
+    // 자식 컴포넌트에서 값을 받는 함수 (Record Modal컴포넌트에서 제출하는 기록)
+    const [ data, setData ] = useState([ WorkoutList ]);
 
-    // 종원 시간 입력값 받아서 통계로 넘김
-    // 자식 컴포넌트에서 값을 받는 함수 (총 시간)
-    const [ totalHour, setTotalHour ] = useState();
-
-        // 자식 컴포넌트에서 값을 받는 함수 (총 세트수)
-    const [ totalSet, setTotalSet] = useState();
-
-    const totalHourUpdate = (hourVal) => {
-        setTotalHour(hourVal); // 총 시간 상태 업데이트
-    } // recordModal에서 인자 가져옴
-
-    const totalSetUpdate = (setVal) => {
-        setTotalSet(setVal);
+    const dataUpdate = (value) => {
+        setData(value);
     }
+
+    // const [ totalSet, setTotalSet] = useState();
+
+    // const totalSetUpdate = (setVal) => {
+    //     setTotalSet(setVal);
+    // }
 
 
     return (
@@ -40,10 +37,14 @@ export default function RecordMain() {
                 <section className="contents">
                     <div className="myWork">
                         <Calendar onValueChange={handleSelectdayFromChild} />
-                        <RecordModal value={selectDay} totalHourUpdate={totalHourUpdate} totalSetUpdate={totalSetUpdate} />
+                        <RecordModal
+                            value={selectDay}
+                            dataUpdate={dataUpdate}
+                        />
                     </div>
                     <div className="statisticContent">
-                        <Statistics totalHour={totalHour} totalSet={totalSet} />
+                        <Statistics />
+                        {/* <Statistics totalHour={totalHour} totalSet={totalSet} /> */}
                     </div>
                 </section>
             </div>

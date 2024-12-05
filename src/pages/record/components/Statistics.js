@@ -1,6 +1,4 @@
-import BarChart from "./BarChart";
 import DoughnutChart from "./DoughnutChart";
-import LineChart from "./LineChart";
 import RadarChart from "./RadarChart";
 import StatsHeader from "./StatsHeader";
 import StatatisticWorkInfo from "./StatatisticWorkInfo";
@@ -18,8 +16,8 @@ export default function Statistics() {
                 <h1>일반</h1>
                 <Tabs>
                     <TabList>
-                        <Tab>차트</Tab>
-                        <Tab>차트</Tab>
+                        <Tab>Memo</Tab>
+                        <Tab>Data</Tab>
                     </TabList>
 
                     <TabPanel>
