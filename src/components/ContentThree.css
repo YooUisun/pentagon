@@ -1,0 +1,64 @@
+/* 배경 이미지 */
+/* 배경 컨테이너 */
+#introduce-page3 {
+    width: 100%;
+    height: 100vh;
+    display: flex; /* Flexbox 활성화 */
+    flex-direction: column; /* 수직 정렬 (선택 사항) */
+    justify-content: center; /* 수직 가운데 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    position: relative; /* 컨텍스트 생성 */
+    overflow: hidden; /* 내용 초과 방지 */
+    z-index: 0;
+}
+
+/* 배경 이미지 및 밝기 조정 */
+#introduce-page3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/image/page3title.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(40%); /* 밝기 필터 */
+    z-index: -1; /* 텍스트보다 뒤에 위치 */
+}
+
+/* 텍스트 컨테이너 */
+.text-container {
+    position: absolute; /* 배경 기준 정렬 */
+    text-align: center;
+    color: white; /* 텍스트 밝게 */
+    z-index: 1; /* 배경 위에 위치 */
+}
+
+/* 텍스트 스타일 */
+.text-container #title3 {
+    font-size: 4.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-container #content3 {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+.learn-more-button2 {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.learn-more-button2:hover {
+    background-color: #218838;
+}

@@ -55,4 +55,8 @@ function Footer() {
     )
 }
 
+<<<<<<< HEAD
 export default Footer;
+=======
+export default Footer;
+>>>>>>> 0bcc08d94a8ea2d507f158883ac46955b16b6a9b
