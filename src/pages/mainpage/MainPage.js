@@ -6,6 +6,7 @@ import Header from '../../components/Header'; // Footer 컴포넌트 import.
 import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
 import ContentOne from '../../components/ContentOne'; // Footer 컴포넌트 import.
 import ContentTwo from '../../components/ContentTwo'; // Footer 컴포넌트 import.
+import ContentThree from '../../components/ContentThree';
 
 
 function MainPage() {
@@ -29,15 +30,7 @@ function MainPage() {
         {/* 비디오 배경이 포함된 콘텐츠 영역 */}
         <ContentOne/>
         <ContentTwo/>
-        <Container id="introduce-page3">
-            <h1 className="content3">
-                기록 메인
-            </h1>
-            <h3 className="content3">
-                기록 메인에서는 그 날 본인이 했던 운동들의 자세한 정보들을 사이트에 기록할 수 있습니다.
-                성실하게 수행 하고 있는 본인의 운동 기록들을 펜타곤에 기록해보세요.
-            </h3>
-        </Container>
+        <ContentThree/>
         <Container id="introduce-page4">
             <h1>
                 상담 메인
