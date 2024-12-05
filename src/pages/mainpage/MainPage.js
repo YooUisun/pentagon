@@ -15,6 +15,7 @@ import Ai from '../ai/Ai';
 import LoginPage from '../login/LoginPage';
 import SigninPage from '../signin/SigninPage';
 import ExerciseMain from '../exerciseMain/ExerciseMain';
+import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
 
 
 function MainPage() {
@@ -57,6 +58,7 @@ function MainPage() {
                 <Route path="/Login" element={<LoginPage />} />
                 <Route path="/Signin" element={<SigninPage />} />
                 <Route path="/ExcerciseMain" element={<ExerciseMain />} />
+                <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
             </Routes>
 
             {/* Footer 컴포넌트 */}

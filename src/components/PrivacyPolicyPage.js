@@ -1,12 +1,10 @@
 import React from 'react';
 import './PrivacyPolicyPage.css'; //css 스타일
-import Header from './Header';
 import Footer from './Footer';
 
 function PrivacyPolicyPage() {
     return (
     <>
-    <Header/>
         <div className="privacy-policy-container">
             <h2 className="Privacy-policy-title">개인정보 처리방침</h2>
                 <p className="privacy-policy-text">
