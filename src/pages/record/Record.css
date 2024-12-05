@@ -137,14 +137,14 @@
 } */
 
 .stats_content_container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .stats_content_main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     flex-wrap: wrap;
     height: 100%;
 }
@@ -164,7 +164,7 @@
 }
 
 .stats_content_chart {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 20px;
     display: flex;
     flex-direction: row;
