@@ -44,7 +44,6 @@ export default function RecordModal({ value }) {
         setTime("");
         setSets("");
         setWeight("");
-        console.log("제출 완료! 입력값이 초기화되었습니다.");
     };
 
     return (

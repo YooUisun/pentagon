@@ -1,10 +1,8 @@
 import "./Record.css";
-
-import CalendarHeader from "./components/CalendarHeader";
 import Calendar from "./components/Calendar";
 import RecordModal from "./components/RecordModal";
-import Statistics from "./components/Statistics";
 import { useState } from "react";
+import Statistics from "./components/Statistics";
 
 export default function RecordMain() {
 

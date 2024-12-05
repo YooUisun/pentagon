@@ -10,10 +10,6 @@
     margin: 20px 20px;
 }
 
-.statisticContent {
-    width: 100%;
-    margin: 20px 0;
-}
 
 .radar-chart-container {
     display: flex;
@@ -132,6 +128,7 @@
 .stats_container {
     border: 3px solid blue;
     height: 100%;
+    
 }
 
 /* .stats_header_calendar {

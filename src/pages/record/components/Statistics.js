@@ -1,6 +1,4 @@
-import BarChart from "./BarChart";
 import DoughnutChart from "./DoughnutChart";
-import LineChart from "./LineChart";
 import RadarChart from "./RadarChart";
 import StatsHeader from "./StatsHeader";
 import StatatisticWorkInfo from "./StatatisticWorkInfo";
