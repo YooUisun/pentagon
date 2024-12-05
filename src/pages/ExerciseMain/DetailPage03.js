@@ -40,8 +40,7 @@ function DetailPage03() {
         }
     ]);
     
-    // 운동가이드 설명칸 데이터
-    // 해당 난이도 객체들만 dcData로 복사
+    // 운동가이드 설명 데이터 필터링
     let [dcData, setDcData] = useState(DcData.filter(DcData => DcData.difficulty == 'hard'));
     
     // contentData.flag : true인 id값 가져오기
@@ -55,8 +54,6 @@ function DetailPage03() {
     // Modal창 열림/닫힘
     let [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = ()=>{ setIsModalOpen(!isModalOpen); }
-
-    let [tabs, setTabs] = useState([]);
 
     return (
         <>
@@ -105,9 +102,7 @@ function DetailPage03() {
 
                 {/* 모달창 */}
                 {isModalOpen && (
-                    <DetailModal
-                        toggleModal={toggleModal}
-                    >
+                    <DetailModal toggleModal={toggleModal}>
                         <DetailModalTab>
                             <DetailModalTitle>
                                 제목1
