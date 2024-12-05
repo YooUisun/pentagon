@@ -16,6 +16,7 @@ import Footer from '../../components/Footer';
 import DetailPage01 from '../../pages/exerciseMain/DetailPage01';
 import DetailPage02 from '../../pages/exerciseMain/DetailPage02';
 import DetailPage03 from '../../pages/exerciseMain/DetailPage03';
+import MainPage from '../mainpage/MainPage';
 
 
 
@@ -25,9 +26,9 @@ function ExerciseMain() {
         <div>
             <NavBar />
             {/* Routes를 사용하여 경로에 따라 컴포넌트를 렌더링 */}
-            <Routes>
+            {/* <Routes> */}
                 {/* 기본 경로 '/'에서 ExerciseMain을 렌더링 */}
-                <Route path="/" element={
+                
                     <Row className="justify-content-center centered-row">
                         <Card className="m-4" style={{ width: '22rem' }} >
                             {/* <Card.Img variant="top" src={lowLevelImage} style={{ height: '220px', objectFit: 'cover' }} /> */}
@@ -82,28 +83,21 @@ function ExerciseMain() {
                             </Card.Body>
                         </Card>
                     </Row>
-                } />
+                    {/* <Route path="/" element={} /> */}
                 {/* NavBar에서 운동 눌렀을때 이동 하도록 설정 */}
-                <Route path="/" element={<ExerciseMain />} />
+                {/* <Route path="/" element={<MainPage />} />
                 {/* '/details' 경로에서 DetailPage 컴포넌트를 렌더링 */}
-                <Route path="/details1" element={<DetailPage01 />} />
+                {/* <Route path="/details1" element={<DetailPage01 />} />
                 <Route path="/details2" element={<DetailPage02 />} />
                 <Route path="/details3" element={<DetailPage03 />} />
                 <Route path="/Ai" element={<Ai />} />
                 <Route path="/Login" element={<LoginPage />} />
                 <Route path="/Signin" element={<SigninPage />} />
-            </Routes>
+                <Route path="/ExcerciseMain" element={<ExerciseMain />} /> */}
+            {/* </Routes> */}
             <Footer/>
         </div>
     );
 }
 export default ExerciseMain;
-// "primary"    파란색 강조 버튼
-// "secondary"  회색 버튼
-// "success"    초록색 버튼
-// "danger"     빨간색 버튼
-// "warning"    노란색 버튼
-// "info"       파란색 버튼
-// "light"      밝은 회색 버튼
-// "dark"       어두운 회색 버튼
-// "link"       링크 스타일의 버튼
+
