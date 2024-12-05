@@ -12,7 +12,6 @@ function Footer() {
             <Container>
                 <Row className='font-form'>
                     <p id="font-form1">상호명 및 호스팅 서비스 제공 : <span id='highlight'>㈜펜타곤</span></p>
-                    <br></br>
                     <p id="font-form2">사업자 등록번호: 123-45-67890 | 대표이사 : 유의선</p>
                     <p id="font-form3">문의: 1234-5678(24시간 연중무휴)</p>
                     <p id="font-form4">충청남도 천안시 동남구 대흥로 215 7층 (휴먼교육센터)</p>

@@ -11,7 +11,7 @@ function NavBar() {
             <header className="header">
                 <Navbar className="navbar">
                     <Container className="navbar-container">
-                        <Navbar.Brand style={{ color: 'white', marginLeft: '50px' }}><h1>Pentagon</h1></Navbar.Brand>
+                        <Navbar.Brand style={{ color: 'white', marginLeft: '50px' }}><Nav.Link as={Link} to="/MainPage" ><h1 className="main-logo-title">Pentagon</h1></Nav.Link></Navbar.Brand>
                         <Nav className="nav-links" style={{ marginRight: '50px' }}>
                             <Nav.Link as={Link} to="/ExcerciseMain" className="side-navlink">운동</Nav.Link>
                             <Nav.Link className="side-navlink">기록</Nav.Link>

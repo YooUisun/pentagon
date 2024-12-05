@@ -18,6 +18,10 @@
     /* 헤더 부분이 화면에서 맨 위에 위치하도록 설정 */
 }
 
+.main-logo-title {
+    cursor: pointer;
+}
+
 .navbar {
     width: 100%;
     display: flex;

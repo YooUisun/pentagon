@@ -54,6 +54,7 @@ function MainPage() {
                 <Route path="/details3" element={<DetailPage03 />} />
 
                 {/* 다른 페이지들 */}
+                <Route path="/MainPage" element={<MainPage/>}/>
                 <Route path="/Ai" element={<Ai />} />
                 <Route path="/Login" element={<LoginPage />} />
                 <Route path="/Signin" element={<SigninPage />} />
