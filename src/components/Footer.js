@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom'; //React Router의 Link 컴포넌트를 import.
+import { Link } from 'react-router-dom';
 import './Footer.css'; // Footer에 대한 스타일 css 파일
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagramSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
     return (
+    <>
         <footer className="footer">
             <Container>
                 <Row className='font-form'>
@@ -21,7 +22,7 @@ function Footer() {
                     <Col>
                         <Nav className='nav-items'>
                             <Nav.Item className='nav-item'>
-                                <Nav.Link href="#privacy-policy">개인정보 처리방침</Nav.Link>
+                                <Nav.Link as={Link} to="/privacy-policy">개인정보 처리방침</Nav.Link>
                             </Nav.Item>
                             <p className='nav-item'>|</p>
                             <Nav.Item className='nav-item'>
@@ -52,6 +53,7 @@ function Footer() {
                 </Row>
             </Container>
         </footer>
+        </>
     )
 }
 
