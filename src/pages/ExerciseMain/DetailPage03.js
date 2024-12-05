@@ -4,7 +4,7 @@ import ExDescription from './ExDescription';
 import ExContentBox from './ExContentBox';
 import { useState } from 'react';
 import DcData from './DcData';
-import DetailModal from './DetailModal';
+import {DetailModal, DetailModalTitle, DetailModalText, DetailModalTab} from './DetailModal';
 
 function DetailPage03() {
     let image = testimage;
@@ -56,6 +56,8 @@ function DetailPage03() {
     let [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = ()=>{ setIsModalOpen(!isModalOpen); }
 
+    let [tabs, setTabs] = useState([]);
+
     return (
         <>
             <div className='mn-container'>
@@ -92,17 +94,57 @@ function DetailPage03() {
                     })
                 }
 
-                <div style={{width: '100%', alignItems: 'center', textAlign: 'center'}}>
-                <button
-                    type='button'
-                    style={{width: '100px', height: '50px'}}
-                    onClick={toggleModal}
-                >Modal</button>
+                {/* 모달 버튼 */}
+                <div className='btnContainer'>
+                    <button
+                        type='button'
+                        style={{width: '100px', height: '50px'}}
+                        onClick={toggleModal}
+                    >Modal</button>
                 </div>
 
-                {
-                    isModalOpen && <DetailModal toggleModal={toggleModal}/>
-                }
+                {/* 모달창 */}
+                {isModalOpen && (
+                    <DetailModal
+                        toggleModal={toggleModal}
+                    >
+                        <DetailModalTab>
+                            <DetailModalTitle>
+                                제목1
+                            </DetailModalTitle>
+                            <DetailModalText>
+                                tab1 text1
+                            </DetailModalText>
+                            <DetailModalText>
+                                tab1 text2
+                            </DetailModalText>
+                        </DetailModalTab>
+
+                        <DetailModalTab>
+                            <DetailModalTitle>
+                                제목2
+                            </DetailModalTitle>
+                            <DetailModalText>
+                                tab2 text1
+                            </DetailModalText>
+                            <DetailModalText>
+                                tab2 text2
+                            </DetailModalText>
+                        </DetailModalTab>
+
+                        <DetailModalTab>
+                            <DetailModalTitle>
+                                제목3
+                            </DetailModalTitle>
+                            <DetailModalText>
+                                tab3 text1
+                            </DetailModalText>
+                            <DetailModalText>
+                                tab3 text2
+                            </DetailModalText>
+                        </DetailModalTab>
+                    </DetailModal>
+                )}
             </div>
 
         </>

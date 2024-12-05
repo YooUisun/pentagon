@@ -143,3 +143,12 @@
     margin-bottom: 25px;
     font-size: 18px;
 }
+
+
+/* 모달 버튼*/
+.mn-container .btnContainer {
+    width: 100px;
+    margin: auto;
+    margin-bottom: 50px;
+    justify-content: center;
+}
