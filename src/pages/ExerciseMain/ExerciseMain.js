@@ -1,5 +1,4 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -8,15 +7,8 @@ import lowLevelImage from '../../assets/image/low-level.mp4';
 import midLevelImage from '../../assets/image/mid-level.mp4';
 import highLevelImage from '../../assets/image/high-level.webp';
 import '../../assets/ExerciseMain.css';
-import NavBar from '../../components/NavBar';
-import Ai from '../ai/Ai';
-import LoginPage from '../login/LoginPage';
-import SigninPage from '../signin/SigninPage';
-import Footer from '../../components/Footer';
-import DetailPage01 from '../../pages/exerciseMain/DetailPage01';
-import DetailPage02 from '../../pages/exerciseMain/DetailPage02';
-import DetailPage03 from '../../pages/exerciseMain/DetailPage03';
-import MainPage from '../mainpage/MainPage';
+
+
 
 
 
@@ -24,7 +16,7 @@ function ExerciseMain() {
 
     return (
         <div>
-            <NavBar />
+            
             {/* Routes를 사용하여 경로에 따라 컴포넌트를 렌더링 */}
             {/* <Routes> */}
                 {/* 기본 경로 '/'에서 ExerciseMain을 렌더링 */}
@@ -94,8 +86,7 @@ function ExerciseMain() {
                 <Route path="/Login" element={<LoginPage />} />
                 <Route path="/Signin" element={<SigninPage />} />
                 <Route path="/ExcerciseMain" element={<ExerciseMain />} /> */}
-            {/* </Routes> */}
-            <Footer/>
+            {/* </Routes> */}            
         </div>
     );
 }

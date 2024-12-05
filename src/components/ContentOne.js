@@ -1,11 +1,10 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 import './ContentOne.css';
 import backgroundvideo from '../../src/assets/video/MaintitleVideo.mp4';
 
 function ContentOne(){
     return (
-        <Container id="introduce-page1">
+        <div id="introduce-page1">
             <div className="background">
                 <video 
                     autoPlay
@@ -24,7 +23,7 @@ function ContentOne(){
                 펜타곤과 함께 당신의 새로운 하루들을 시작해보세요.
                 </h2>
             </div>
-        </Container>
+        </div>
     )
 }
 

@@ -1,12 +1,11 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 import './ContentFour.css';
 import title4 from '../../src/assets/image/page4title.jpg';
 
 
 function ContentFour() {
     return (
-        <Container id="introduce-page4">
+        <div id="introduce-page4">
             <div className="logoimage2">
                 <img src={title4} alt="Logoimage" style={{ width: '400px', height: '450px' }}/>
             </div>
@@ -22,7 +21,7 @@ function ContentFour() {
                 </p>
                 <button className="learn-more-button3">자세히 보기</button> {/* 버튼 누르면 운동 메인 페이지로 */}
             </div>
-        </Container>
+        </div>
     )
 }
 
