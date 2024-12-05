@@ -2,11 +2,12 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import './MainPage.css';
-import Header from '../../components/Header'; // Footer 컴포넌트 import.
+import Header from '../../components/Header'; // Header 컴포넌트 import.
 import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
-import ContentOne from '../../components/ContentOne'; // Footer 컴포넌트 import.
-import ContentTwo from '../../components/ContentTwo'; // Footer 컴포넌트 import.
-import ContentThree from '../../components/ContentThree';
+import ContentOne from '../../components/ContentOne'; // 첫번째 콘텐츠 컴포넌트 import.
+import ContentTwo from '../../components/ContentTwo'; // 두번째 콘텐츠 컴포넌트 import.
+import ContentThree from '../../components/ContentThree'; // 세번째 콘텐츠 컴포넌트 import.
+import ContentFour from '../../components/ContentFour'; // 네번째 콘텐츠 컴포넌트 import.
 
 
 function MainPage() {
@@ -27,23 +28,17 @@ function MainPage() {
         ↑ Top
     </button>
     </div>
-        {/* 비디오 배경이 포함된 콘텐츠 영역 */}
+        {/* 첫번째 콘텐츠 영역 */}
         <ContentOne/>
+        {/* 두번째 콘텐츠 영역 */}
         <ContentTwo/>
+        {/* 세번째 콘텐츠 영역 */}
         <ContentThree/>
-        <Container id="introduce-page4">
-            <h1>
-                상담 메인
-            </h1>
-            <h3>
-                상담 메인에서는 다이어트, 벌크업, 재활 등 각 운동의 목적에 따른 전문가들의 AI 상담 서비스를 제공합니다.
-            </h3>
-        </Container>
-
+        {/* 네번째 콘텐츠 영역 */}
+        <ContentFour/>
         {/* Footer 컴포넌트 */}
         <Footer/>
         </>
-        
     )
 };
 

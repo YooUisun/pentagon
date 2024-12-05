@@ -1,0 +1,50 @@
+#introduce-page4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+#page4-title {
+    color: black;
+    font-size: 50px;
+}
+
+.content4 {
+    flex: 1;
+    margin-right: 100px;
+}
+
+.page4-title {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.page4-description {
+    font-size: 18px;
+}
+
+.logoimage2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.learn-more-button3 {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.learn-more-button3:hover {
+    background-color: #218838;
+}
