@@ -9,17 +9,18 @@ export default function RecordMain() {
     const [ workoutDays, setWorkoutDays ] = useState([]); // 운동한 날짜 추가
     const [ workoutData, setWorkoutData ] = useState({}); // 날짜별 운동 데이터
 
+    const [ data1, setData1 ] = useState([]); //운동기록데이터
+    const [ countType, setCountType ] = useState({});
+
+
     // 자식 컴포넌트에서 값을 받는 함수
     const handleSelectdayFromChild = (value) => {
         console.log(value);
         setSelectDay(value);
     };
 
-    const [ data, setData ] = useState([]); //운동기록데이터
-    const [ countType, setCountType ] = useState({});
-
-    const dataUpdate = (newRecord) => {
-        setData((prevData) => [ ...prevData, newRecord ]); // 업데이트된 값을 setData에 반영
+    const dataUpdate1 = (newRecord) => {
+        setData1((prevData) => [ ...prevData, newRecord ]); // 업데이트된 값을 setData에 반영
     }
 
     const typeUpdate = (value) => {
@@ -28,25 +29,26 @@ export default function RecordMain() {
 
     console.log(countType);
 
-
-//------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
 
     // 선택된 날짜의 일자 추출
-    const day = parseInt(selectDay.split('일')[ 0 ].split(' ')[ 2 ]);
-    if (day) {
-        // 중복 방지를 위해 Set 사용
-        const updatedWorkoutDays = [ ...new Set([ ...workoutDays, day ]) ];
-        setWorkoutDays(updatedWorkoutDays);
+    const dataUpdate = (newRecord) => {
+        const day = parseInt(selectDay.split('일')[ 0 ].split(' ')[ 2 ]);
+        if (day) {
+            // 중복 방지를 위해 Set 사용
+            const updatedWorkoutDays = [ ...new Set([ ...workoutDays, day ]) ];
+            setWorkoutDays(updatedWorkoutDays);
 
-        // 날짜별 데이터 저장 (날짜를 키로 사용)
-        setWorkoutData(prevData => {
-            const dayKey = day.toString();
-            const existingDayData = prevData[ dayKey ] || [];
-            return {
-                ...prevData,
-                [ dayKey ]: [ ...existingDayData, newRecord ]
-            };
-        });
+            // 날짜별 데이터 저장 (날짜를 키로 사용)
+            setWorkoutData(prevData => {
+                const dayKey = day.toString();
+                const existingDayData = prevData[ dayKey ] || [];
+                return {
+                    ...prevData,
+                    [ dayKey ]: [ ...existingDayData, newRecord ]
+                };
+            });
+        }
     }
 
     // 선택된 날짜의 데이터를 가져오는 함수
@@ -55,7 +57,7 @@ export default function RecordMain() {
         return day ? workoutData[ day.toString() ] || [] : [];
     };
 
- //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -70,7 +72,7 @@ export default function RecordMain() {
                         />
                         <RecordModal
                             value={selectDay}
-                            dataUpdate={dataUpdate}
+                            dataUpdate1={dataUpdate1}
                             typeUpdate={typeUpdate}
                         />
                     </div>
@@ -78,6 +80,7 @@ export default function RecordMain() {
                     <div className="statisticContent">
                         <Statistics
                             data={getSelectedDayData()}
+                            data1={data1}
                             setData={(newData) => {
                                 const day = parseInt(selectDay.split('일')[ 0 ].split(' ')[ 2 ]);
                                 if (day) {
@@ -90,6 +93,8 @@ export default function RecordMain() {
                             selectedDay={selectDay}
                             workoutDays={workoutDays}
                             setWorkoutDays={setWorkoutDays}
+                            countType={countType}
+                            setData1={setData1}
                         />
                     </div>
                 </section>

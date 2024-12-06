@@ -1,32 +1,36 @@
 import React, { useState } from "react";
 
-function Calendar({ onValueChange, workoutDays }) {
+function Calendar({ onValueChange }) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [selectDay, setSelectDay] = useState(new Date().getDay());
+  const workoutDays = [2, 3]; // 운동 기록 날짜 (예시)
 
   const handlePrevMonth = () => {
     if (currentMonth === 0) {
-      setCurrentMonth(11); // 1월에서 이전 달로 이동 시 12월로 설정.
-      setCurrentYear(currentYear - 1); // 연도 감소.
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
     } else {
-      setCurrentMonth(currentMonth - 1); // 월 감소.
+      setCurrentMonth(currentMonth - 1);
     }
   };
 
   const handleNextMonth = () => {
     if (currentMonth === 11) {
-      setCurrentMonth(0); // 12월에서 다음 달로 이동 시 1월로 설정.
-      setCurrentYear(currentYear + 1); // 연도 증가.
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
     } else {
-      setCurrentMonth(currentMonth + 1); // 월 증가.
+      setCurrentMonth(currentMonth + 1);
     }
   };
 
   const changeSelectDay = (day) => {
     const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
     const selectedDate = new Date(currentYear, currentMonth, day);
-    const dayOfWeek = weekDays[selectedDate.getDay()];
+    const dayOfWeek = weekDays[selectedDate.getDay()]; // 요일 계산
+    setSelectDay(day);
 
+    // 년, 월, 일, 요일 정보를 전달
     onValueChange(`${currentYear}년 ${currentMonth + 1}월 ${day}일 (${dayOfWeek})`);
   };
 

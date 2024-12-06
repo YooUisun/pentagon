@@ -8,11 +8,12 @@ import {useState} from "react";
 import { RiPieChartFill } from "react-icons/ri";
 import { CiMemoPad } from "react-icons/ci";
 
-export default function Statistics( {data, setData, countType} ) {
+export default function Statistics( {data, data1, setData1, countType} ) {
 
     return (
         <div className="stats_container">
-            <StatsHeader data={data}/>
+            <StatsHeader data1={data1}/>
+
             <div className="stats_content_container">
                 <h1>일반</h1>
                 <Tabs>
@@ -24,7 +25,7 @@ export default function Statistics( {data, setData, countType} ) {
 
                     <TabPanel>
                         <section>
-                            <StatatisticWorkInfo data={data} setData={setData}/>
+                            <StatatisticWorkInfo data={data} data1={data1} setData1={setData1}/>
                         </section>
                     </TabPanel>
 

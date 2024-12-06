@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
 
-export default function RecordModal({ value, dataUpdate, typeUpdate }) {
+export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
     // 상태 관리
     const [ title, setTitle ] = useState(''); //운동 입력값
     const [ time, setTime ] = useState(0); // 기간 입력값
     const [ sets, setSets ] = useState(0); // 세트 입력값
     const [ weight, setWeight ] = useState(0); // 무게 입력값
     const [ type, setType ] = useState('');
-    // const [newWorkoutList, setNewWorkoutList] = useState([]); // 총 데이터 입력
 
     // 운동 입력 핸들러
     const handleTitleChange = (e) => {
@@ -91,7 +90,7 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
         }
 
         // 새로운 기록을 부모 컴포넌트로 전달
-        dataUpdate(newRecord);
+        dataUpdate1(newRecord);
 
         // 입력값 초기화
         setTitle(""); // 운동명 초기화
