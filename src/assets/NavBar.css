@@ -20,6 +20,7 @@
 
 .main-logo-title {
     cursor: pointer;
+    font-family: 'Oswald', sans-serif;
 }
 
 .navbar {
@@ -42,7 +43,7 @@
     position: relative;
     z-index: 10;
     width: auto;
-    behavior: 'smooth';
+    margin-top: 5px;
 }
 
 .side-navlink {
