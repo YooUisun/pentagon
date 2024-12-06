@@ -23,11 +23,11 @@ function Footer() {
                             <Nav.Item className='nav-item'>
                                 <Nav.Link as={Link} to="/privacy-policy">개인정보 처리방침</Nav.Link>
                             </Nav.Item>
-                            <p className='nav-item'>|</p>
+                            <p className='curtain'>|</p>
                             <Nav.Item className='nav-item'>
                                 <Nav.Link href="#terms-of-service">서비스 이용약관</Nav.Link>
                             </Nav.Item>
-                            <p className='nav-item'>|</p>
+                            <p className='curtain'>|</p>
                             <Nav.Item className='nav-item'>
                                 <Nav.Link href="#contact-us">고객센터</Nav.Link>
                             </Nav.Item>
