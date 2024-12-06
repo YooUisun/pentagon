@@ -32,7 +32,7 @@ const DoughnutChart = () => {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)',
                 ],
-                borderWidth: 1,
+                borderWidth: 2,
             },
         ],
     };
@@ -46,7 +46,7 @@ const DoughnutChart = () => {
             },
             title: {
                 display: true,
-                text: 'Doughnut Chart Example',
+                text: 'Doughnut Chart',
             },
         },
     };

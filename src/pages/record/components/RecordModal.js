@@ -28,13 +28,14 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
         // (Object.values(countType));
         console.log(getOptLabel);
     }
+
     // 시간 입력 핸들러
     const handleTimeChange = (e) => {
         const value = Number(e.target.value);
         if (value >= 1 && value <= 60) {
             setTime(value);
-        } else if (isNaN(e.target.value ) || e.target.value === '') {
-            alert('숫자를 입력하세요');
+        } else if (e.target.value === "") {
+            setTime("");
         }
 
         console.log(value);
@@ -53,20 +54,35 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
     // 무게 입력 핸들러
     const handleWeightChange = (e) => {
         const value = Number(e.target.value);
-        if (value >= 0 && value <= 500) {
+        if (value >= 1 && value <= 500) {
             setWeight(value);
         } else if (e.target.value === "") {
             setWeight("");
         }
     };
 
-
     // 제출 핸들러: 입력값 초기화
     const handleSubmit = () => {
-        // 입력값을 모두 초기화
+        // 입력값 유효성 검사
+        if (!title) {
+            alert("운동명을 선택해주세요.");
+            return;
+        }
+        if (!time) {
+            alert("운동 시간을 입력해주세요.");
+            return;
+        }
+        if (!sets) {
+            alert("세트를 입력해주세요.");
+            return;
+        }
+        if (!weight) {
+            alert("무게를 입력해주세요.");
+            return;
+        }
 
+        // 입력값이 유효할 경우, 새로운 운동 기록 추가
         const newRecord = {
-
             title: title,
             time: time,
             sets: sets,
@@ -74,10 +90,11 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
             type: type
         }
 
+        // 새로운 기록을 부모 컴포넌트로 전달
         dataUpdate(newRecord);
 
-        
-
+        // 입력값 초기화
+        setTitle(""); // 운동명 초기화
         setTime("");
         setSets("");
         setWeight("");
@@ -91,6 +108,7 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
                 오늘의 운동
                 <br />
                 <select name="upper" onChange={handleTitleChange}>
+                <option value="" disabled selected>운동을 선택하세요</option> {/* placeholder-like option */}
                     <optgroup label="어깨">
                         <option value="밀리터리 프레스">밀리터리 프레스</option>
                         <option value="사이드 레터럴 레이즈">사이드 레터럴 레이즈</option>
@@ -130,10 +148,8 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
                         <option value="런지">런지</option>
                         <option value="레그 프레스">레그 프레스</option>
                     </optgroup>
-
                 </select>
             </div>
-
             <div className="recordModal_content_detail">
                 날짜선택
                 <div>{value}</div>
@@ -146,7 +162,7 @@ export default function RecordModal({ value, dataUpdate, typeUpdate }) {
                     <div>운동시간(Min)</div>
                     <input
                         type="number"
-                        placeholder="00"
+                        placeholder="최소 1분 이상"
                         value={time}
                         onChange={handleTimeChange}
                     />

@@ -5,6 +5,8 @@ import StatatisticWorkInfo from "./StatatisticWorkInfo";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {useState} from "react";
+import { RiPieChartFill } from "react-icons/ri";
+import { CiMemoPad } from "react-icons/ci";
 
 export default function Statistics( {data, setData, countType} ) {
 
@@ -15,8 +17,9 @@ export default function Statistics( {data, setData, countType} ) {
                 <h1>일반</h1>
                 <Tabs>
                     <TabList>
-                        <Tab>Memo</Tab>
-                        <Tab>Data</Tab>
+                        <Tab><CiMemoPad />
+                        </Tab>
+                        <Tab><RiPieChartFill/></Tab>
                     </TabList>
 
                     <TabPanel>

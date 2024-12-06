@@ -13,7 +13,7 @@ export default function StatsHeader({ data }) {
         <div style={{ height: '25%' }}>
             <div className="stats_content_main">
                 <div>
-                    <div className="stats_content_box">총 시간
+                    <div className="stats_content_box">총 운동 시간
 
                         <p>{Number(totalTime)} 분</p>
 
