@@ -40,11 +40,11 @@ const LoginModal = ({ isOpen, onClose }) => {
                     placeholder="이메일을 입력하세요"
                     value={email}
                     onChange={handleEmailChange}
-                />
-                <button onClick={handleFindPassword}>비밀번호 찾기</button>
+                />                
                 {passwordHint && <p>{passwordHint}</p>}  {/* 비밀번호 힌트 표시 */}
                 {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}  {/* 오류 메시지 표시 */}
-                
+                <button onClick={handleFindPassword}>비밀번호 찾기</button>
+                <br></br>
                 <button onClick={onClose}>닫기</button>
                 <br></br>
                 

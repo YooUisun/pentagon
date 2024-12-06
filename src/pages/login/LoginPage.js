@@ -29,7 +29,7 @@ function LoginPage() {
     let handleLogin = (event) => {
         event.preventDefault();  //폼 제출시 새로고침 방지
         let valid = true;
-
+        window.scrollTo(0, 0);
         if (email.trim() != '' && password.trim() != '') {
             if (!isValidEmail(email)) {
                 setEmailError("이메일 형식이 올바르지 않습니다.");

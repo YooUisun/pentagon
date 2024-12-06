@@ -115,7 +115,7 @@ function SigninPage() {
         if (value.length === 0) {
             setPasswordMatch(true); //값이 없으면 메시지 숨김
         }
-        else if (isMatch(password === value)) {
+        else if (isMatch(password, value)) {
             setPasswordMatch(true); //비밀번호와 확인이 일치하면 업데이트
         } else {
             setPasswordMatch(false); //일치하지 않을때 업데이트
@@ -142,6 +142,10 @@ function SigninPage() {
             alert('이메일 형식이 올바르지 않습니다');
             return;
         }
+        if (localStorage.getItem(email)) {
+            alert('이미 가입된 이메일입니다');
+            return;
+        }
         if (password == '') {
             alert('비밀번호를 입력해주세요');
             return;
@@ -149,7 +153,7 @@ function SigninPage() {
             alert('패스워드 형식이 올바르지 않습니다.');
             return;
         }
-        if (passwordRetype === 0) {
+        if (passwordRetype === '') {
             alert('비밀번호 확인을 입력해주세요');
             return;
         } else if (!isMatch(password, passwordRetype)) {
@@ -239,7 +243,7 @@ function SigninPage() {
                         onChange={handleEmailChange}
                     />
                     <div className={emailValid ? "success" : "hide"}>
-                        사용할 수 있는 이메일입니다
+                        사용할 수 있는 이메일 형식입니다
                     </div>
                     <div className={!emailValid && email.length > 0 ? "failure" : "hide"}>
                         이메일 형식이어야 합니다
