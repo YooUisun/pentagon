@@ -1,57 +1,56 @@
 import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
-import WorkoutList from "../data/WorkoutList";
 
 export default function RecordModal({ value, dataUpdate1 }) {
     // 상태 관리
     const [ title, setTitle ] = useState(''); //운동 입력값
-    const [ time, setTime ] = useState(0); // 기간 입력값
-    const [ sets, setSets ] = useState(0); // 세트 입력값
-    const [ weight, setWeight ] = useState(0); // 무게 입력값
-    const [ type, setType ] = useState('');
+    const [ time, setTime ] = useState(''); // 기간 입력값
+    const [ sets, setSets ] = useState(''); // 세트 입력값
+    const [ weight, setWeight ] = useState(''); // 무게 입력값
+    const [ type, setType ] = useState(''); // 셀렉트박스 클릭값
 
     // 운동 입력 핸들러
     const handleTitleChange = (e) => {
-        const title = e.target.value; // 운동명 밸류값
-        setTitle(title); //운동명 렌더링
+        const title = e.target.value; // select박스 option value값 가져옴
+        setTitle(title); // title값 렌더링
 
-        const getOptIndex = (e.target.options[ e.target.selectedIndex ]); // 선택옵션 인덱스값
-        const getOptLabel = getOptIndex.parentNode.label; // 선택옵션 인덱스값의 레이블
+        const getOptIndex = (e.target.options[ e.target.selectedIndex ]); // select박스 option 인덱스값
+        const getOptLabel = getOptIndex.parentNode.label; // select박스 optgroup label값
 
-        setType(getOptLabel);
-         // 운동종류 렌더링
+        setType(getOptLabel); // select박스 label값 렌더링
     }
 
-    // 시간 입력 핸들러
+    // 시간 입력 핸들러 -> 24시간 60분 계산 -> 최대값 1440
     const handleTimeChange = (e) => {
         const value = Number(e.target.value);
-        if (value >= 1 && value <= 60) {
+        if (value >= 1 && value <= 1440) {
             setTime(value);
         } else if (e.target.value === "") {
             setTime("");
         }
     };
 
-    // 세트 입력 핸들러
+    // 세트 입력 핸들러 -> 최대 세트수 30으로 지정
     const handleSetsChange = (e) => {
         const value = Number(e.target.value);
-        if (value >= 1 && value <= 20) {
+        if (value >= 1 && value <= 30) {
             setSets(value);
         } else if (e.target.value === "") {
             setSets("");
         }
     };
 
-    // 무게 입력 핸들러
+    // 무게 입력 핸들러 -> 최대 무게수 1000키로 지정
     const handleWeightChange = (e) => {
         const value = Number(e.target.value);
-        if (value >= 1 && value <= 500) {
+        if (value >= 1 && value <= 1000) {
             setWeight(value);
         } else if (e.target.value === "") {
             setWeight("");
         }
     };
+
 
     // 제출 핸들러: 입력값 초기화
     const handleSubmit = () => {
@@ -75,40 +74,37 @@ export default function RecordModal({ value, dataUpdate1 }) {
         }
 
         // 입력값이 유효할 경우, 새로운 운동 기록 추가
+        // recordMain의 data1에 값 저장
         const newRecord = {
             date : {value}.value,
             title: title,
-            time: time,
-            sets: sets,
-            weight: weight,
+            time: Number(time),
+            sets: Number(sets),
+            weight: Number(weight),
             type: type
         }
 
-        console.log('recordModal')
-        console.log(newRecord);
+        // 숫자타입으로 데이터 넘어오는지 디버깅
+        // console.log(time);
+        // console.log(sets);
+        // console.log(weight);
 
         dataUpdate1(newRecord);// 새로운 기록을 부모 컴포넌트로 전달
-        // typeUpdate((prevType) => ({
-        //     ...prevType, [ getOptLabel ]: (prevType[ getOptLabel ] || 0) + 1
-        // })) // 기존 countType객체를 복사해서 getOptLabel 키값을 1씩 증가
-
-
+        
         // 입력값 초기화
         setTitle(""); // 운동명 초기화
-        setTime("");
-        setSets("");
-        setWeight("");
+        setTime(""); // 시간 초기화
+        setSets(""); // 세트 초기화
+        setWeight(""); // 무게 초기화
     };
-
-    // let [workoutList, setWorkoutList] = useState(workoutList);
 
     return (
         <div className="recordModal_container">
             <div className="recordModal_content_detail">
                 오늘의 운동
                 <br />
-                <select name="upper" onChange={handleTitleChange}>
-                    <option value="" disabled selected>운동을 선택하세요</option> {/* placeholder-like option */}
+                <select name="upper" value={title} onChange={handleTitleChange}>
+                    <option value="" disabled>운동을 선택하세요</option> {/* placeholder-like option */}
                     <optgroup label="어깨">
                         <option value="밀리터리 프레스">밀리터리 프레스</option>
                         <option value="사이드 레터럴 레이즈">사이드 레터럴 레이즈</option>

@@ -54,13 +54,13 @@ const RadarChart = ( {data1} ) => {
             r: {
                 grid: {
                     color: 'black', // 내부 6각형 선의 색상
-                    lineWidth: 5, // 내부 선의 두께
+                    lineWidth: 4, // 내부 선의 두께
                 },
                 ticks: {
                     display: false, // 축에 표시되는 숫자 숨기기
                 },
                 suggestedMin: 0,
-                suggestedMax: 15,
+                suggestedMax: Math.max(...workoutData)+1, // workout배열에서 +1로 최대값 동적으로 변경
             },
         },
         plugins: {
