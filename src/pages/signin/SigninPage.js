@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import '../../assets/SigninPage.css';
 import { useNavigate } from 'react-router-dom';
 
-function SigninPage() {
 
+
+function SigninPage() {
+    let navigate = useNavigate();
     let [year, setYear] = useState('');
     let [month, setMonth] = useState('');
     let [day, setDay] = useState('');
@@ -14,8 +16,9 @@ function SigninPage() {
     let [passwordValid, setPasswordValid] = useState('');
     let [passwordMatch, setPasswordMatch] = useState(true);
     let [nickName, setNickName] = useState('');
-    const [nickNameError, setNickNameError] = useState('');
-    let navigate = useNavigate();
+    let [phonePrefix, setPhonePrefix] = useState('010');  // 전화번호 앞자리
+    let [phoneSuffix, setPhoneSuffix] = useState('');     // 전화번호 뒷자리
+    let [nickNameError, setNickNameError] = useState('');
 
     //이메일 형식 유효성검증
     function isValidEmail(str) {
@@ -47,7 +50,43 @@ function SigninPage() {
 
         return null; // 유효하면 null 반환
     }
+    //이메일 중복 확인 함수
+    const checkEmailDuplicate = (email) => {
+        // 로컬 스토리지에서 모든 사용자 이메일을 확인
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i); // 로컬스토리지에서 이메일을 키로 사용
+            const userData = JSON.parse(localStorage.getItem(key)); // 해당 이메일에 대한 사용자 정보 가져오기
 
+            // 이메일이 이미 존재하는 경우
+            if (userData && userData.email === email) {
+                alert('이미 사용 중인 이메일입니다.');
+                return;
+            }
+        }
+
+        // 이메일이 중복되지 않으면 사용 가능
+        alert('사용 가능한 이메일입니다.');
+    };
+    //닉네임 중복 확인 함수
+    const checkNickNameDuplicate = (nickName) => {
+        let isDuplicate = false;
+        // 로컬 스토리지에서 'users' 키로 저장된 사용자 목록을 가져옵니다.
+        for (let i = 0; i < localStorage.length; i++) {
+            const email = localStorage.key(i); // 각 키(이메일)를 가져옴
+            const userData = JSON.parse(localStorage.getItem(email)); // 해당 이메일에 대한 사용자 정보
+
+            // 중복 닉네임 확인
+            if (userData && userData.nickName === nickName) {
+                isDuplicate = true;
+                break; // 중복된 닉네임이 있으면 루프 종료
+            }
+        }
+        if (isDuplicate) {
+            alert('이미 사용 중인 닉네임입니다.');
+        } else {
+            alert('사용 가능한 닉네임입니다.');
+        }
+    };
     //이메일, 비밀번호, 비밀번호확인에 입력할때마다 상태 업데이트, 유효성 검증
     const handleEmailChange = (e) => {
         const value = e.target.value;
@@ -73,10 +112,10 @@ function SigninPage() {
     const handlePasswordRetypeChange = (e) => {
         const value = e.target.value;
         setPasswordRetype(value);  //비밀번호 확인 입력값 저장
-        if (value.length == 0) {
+        if (value.length === 0) {
             setPasswordMatch(true); //값이 없으면 메시지 숨김
         }
-        else if (isMatch(password, value)) {
+        else if (isMatch(password === value)) {
             setPasswordMatch(true); //비밀번호와 확인이 일치하면 업데이트
         } else {
             setPasswordMatch(false); //일치하지 않을때 업데이트
@@ -108,8 +147,9 @@ function SigninPage() {
             return;
         } else if (!strongPassword(password)) {
             alert('패스워드 형식이 올바르지 않습니다.');
+            return;
         }
-        if (passwordRetype === '') {
+        if (passwordRetype === 0) {
             alert('비밀번호 확인을 입력해주세요');
             return;
         } else if (!isMatch(password, passwordRetype)) {
@@ -124,13 +164,36 @@ function SigninPage() {
             if (nickNameError) {
                 alert(nickNameError); // 유효하지 않으면 에러 메시지 출력
                 return;
-            }            
+            }
         }
+
+        let fullPhoneNumber = `${phonePrefix}${phoneSuffix}`;
+        let newUser = {
+            email: email,
+            password: password,
+            nickName: nickName,
+            phone: fullPhoneNumber || '', //선택사항, 값이 없으면 빈 문자열로
+            birthdate: { year, month, day } || {} //선택사항, 값이 없으면 빈 객체
+        };
+        //유저데이터 로컬스토리지에 저장
+        localStorage.setItem(newUser.email, JSON.stringify(newUser));
+        //setItem은 데이터 저장 메서드(key,value) newUser.email이 key  newUser가 value
+        //newUser.email 이렇게 써야 이메일을 키로 사용하여 이메일별로 각자 저장됨
+        //JSON.stringify 객체나 배열을 JSON문자열로 변환하는 메서드
+        //로컬 스토리지는 문자열만 저장 가능 하기때문에 JSON.stringify으로 변환
+
+
         alert('회원가입이 완료되었습니다');
-            setEmail('');
-            setPassword('');
-            setPasswordRetype('');
-            setNickName('');
+        navigate('/Login');
+        setEmail('');
+        setPassword('');
+        setPasswordRetype('');
+        setNickName('');
+        setPhonePrefix('010');
+        setPhoneSuffix('');
+        setYear('');
+        setMonth('');
+        setDay('');
     };
 
     // 현재 년도와 월을 기준으로 선택 가능한 년,월,일을 설정
@@ -162,10 +225,10 @@ function SigninPage() {
         <div className='signContainer'>
             <div className='signinBox'>
                 <h1>회원가입</h1>
-                <form className='formStyle'>
+                <form className='formStyle' onSubmit={handleSignin}>
                     <br></br>
                     <div className='infoText'>
-                        <h3>기본정보</h3><span style={{ color: 'red' }}>필수사항</span>
+                        <h3>기본정보</h3><span>필수사항</span>
                     </div>
                     <label>Email</label>
                     <input
@@ -181,6 +244,20 @@ function SigninPage() {
                     <div className={!emailValid && email.length > 0 ? "failure" : "hide"}>
                         이메일 형식이어야 합니다
                     </div>
+                    <button
+                        className="inputField"
+                        type='button'
+                        onClick={(event) => {
+                            event.preventDefault();
+                            if (email === '') {
+                                alert('이메일을 입력해주세요');
+                                return;
+                            }
+                            checkEmailDuplicate(email); // 이메일 중복 확인 함수 호출
+                        }}
+                    >
+                        이메일 중복 확인
+                    </button>
 
                     <label>Password</label>
                     <input
@@ -220,27 +297,37 @@ function SigninPage() {
                     <div className="error">
                         {nickNameError && <span>{nickNameError}</span>}
                     </div>
-                    <button onClick={(event) => {
-                        event.preventDefault();
-                        const error = isValidNickName(nickName); // isValidNickName 함수 호출
-                        if (error) {
-                            alert(error); // 유효하지 않으면 에러 메시지 출력
-                            return; // 유효하지 않으면 중복 확인을 진행하지 않음
-                        }
-                        alert('사용 가능한 닉네임입니다')
-                    }}>닉네임 중복 확인</button>
+                    <button
+                        className="inputField"
+                        type='button'
+                        onClick={(event) => {
+                            event.preventDefault();
+                            const error = isValidNickName(nickName); // isValidNickName 함수 호출
+                            if (error) {
+                                alert(error); // 유효하지 않으면 에러 메시지 출력
+                                return; // 유효하지 않으면 중복 확인을 진행하지 않음
+                            }
+                            checkNickNameDuplicate(nickName)
+                        }}>닉네임 중복 확인</button>
 
                     <br></br>
                     <div className='infoText'>
                         <h3>전화번호</h3><span style={{ color: 'blue' }}>선택사항</span>
                     </div>
                     <div className='phone'>
-                        <select>
-                            <option selected>010</option>
-                            <option>011</option>
-                            <option>016</option>
-                            <option>017</option>
-                        </select><input type="text" className="inputField" placeholder='휴대폰번호를 입력해주세요'></input>
+                        <select onChange={(e) => setPhonePrefix(e.target.value)} value={phonePrefix}>
+                            <option value='010'>010</option>
+                            <option value='011'>011</option>
+                            <option value='016'>016</option>
+                            <option value='017'>017</option>
+                        </select>
+                        <input
+                            type="text"
+                            className="inputField"
+                            placeholder='휴대폰번호를 입력해주세요'
+                            onChange={(e) => setPhoneSuffix(e.target.value)}
+                            value={phoneSuffix}
+                        />
                     </div>
                     <br></br>
                     <div >
@@ -292,9 +379,11 @@ function SigninPage() {
                         </div>
                     </div>
                     <br></br>
-                    <button className="inputField" onClick={handleSignin}>Signin</button>
+                    <button className="inputField" type='submit'>Signin</button>
+
                 </form>
             </div>
+
         </div>
     )
 }
