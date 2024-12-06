@@ -1,11 +1,3 @@
-let WorkoutList = [ {
-    id: '',
-    title: '',
-    time: '',
-    sets: '',
-    weight: '',
-    // type: ''
-}
-];
+let WorkoutList = [];
 
 export default WorkoutList;

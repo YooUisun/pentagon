@@ -5,24 +5,26 @@ import StatatisticWorkInfo from "./StatatisticWorkInfo";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {useState} from "react";
+import { RiPieChartFill } from "react-icons/ri";
+import { CiMemoPad } from "react-icons/ci";
 
-export default function Statistics() {
-
+export default function Statistics( {data, setData} ) {
 
     return (
         <div className="stats_container">
-            <StatsHeader />
+            <StatsHeader data={data}/>
             <div className="stats_content_container">
                 <h1>일반</h1>
                 <Tabs>
                     <TabList>
-                        <Tab>Memo</Tab>
-                        <Tab>Data</Tab>
+                        <Tab><CiMemoPad />
+                        </Tab>
+                        <Tab><RiPieChartFill/></Tab>
                     </TabList>
 
                     <TabPanel>
                         <section>
-                            <StatatisticWorkInfo/>
+                            <StatatisticWorkInfo data={data} setData={setData}/>
                         </section>
                     </TabPanel>
 
