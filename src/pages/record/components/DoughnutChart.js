@@ -11,7 +11,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = () => {
     const data = {
-        labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange' ],
+        labels: [ '어깨', '팔', '가슴', '등', '복근', '허벅지' ],
         datasets: [
             {
                 label: 'Votes',

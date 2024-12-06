@@ -2,28 +2,42 @@ import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
 
-export default function RecordModal({ value, dataUpdate }) {
+export default function RecordModal({ value, dataUpdate, typeUpdate }) {
     // 상태 관리
     const [ title, setTitle ] = useState(''); //운동 입력값
-    const [ time, setTime ] = useState(""); // 기간 입력값
-    const [ sets, setSets ] = useState(""); // 세트 입력값
-    const [ weight, setWeight ] = useState(""); // 무게 입력값
+    const [ time, setTime ] = useState(0); // 기간 입력값
+    const [ sets, setSets ] = useState(0); // 세트 입력값
+    const [ weight, setWeight ] = useState(0); // 무게 입력값
+    const [ type, setType ] = useState('');
     // const [newWorkoutList, setNewWorkoutList] = useState([]); // 총 데이터 입력
 
     // 운동 입력 핸들러
     const handleTitleChange = (e) => {
-        const title = e.target.value;
-        setTitle(title);
-    }
+        const title = e.target.value; // 운동명 밸류값
 
+        const getOptIndex = (e.target.options[ e.target.selectedIndex ]); // 선택옵션 인덱스값
+        const getOptLabel = getOptIndex.parentNode.label; // 선택옵션 인덱스값의 레이블
+
+        setTitle(title); //운동명 렌더링
+        setType(getOptLabel); // 운동종류 렌더링
+
+        typeUpdate((prevType) => ({
+            ...prevType, [ getOptLabel ]: (prevType[ getOptLabel ] || 0) + 1
+        })) // 기존 countType객체를 복사해서 getOptLabel 키값을 1씩 증가
+
+        // (Object.values(countType));
+        console.log(getOptLabel);
+    }
     // 시간 입력 핸들러
     const handleTimeChange = (e) => {
         const value = Number(e.target.value);
         if (value >= 1 && value <= 60) {
             setTime(value);
-        } else if (e.target.value === "") {
-            setTime("");
+        } else if (isNaN(e.target.value ) || e.target.value === '') {
+            alert('숫자를 입력하세요');
         }
+
+        console.log(value);
     };
 
     // 세트 입력 핸들러
@@ -56,10 +70,13 @@ export default function RecordModal({ value, dataUpdate }) {
             title: title,
             time: time,
             sets: sets,
-            weight: weight
+            weight: weight,
+            type: type
         }
 
         dataUpdate(newRecord);
+
+        
 
         setTime("");
         setSets("");

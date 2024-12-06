@@ -16,7 +16,7 @@ export default function StatatisticWorkInfo({ data, setData }) {
                     return (
                         <div style={{ display: 'flex', flexDirection: 'row' } }>
 
-                            <div style={ {display: 'flex', flexDirection: 'row' } }>
+                            <div style={ {display: 'flex', flexDirection: 'row'} }>
                                 <div>{index + 1}</div> 
                                 <div>운동명 : {item.title}</div>
                                 <div>운동 시간 : {item.time} 분</div>

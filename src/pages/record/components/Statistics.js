@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {useState} from "react";
 
-export default function Statistics( {data, setData} ) {
+export default function Statistics( {data, setData, countType} ) {
 
     return (
         <div className="stats_container">
@@ -27,7 +27,7 @@ export default function Statistics( {data, setData} ) {
 
                     <TabPanel>
                         <section className="stats_content_chart">
-                            <RadarChart/>
+                            <RadarChart countType={countType}/>
                             <DoughnutChart/>
                         </section>
                     </TabPanel>

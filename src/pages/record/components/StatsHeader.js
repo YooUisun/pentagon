@@ -8,18 +8,19 @@ export default function StatsHeader({ data }) {
     const totalTime = data.reduce( (sum, item) => sum + item.time, 0);
     const totalSets = data.reduce( (sum, item) => sum + item.sets, 0);
 
+
     return (
         <div style={{ height: '25%' }}>
             <div className="stats_content_main">
                 <div>
                     <div className="stats_content_box">총 시간
 
-                        <p>{totalTime} 분</p>
+                        <p>{Number(totalTime)} 분</p>
 
 
                     </div>
                     <div className="stats_content_box">총 세트수
-                        <p>{totalSets} 세트</p>
+                        <p>{Number(totalSets)} 세트</p>
                     </div>
                 </div>
             </div>

@@ -18,10 +18,17 @@ export default function RecordMain() {
 
 
     const [ data, setData ] = useState([]); //운동기록데이터
+    const [ countType, setCountType] = useState({});
 
     const dataUpdate = (newRecord) => {
         setData( (prevData) => [...prevData, newRecord]); // 업데이트된 값을 setData에 반영
     }
+
+    const typeUpdate = (value) => {
+        setCountType( (prevType) => value(prevType));
+    }
+
+    console.log(countType);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -33,13 +40,13 @@ export default function RecordMain() {
                         <Calendar onValueChange={handleSelectdayFromChild} />
                         <RecordModal
                             value={selectDay}
-                            dataUpdate={(dataUpdate)}
+                            dataUpdate={dataUpdate}
+                            typeUpdate={typeUpdate}
                         />
                     </div>
 
                     <div className="statisticContent">
-                        <Statistics data={data} setData={setData}/>
-                        {/* <Statistics totalHour={totalHour} totalSet={totalSet} /> */}
+                        <Statistics data={data} setData={setData} countType={countType}/>
                     </div>
                 </section>
 
