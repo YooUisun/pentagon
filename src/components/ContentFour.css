@@ -48,3 +48,31 @@
 .learn-more-button3:hover {
     background-color: #218838;
 }
+
+/* 슬라이드 애니메이션 */
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.3s ease-in-out, transform 1.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* 최종 위치 */
+}
+
+.page4-title {
+    transition-delay: 0s; /* logoimage2와 page4-title은 동시에 애니메이션 */
+}
+
+.logoimage2 {
+    transition-delay: 0.1s;
+}
+
+.page4-description {
+    transition-delay: 0.3s; /* 1초 후에 page4-description이 애니메이션 시작 */
+}
+
+.learn-more-button3 {
+    transition-delay: 0.4s;
+}

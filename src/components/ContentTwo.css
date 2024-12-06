@@ -50,8 +50,8 @@
 
 .slide-up {
     opacity: 0;
-    transform: translateY(70px); /* 처음에는 아래로 이동 */
-    transition: opacity 1.7s ease-in-out, transform 1.7s ease-in-out; /* 부드러운 애니메이션 */
+    transform: translateY(60px); /* 처음에는 아래로 이동 */
+    transition: opacity 1.3s ease-in-out, transform 1.3s ease-in-out; /* 부드러운 애니메이션 */
 }
 
 .slide-up.visible {

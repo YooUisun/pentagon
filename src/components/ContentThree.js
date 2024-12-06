@@ -8,7 +8,7 @@ function ContentThree() {
         const observerOptions = {
             root: null, // Viewport 전체를 root로 설정
             rootMargin: '0px', // 추가 여백 없이 감지
-            threshold: 0.5, // 요소가 50% 이상 보일 때 감지
+            threshold: 0.4, // 요소가 40% 이상 보일 때 감지
         };
 
         const slideUpElements = document.querySelectorAll('.slide-up');
