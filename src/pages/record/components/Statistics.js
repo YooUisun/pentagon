@@ -8,7 +8,7 @@ import {useState} from "react";
 import { RiPieChartFill } from "react-icons/ri";
 import { CiMemoPad } from "react-icons/ci";
 
-export default function Statistics( {data, data1, setData1, countType} ) {
+export default function Statistics( {data, data1, setData1} ) {
 
     return (
         <div className="stats_container">
@@ -31,7 +31,7 @@ export default function Statistics( {data, data1, setData1, countType} ) {
 
                     <TabPanel>
                         <section className="stats_content_chart">
-                            <RadarChart countType={countType}/>
+                            <RadarChart data1={data1}/>
                             <DoughnutChart/>
                         </section>
                     </TabPanel>

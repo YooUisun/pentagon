@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
+import WorkoutList from "../data/WorkoutList";
 
-export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
+export default function RecordModal({ value, dataUpdate1 }) {
     // 상태 관리
     const [ title, setTitle ] = useState(''); //운동 입력값
     const [ time, setTime ] = useState(0); // 기간 입력값
@@ -13,19 +14,13 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
     // 운동 입력 핸들러
     const handleTitleChange = (e) => {
         const title = e.target.value; // 운동명 밸류값
+        setTitle(title); //운동명 렌더링
 
         const getOptIndex = (e.target.options[ e.target.selectedIndex ]); // 선택옵션 인덱스값
         const getOptLabel = getOptIndex.parentNode.label; // 선택옵션 인덱스값의 레이블
 
-        setTitle(title); //운동명 렌더링
-        setType(getOptLabel); // 운동종류 렌더링
-
-        typeUpdate((prevType) => ({
-            ...prevType, [ getOptLabel ]: (prevType[ getOptLabel ] || 0) + 1
-        })) // 기존 countType객체를 복사해서 getOptLabel 키값을 1씩 증가
-
-        // (Object.values(countType));
-        console.log(getOptLabel);
+        setType(getOptLabel);
+         // 운동종류 렌더링
     }
 
     // 시간 입력 핸들러
@@ -36,8 +31,6 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
         } else if (e.target.value === "") {
             setTime("");
         }
-
-        console.log(value);
     };
 
     // 세트 입력 핸들러
@@ -62,6 +55,7 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
 
     // 제출 핸들러: 입력값 초기화
     const handleSubmit = () => {
+
         // 입력값 유효성 검사
         if (!title) {
             alert("운동명을 선택해주세요.");
@@ -82,6 +76,7 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
 
         // 입력값이 유효할 경우, 새로운 운동 기록 추가
         const newRecord = {
+            date : {value}.value,
             title: title,
             time: time,
             sets: sets,
@@ -89,17 +84,23 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
             type: type
         }
 
-        // 새로운 기록을 부모 컴포넌트로 전달
-        dataUpdate1(newRecord);
+        console.log('recordModal')
+        console.log(newRecord);
+
+        dataUpdate1(newRecord);// 새로운 기록을 부모 컴포넌트로 전달
+        // typeUpdate((prevType) => ({
+        //     ...prevType, [ getOptLabel ]: (prevType[ getOptLabel ] || 0) + 1
+        // })) // 기존 countType객체를 복사해서 getOptLabel 키값을 1씩 증가
+
 
         // 입력값 초기화
         setTitle(""); // 운동명 초기화
         setTime("");
         setSets("");
         setWeight("");
-
-        console.log(newRecord);
     };
+
+    // let [workoutList, setWorkoutList] = useState(workoutList);
 
     return (
         <div className="recordModal_container">
@@ -107,7 +108,7 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
                 오늘의 운동
                 <br />
                 <select name="upper" onChange={handleTitleChange}>
-                <option value="" disabled selected>운동을 선택하세요</option> {/* placeholder-like option */}
+                    <option value="" disabled selected>운동을 선택하세요</option> {/* placeholder-like option */}
                     <optgroup label="어깨">
                         <option value="밀리터리 프레스">밀리터리 프레스</option>
                         <option value="사이드 레터럴 레이즈">사이드 레터럴 레이즈</option>
@@ -149,6 +150,7 @@ export default function RecordModal({ value, dataUpdate1, typeUpdate }) {
                     </optgroup>
                 </select>
             </div>
+
             <div className="recordModal_content_detail">
                 날짜선택
                 <div>{value}</div>

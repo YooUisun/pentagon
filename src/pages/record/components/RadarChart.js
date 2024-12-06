@@ -21,22 +21,24 @@ ChartJS.register(
     RadarController
 );
 
-const RadarChart = ( {countType} ) => {
+const RadarChart = ( {data1} ) => {
+
+    
+    const categories = ['등','어깨','가슴','팔','복근','허벅지'];
+    const workoutData = categories.map ( (categories) => {
+        return data1.filter( (item) => item.type === categories).length;
+    })
 
 
-    // const statData = data.reduce((sum, item) => sum + item.type.length + 1, 0);
-
-    console.log('레이다')
-    // console.log(Object.values(countType));
-    console.log(countType);
-
-
+    console.log('레이다');
+    console.log(workoutData);
+    
     const data = {
-        labels: ['등','어깨','가슴','팔','복근','허벅지'], //운동부위
+        labels: categories, //운동부위
         datasets: [
             {
                 label: '부위별 통계',
-                data: Object.values(countType),
+                data: workoutData,
                 fill: true,
                 backgroundColor: 'rgb(236, 223, 204)',
                 borderColor: 'rgb(31, 49, 111)',
@@ -52,13 +54,13 @@ const RadarChart = ( {countType} ) => {
             r: {
                 grid: {
                     color: 'black', // 내부 6각형 선의 색상
-                    lineWidth: 3, // 내부 선의 두께
+                    lineWidth: 5, // 내부 선의 두께
                 },
                 ticks: {
                     display: false, // 축에 표시되는 숫자 숨기기
                 },
                 suggestedMin: 0,
-                suggestedMax: 5,
+                suggestedMax: 15,
             },
         },
         plugins: {

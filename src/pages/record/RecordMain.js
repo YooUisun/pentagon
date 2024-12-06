@@ -10,24 +10,19 @@ export default function RecordMain() {
     const [ workoutData, setWorkoutData ] = useState({}); // 날짜별 운동 데이터
 
     const [ data1, setData1 ] = useState([]); //운동기록데이터
-    const [ countType, setCountType ] = useState({});
+
+    console.log('counttype전')
+    console.log(data1);
 
 
     // 자식 컴포넌트에서 값을 받는 함수
     const handleSelectdayFromChild = (value) => {
-        console.log(value);
         setSelectDay(value);
     };
 
     const dataUpdate1 = (newRecord) => {
         setData1((prevData) => [ ...prevData, newRecord ]); // 업데이트된 값을 setData에 반영
     }
-
-    const typeUpdate = (value) => {
-        setCountType((prevType) => value(prevType));
-    }
-
-    console.log(countType);
 
     //------------------------------------------------------------------------------------------------------------
 
@@ -73,7 +68,6 @@ export default function RecordMain() {
                         <RecordModal
                             value={selectDay}
                             dataUpdate1={dataUpdate1}
-                            typeUpdate={typeUpdate}
                         />
                     </div>
 
@@ -93,7 +87,6 @@ export default function RecordMain() {
                             selectedDay={selectDay}
                             workoutDays={workoutDays}
                             setWorkoutDays={setWorkoutDays}
-                            countType={countType}
                             setData1={setData1}
                         />
                     </div>
