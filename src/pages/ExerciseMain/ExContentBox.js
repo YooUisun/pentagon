@@ -21,6 +21,7 @@ function ExContentBox( {contentData, setContentData, index, getId} ) {
                     className='contImg'
                     src={contentData[index].imageURL}
                 ></img>
+                <div className="exPart">운동 부위</div>
                 <div className='contText'>{contentData[index].content}</div>
             </div>
         </>

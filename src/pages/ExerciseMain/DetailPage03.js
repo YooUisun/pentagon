@@ -95,7 +95,6 @@ function DetailPage03() {
                 <div className='btnContainer'>
                     <button
                         type='button'
-                        style={{width: '100px', height: '50px'}}
                         onClick={toggleModal}
                     >Modal</button>
                 </div>
@@ -105,37 +104,61 @@ function DetailPage03() {
                     <DetailModal toggleModal={toggleModal}>
                         <DetailModalTab>
                             <DetailModalTitle>
-                                제목1
+                                1일차
                             </DetailModalTitle>
                             <DetailModalText>
-                                tab1 text1
+                                스트레칭
                             </DetailModalText>
                             <DetailModalText>
-                                tab1 text2
+                                벤치프레스 3세트
+                            </DetailModalText>
+                            <DetailModalText>
+                                10분 휴식
+                            </DetailModalText>
+                            <DetailModalText>
+                                바벨스쿼트 2세트
+                            </DetailModalText>
+                            <DetailModalText>
+                                바벨로우 2세트
                             </DetailModalText>
                         </DetailModalTab>
 
                         <DetailModalTab>
-                            <DetailModalTitle>
-                                제목2
+                        <DetailModalTitle>
+                                2일차
                             </DetailModalTitle>
                             <DetailModalText>
-                                tab2 text1
+                                스트레칭
                             </DetailModalText>
                             <DetailModalText>
-                                tab2 text2
+                                벤치프레스 1세트
+                            </DetailModalText>
+                            <DetailModalText>
+                                5분 휴식
+                            </DetailModalText>
+                            <DetailModalText>
+                                바벨스쿼트 1세트
                             </DetailModalText>
                         </DetailModalTab>
 
                         <DetailModalTab>
-                            <DetailModalTitle>
-                                제목3
+                        <DetailModalTitle>
+                                3일차
                             </DetailModalTitle>
                             <DetailModalText>
-                                tab3 text1
+                                스트레칭
                             </DetailModalText>
                             <DetailModalText>
-                                tab3 text2
+                                벤치프레스 1세트
+                            </DetailModalText>
+                            <DetailModalText>
+                                10분 휴식
+                            </DetailModalText>
+                            <DetailModalText>
+                                바벨스쿼트 3세트
+                            </DetailModalText>
+                            <DetailModalText>
+                                바벨로우 2세트
                             </DetailModalText>
                         </DetailModalTab>
                     </DetailModal>

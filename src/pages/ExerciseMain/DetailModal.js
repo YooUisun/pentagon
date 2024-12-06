@@ -39,6 +39,15 @@ function DetailModal({ children, toggleModal }) {
     );
 }
 
+// Modal Tab 생성
+const DetailModalTab = ({ children }) => {
+    return (
+        <div className="tab">
+            {children}
+        </div>
+    );
+};
+
 const DetailModalTitle = ({ children }) => {
     return (
         <div className="modalTitle">
@@ -50,15 +59,6 @@ const DetailModalTitle = ({ children }) => {
 const DetailModalText = ({ children }) => {
     return (
         <div className="modalText">
-            {children}
-        </div>
-    );
-};
-
-// Modal Tab 생성
-const DetailModalTab = ({ children }) => {
-    return (
-        <div className="tab">
             {children}
         </div>
     );

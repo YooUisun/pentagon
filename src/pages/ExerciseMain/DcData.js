@@ -3,17 +3,10 @@ import exdetail02 from '../../assets/exdetail02.gif'    // 싯업
 import exdetail03 from '../../assets/exdetail03.webp'   // 벤치프레스
 import exdetail04 from '../../assets/exdetail04.webp'   // 데드리프트
 import exdetail05 from '../../assets/exdetail05.gif'    // 밴드스텝업
-import exdetail06 from '../../assets/exdetail06.webp'    // 바벨스쿼트
-import exdetail07 from '../../assets/exdetail07.gif'   // 바벨로우
+import exdetail06 from '../../assets/exdetail06.webp'   // 바벨스쿼트
+import exdetail07 from '../../assets/exdetail07.gif'    // 바벨로우
 
-let image01 = exdetail01;
-let image02 = exdetail02;
-let image03 = exdetail03;
-let image04 = exdetail04;
-let image05 = exdetail05;
-let image06 = exdetail06;
-let image07 = exdetail07;
-
+// Description Data
 let DcData = [
 
     // {
@@ -32,7 +25,7 @@ let DcData = [
         id: '001',
         difficulty: 'easy',
         name: '푸시업',
-        imageURL: image01,
+        imageURL: exdetail01,
         content1: '효과가 뛰어난 맨몸 운동이에요 손 너비가 좁아질수록 가슴 안쪽, 넓어질수록 가슴 바깥쪽에 자극을 줄 수 있어요!',
         content2:
             <div>
@@ -60,7 +53,7 @@ let DcData = [
         id: '002',
         difficulty: 'easy',
         name: '싯업',
-        imageURL: image02,
+        imageURL: exdetail02,
         content1: '코어 전체에 효과적인 운동이에요. 하지만 잘못된 동작으로 할 경우에는 허리에 부상을 줄 수 있으니 허벅지로 강하게 고정한 후 정확한 자세로 수행해 주세요!',
         content2:
             <div>
@@ -86,7 +79,7 @@ let DcData = [
         id: '003',
         difficulty: 'normal',
         name: '벤치프레스',
-        imageURL: image03,
+        imageURL: exdetail03,
         content1: '벤치 프레스는 웨이트 트레이닝을 해본 적이 없는 사람들도 알고 있는 경우가 많을 정도로 가장 널리 알려진 운동으로서, 큰가슴근과 삼두근을 위주로 가슴 부근의 상체 근육들을 종합적으로 강화하기 위한 최고의 운동이에요. 또한 가슴 운동중 가장 많이 하는 운동이에요. 벤치프레스만 잘해도 크고 넓은 가슴을 가질 수 있어요!',
         content2:
             <div>
@@ -118,7 +111,7 @@ let DcData = [
         id: '004',
         difficulty: 'normal',
         name: '데드리프트',
-        imageURL: image04,
+        imageURL: exdetail04,
         content1: '몸 뒤쪽 근육들이 중량을 버티는 데에 많은 관여를 하기 때문에 등 근육 발달에 좋은 운동이에요. 완벽한 등근육을 가지고 싶다면 필수 운동!',
         content2:
             <div>
@@ -149,7 +142,7 @@ let DcData = [
         id: '005',
         difficulty: 'normal',
         name: '밴드스텝업',
-        imageURL: image05,
+        imageURL: exdetail05,
         content1: '밴드를 이용해 스텝업을 수행해요. 밴드 스텝업은 허리와 하체의 유기적인 움직임과 회전을 자연스럽게 도와요. 뒷발 돌리는 감각을 쉡게 익히실 수 있어요! 펀치력이나 비거리 향상에 효과적이에요!',
         content2:
             <div>
@@ -175,7 +168,7 @@ let DcData = [
         id: '006',
         difficulty: 'hard',
         name: '벤치프레스',
-        imageURL: image03,
+        imageURL: exdetail03,
         content1: '몸 뒤쪽 근육들이 중량을 버티는 데에 많은 관여를 하기 때문에 등 근육 발달에 좋은 운동이에요. 완벽한 등근육을 가지고 싶다면 필수 운동!',
         content2:
             <div>
@@ -206,7 +199,7 @@ let DcData = [
         id: '007',
         difficulty: 'hard',
         name: '바벨스쿼트',
-        imageURL: image06,
+        imageURL: exdetail06,
         content1: '몸 뒤쪽 근육들이 중량을 버티는 데에 많은 관여를 하기 때문에 등 근육 발달에 좋은 운동이에요. 완벽한 등근육을 가지고 싶다면 필수 운동!',
         content2:
             <div>
@@ -237,7 +230,7 @@ let DcData = [
         id: '008',
         difficulty: 'hard',
         name: '바벨로우',
-        imageURL: image07,
+        imageURL: exdetail07,
         content1: '몸 뒤쪽 근육들이 중량을 버티는 데에 많은 관여를 하기 때문에 등 근육 발달에 좋은 운동이에요. 완벽한 등근육을 가지고 싶다면 필수 운동!',
         content2:
             <div>

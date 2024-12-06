@@ -78,11 +78,25 @@
     max-height: 75%;
 }
 
+.mn-container .contentWrap .exPart {
+    margin: auto;
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 238, 0, 0.8);
+
+    &:hover {
+        border-bottom: 2px solid rgba(255, 0, 0, 0.8);
+    }
+}
+
 /* 운동설명 */
 .mn-container .contentWrap .contText {
-    height: 100px;
-    padding: 10px;
-    /* border: 2px solid red; */
+    height: 55px;
+    /* padding: 10px; */
+    /* display: flex;
+    align-items: center;
+    border: 2px solid red; */
 }
 
 
@@ -145,10 +159,18 @@
 }
 
 
-/* 모달 버튼*/
+/* 모달 버튼 컨테이너*/
 .mn-container .btnContainer {
-    width: 100px;
-    margin: auto;
+    /* width: 200px; */
+    /* margin: auto; */
     margin-bottom: 50px;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+/* 모달 버튼 */
+.mn-container .btnContainer button {
+    width: 100px;
+    height: 50px;
+
+    color: red;
 }
