@@ -3,7 +3,7 @@ import { Container, Row, Col, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Footer.css'; // Footer에 대한 스타일 css 파일
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagramSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import { faInstagramSquare, faTwitterSquare, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
     return (
@@ -21,31 +21,38 @@ function Footer() {
                     <Col>
                         <Nav className='nav-items'>
                             <Nav.Item className='nav-item'>
-                                <Nav.Link as={Link} to="/privacy-policy">개인정보 처리방침</Nav.Link>
+                                <Nav.Link as={Link} to="/privacy-policy"
+                                className="ft-nav-link">개인정보 처리방침</Nav.Link>
                             </Nav.Item>
                             <p className='curtain'>|</p>
                             <Nav.Item className='nav-item'>
-                                <Nav.Link href="#terms-of-service">서비스 이용약관</Nav.Link>
+                                <Nav.Link as={Link} to="/not-found-page"
+                                className="ft-nav-link">서비스 이용약관</Nav.Link>
                             </Nav.Item>
                             <p className='curtain'>|</p>
                             <Nav.Item className='nav-item'>
-                                <Nav.Link href="#contact-us">고객센터</Nav.Link>
+                                <Nav.Link as={Link} to="/not-found-page"
+                                className="ft-nav-link">고객센터</Nav.Link>
                             </Nav.Item>
                             <div className='social-icons'>
-                            <Link to="/instagram">
+                            <a href="https://www.instagram.com/thepentagon_gym" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon 
                                 className='social-icon' 
                                 icon={faInstagramSquare} 
-                                size="3x" 
                                 />
-                            </Link>
-                            <Link to="/twitter">
+                            </a>
+                            <a href="https://www.twitter.com/thepentagon_gym" target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon 
                                 className='social-icon' 
                                 icon={faTwitterSquare} 
-                                size="3x" 
                                 />
-                            </Link>
+                            </a>
+                            <a href="https://www.facebook.com/thepentagon_gym" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon 
+                                className='social-icon' 
+                                icon={faFacebookSquare} 
+                                />
+                            </a>
                             </div>
                         </Nav>
                     </Col>

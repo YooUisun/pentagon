@@ -16,6 +16,7 @@ import LoginPage from '../login/LoginPage';
 import SigninPage from '../signin/SigninPage';
 import ExerciseMain from '../exerciseMain/ExerciseMain';
 import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
+import NotFoundPage from '../../components/NotFoundPage';
 
 
 function MainPage() {
@@ -60,6 +61,7 @@ function MainPage() {
                 <Route path="/Signin" element={<SigninPage />} />
                 <Route path="/ExcerciseMain" element={<ExerciseMain />} />
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
+                <Route path="/not-found-page" element={<NotFoundPage/>} />
             </Routes>
 
             {/* Footer 컴포넌트 */}
