@@ -32,7 +32,7 @@ export default function Statistics( {data, data1, setData1} ) {
                     <TabPanel>
                         <section className="stats_content_chart">
                             <RadarChart data1={data1}/>
-                            <DoughnutChart/>
+                            <DoughnutChart data1={data1}/>
                         </section>
                     </TabPanel>
                 </Tabs>

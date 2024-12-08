@@ -9,13 +9,29 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DoughnutChart = () => {
+const DoughnutChart = ({ data1 }) => {
+
+    const categories = ['등', '어깨', '가슴', '팔', '복근', '허벅지'];
+
+    // reduce함수를 통해 acc객체에 key, value값 대입함
+    // ex) countSets = {등 : 3} 이런식으로 저장됨
+    const countSets = data1.reduce((acc, item) => {
+        acc[item.type] = (acc[item.type] || 0) + item.sets;
+        return acc;
+    }, {});
+
+    // console.log(countSets);
+
+    // countSets변수의 밸류값을 map함수를 통해 뽑아냄
+    const totalSets = categories.map(categories => countSets[categories] || 0);
+
+
     const data = {
-        labels: [ '어깨', '팔', '가슴', '등', '복근', '허벅지' ],
+        labels: categories,
         datasets: [
             {
-                label: 'Votes',
-                data: [ 12, 19, 3, 5, 2, 3 ],
+                label: '부위별 세트수',
+                data: totalSets, // 데이터 동적으로 변환
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.5)',
                     'rgba(54, 162, 235, 0.5)',
@@ -43,6 +59,14 @@ const DoughnutChart = () => {
         plugins: {
             legend: {
                 position: 'top',
+                labels: {
+                    font: {
+                        size: 16, // 폰트 사이즈
+                        family: 'Arial', // 폰트종류
+                        weight: 'bold', //폰트두께
+                    },
+                    color: 'white',
+                },
             },
             title: {
                 display: true,

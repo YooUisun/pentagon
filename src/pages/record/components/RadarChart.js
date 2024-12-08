@@ -21,23 +21,20 @@ ChartJS.register(
     RadarController
 );
 
-const RadarChart = ( {data1} ) => {
+const RadarChart = ({ data1 }) => {
 
-    
-    const categories = ['등','어깨','가슴','팔','복근','허벅지'];
-    const workoutData = categories.map ( (categories) => {
-        return data1.filter( (item) => item.type === categories).length;
+    const categories = ['등', '어깨', '가슴', '팔', '복근', '허벅지'];
+    const workoutData = categories.map((categories) => {
+        return data1.filter((item) => item.type === categories).length;
     })
 
+    //    console.log(workoutData);
 
-    console.log('레이다');
-    console.log(workoutData);
-    
     const data = {
         labels: categories, //운동부위
         datasets: [
             {
-                label: '부위별 통계',
+                label: '부위별 운동 횟수',
                 data: workoutData,
                 fill: true,
                 backgroundColor: 'rgb(236, 223, 204)',
@@ -59,11 +56,27 @@ const RadarChart = ( {data1} ) => {
                 ticks: {
                     display: false, // 축에 표시되는 숫자 숨기기
                 },
+                pointLabels: {
+                    font: {
+                        size: 14, // 축 라벨 폰트 크기
+                        family: 'Arial', //폰트종류
+                    },
+                    color: 'white', //축라벨 폰트색상
+                },
                 suggestedMin: 0,
-                suggestedMax: Math.max(...workoutData)+1, // workout배열에서 +1로 최대값 동적으로 변경
+                suggestedMax: Math.max(...workoutData) + 1, // workout배열에서 +1로 최대값 동적으로 변경
             },
         },
         plugins: {
+            legend: {
+                position: 'top',
+                labels: {
+                    font: {
+                        size: 16, // 범례 폰트 크기
+                    },
+                    color: 'white', // 범례 폰트 색상
+                },
+            },
             title: {
                 display: true,
                 text: '운동 부위별 통계',
