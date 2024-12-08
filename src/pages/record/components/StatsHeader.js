@@ -1,12 +1,11 @@
-import { useState } from "react"
 
 
-export default function StatsHeader({ data1 }) {
+export default function StatsHeader({ data }) {
 
 
     // reduce함수 => 배열.reduce(콜백, (누적값, 현재값) => {누적값 + 현재값, 초기값} )
-    const totalTime = data1.reduce( (sum, item) => sum + item.time, 0);
-    const totalSets = data1.reduce( (sum, item) => sum + item.sets, 0);
+    const totalTime = data.reduce((sum, item) => sum + item.time, 0);
+    const totalSets = data.reduce((sum, item) => sum + item.sets, 0);
 
 
     return (
