@@ -286,6 +286,36 @@
     bottom: 5px;
 }
 
+
+/* 12월7일 의선 수정: 캘린더 초록불 스타일 추가 */
+/* 운동 데이터를 가진 날짜를 시각적으로 구분 */
+.workout-day {
+    background-color: #32cd32; /* 초록색 */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* 선택된 날짜 강조 */
+.selected-day {
+    background-color: #3b3b3b; /* 어두운 배경색 */
+}
+
+/* 캘린더에서 운동이 없는 날 기본 스타일 */
+.calendar-day {
+    transition: all 0.3s ease;
+}
+
+/* 캘린더에서 날짜 hover 스타일 */
+.calendar-day:hover {
+    background-color: #5a5a5a;
+    color: rgb(230, 12, 12); 
+    /* 의선 캘린더 안에 있는 숫자 마우스 올리면 red color 로 변경 */
+}
+
 /* -------------------------------------- */
 
 .Memo {

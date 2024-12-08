@@ -4,40 +4,37 @@ import StatsHeader from "./StatsHeader";
 import StatatisticWorkInfo from "./StatatisticWorkInfo";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import {useState} from "react";
 import { RiPieChartFill } from "react-icons/ri";
 import { CiMemoPad } from "react-icons/ci";
 
-export default function Statistics( {data, data1, setData1} ) {
+export default function Statistics({ data, data1, setData1 }) {
 
     return (
         <div className="stats_container">
-            <StatsHeader data1={data1}/>
+            <StatsHeader data1={data1} />
 
             <div className="stats_content_container">
                 <h1>일반</h1>
                 <Tabs>
                     <TabList>
-                        <Tab><CiMemoPad />
-                        </Tab>
-                        <Tab><RiPieChartFill/></Tab>
+                        <Tab><CiMemoPad /></Tab>
+                        <Tab><RiPieChartFill /></Tab>
                     </TabList>
 
                     <TabPanel>
                         <section>
-                            <StatatisticWorkInfo data={data} data1={data1} setData1={setData1}/>
+                            <StatatisticWorkInfo data={data} data1={data1} setData1={setData1} />
                         </section>
                     </TabPanel>
 
                     <TabPanel>
                         <section className="stats_content_chart">
-                            <RadarChart data1={data1}/>
-                            <DoughnutChart/>
+                            <RadarChart data1={data1} />
+                            <DoughnutChart />
                         </section>
                     </TabPanel>
                 </Tabs>
             </div>
-
         </div>
-    )
+    );
 }
