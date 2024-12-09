@@ -1,6 +1,6 @@
 import "../assets/NavBar.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
