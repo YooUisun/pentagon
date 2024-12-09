@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './ContentFour.css';
 import title4 from '../../src/assets/image/page4title.jpg';
+import { Link } from 'react-router-dom';
 
 
 function ContentFour() {
@@ -54,7 +55,7 @@ function ContentFour() {
                 <p className="page4-description slide-up">
                 AI 전문가들의 조언에 따라 더 효과적이고 효율적으로 운동 목표와 계획을 수립해나가세요.
                 </p>
-                <button className="learn-more-button3 slide-up">자세히 보기</button> {/* 버튼 누르면 운동 메인 페이지로 */}
+                <Link to="/Ai" className="learn-more-button3 slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 Ai 상담 페이지로 */}
             </div>
         </div>
     )

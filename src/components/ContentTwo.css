@@ -32,6 +32,10 @@
     margin-right: 60px;
 }
 
+.logoimage1 img {
+    border-radius: 30px;
+}
+
 .learn-more-button {
     width: 150px;
     height: 50px;
@@ -43,7 +47,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
     margin-left: 140px;
     text-align: center;
     text-decoration: none;
@@ -51,6 +54,7 @@
 
 .learn-more-button p{
     margin-top: 5px;
+    user-select: none;
 }
 
 .learn-more-button:hover {

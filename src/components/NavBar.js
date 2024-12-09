@@ -1,13 +1,21 @@
 import "../assets/NavBar.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import React, { useEffect, useRef  } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
-function NavBar() {
-    let location = useLocation(); // 현재 URL 정보 가져오기
+
+function NavBar({ isLoggedIn, setIsLoggedIn }) {
+    const location = useLocation(); // 현재 URL 정보 가져오기
+
+
+    const handleLogout = () => {
+        setIsLoggedIn(false); // 로그아웃 상태로 전환
+        alert("로그아웃 되었습니다.");
+    }
 
     useEffect(() => {
         // 페이지가 변경될 때마다 스크롤을 맨 위로 이동시킴
@@ -19,7 +27,7 @@ function NavBar() {
     const [searchHistory, setSearchHistory] = useState([]);  // 검색 기록 상태
     const [isHovered, setIsHovered] = useState(false);  // 마우스 hover 여부 상태
     const searchContainerRef = useRef(null);  //참조객체 생성. current속성 가짐. 렌더링해도 값을 유지
-    
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
@@ -74,8 +82,8 @@ function NavBar() {
                                 <h1 className="main-logo-title">Pentagon</h1>
                             </Nav.Link>
                         </Navbar.Brand>
-                        <div 
-                            ref={searchContainerRef} 
+                        <div
+                            ref={searchContainerRef}
                             className="search-container"
                         >
                             <input
@@ -89,14 +97,14 @@ function NavBar() {
                                 }}
                             />
                             <button className="search-btn" onClick={handleSearch}>
-                                🔍
+                                <FontAwesomeIcon icon={faMagnifyingGlass} style={{ verticalAlign: 'middle', marginRight: '8px' }} />
                             </button>
                             {isHovered && searchHistory.length > 0 && (
                                 <div className="search-history">
                                     <ul>
                                         {searchHistory.map((item, index) => (
                                             <li key={index}>
-                                                <span 
+                                                <span
                                                     onClick={() => {
                                                         handleHistoryClick(item);
                                                         // 항목 클릭 시 검색 기록 유지
@@ -104,7 +112,7 @@ function NavBar() {
                                                 >
                                                     {item}
                                                 </span>
-                                                <button 
+                                                <button
                                                     onClick={(e) => {
                                                         // 이벤트 전파 방지
                                                         e.stopPropagation();
@@ -124,8 +132,27 @@ function NavBar() {
                             <Nav.Link as={Link} to="/ExcerciseMain" className="side-navlink">운동</Nav.Link>
                             <Nav.Link className="side-navlink">기록</Nav.Link>
                             <Nav.Link as={Link} to="/Ai" className="side-navlink">상담</Nav.Link>
-                            <Nav.Link as={Link} to="/Login" className="side-navlink">로그인</Nav.Link>
-                            <Nav.Link as={Link} to="/Signin" className="side-navlink">회원가입</Nav.Link>
+                            {isLoggedIn ? (
+                                <>
+                                    <Nav.Link
+                                        onClick={handleLogout}
+                                        className="side-navlink"
+                                        style={{ cursor: "pointer" }}
+                                    >
+                                        로그아웃
+                                    </Nav.Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Nav.Link as={Link} to="/Login" className="side-navlink">
+                                        로그인
+                                    </Nav.Link>
+
+                                    <Nav.Link as={Link} to="/Signin" className="side-navlink">
+                                        회원가입
+                                    </Nav.Link>
+                                </>
+                            )}
                         </Nav>
                     </Container>
                 </Navbar>

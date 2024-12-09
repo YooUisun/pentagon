@@ -3,7 +3,7 @@ import '../../assets/LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 import LoginModal from '../../components/LoginModal';
 
-function LoginPage() {
+function LoginPage({ setIsLoggedIn }) {
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
     let [emailError, setEmailError] = useState("");
@@ -54,7 +54,8 @@ function LoginPage() {
                 if (storedUser && storedUser.email === email && storedUser.password === password) {
                     //조건에 storedUser 넣는 이유 = null,undefined 방지
                     // 로그인 성공
-                    alert("로그인 성공!");                    
+                    alert("로그인 성공!");  
+                    setIsLoggedIn(true);                  
                     navigate('/'); // 홈 화면으로 이동
                 } else {
                     // 로그인 실패                    
