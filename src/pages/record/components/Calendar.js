@@ -7,7 +7,7 @@ function Calendar({ onValueChange, workoutDays = [] }) {
 
   // 데이터를 여기서 입력을 하는게 아니라 입력받은걸 가지고 와야해서
 
-  const [selctDay, setSelectDay] = useState(new Date().getDay());
+  const [selectDay, setSelectDay] = useState(new Date().getDay());
   
   const handlePrevMonth = () => {
     if (currentMonth === 0) {

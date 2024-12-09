@@ -25,6 +25,7 @@ export default function RecordMain() {
 
     const dataUpdate = (newRecord) => {
         const day = parseInt(selectDay.split('일')[0].split(' ')[2]);
+
         if (day) {
             const updatedWorkoutDays = [...new Set([...workoutDays, day])];
             setWorkoutDays(updatedWorkoutDays); // 운동한 날짜 리스트 업데이트
@@ -42,12 +43,12 @@ export default function RecordMain() {
     };
 
 
-
     // 선택된 날짜의 데이터를 가져오는 함수
     const getSelectedDayData = () => {
         const day = parseInt(selectDay.split('일')[0].split(' ')[2]);
         return day ? workoutData[day.toString()] || [] : [];
     };
+
 
     // X 버튼 클릭시 운동 데이터 삭제 및 초록불 상태 업데이트
     const handleDeleteWorkout = (newData) => {
@@ -67,6 +68,7 @@ export default function RecordMain() {
         const updatedWorkoutDays = Object.keys(updatedWorkoutData).map(Number);
         setWorkoutDays(updatedWorkoutDays); // 운동한 날짜 리스트 업데이트
     };
+
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
