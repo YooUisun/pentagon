@@ -19,6 +19,7 @@
 }
 
 .main-logo-title {
+    margin-left: -40px;
     cursor: pointer;
     font-family: 'Oswald', sans-serif;
 }
@@ -61,4 +62,38 @@
 
 .side-navlink:hover {
     color: white !important;
+}
+
+.inputSearch{
+    border-radius: 20px;
+}
+
+.search-container {
+    position: relative;
+    display: inline-flex;
+}
+
+.search-box {
+    padding: 5px 40px 5px 10px;  /* 오른쪽에 버튼 공간을 만들기 위해 padding 추가 */
+    width: 250px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;  /* 버튼을 오른쪽 끝에 위치시킴 */
+    top: 50%;
+    transform: translateY(-50%);  /* 버튼을 세로 가운데로 정렬 */
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.search-box:focus {
+    outline: none;
+    background-color: #f4f4f4; /* 포커스 시 배경색 변경 */
 }

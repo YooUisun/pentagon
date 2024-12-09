@@ -244,7 +244,7 @@ function SigninPage() {
                         이메일 형식이어야 합니다
                     </div>
                     <button
-                        className="inputField"
+                        className="signupInputField"
                         type='button'
                         onClick={(event) => {
                             event.preventDefault();
@@ -288,7 +288,7 @@ function SigninPage() {
                     </div>
                     <input
                         type="text"
-                        className="inputField"
+                        className="signupInputField"
                         value={nickName}
                         onChange={handleNickNameChange}
                         placeholder='닉네임'
@@ -297,7 +297,7 @@ function SigninPage() {
                         {nickNameError && <span>{nickNameError}</span>}
                     </div>
                     <button
-                        className="inputField"
+                        className="signupInputField"
                         type='button'
                         onClick={(event) => {
                             event.preventDefault();
@@ -322,7 +322,7 @@ function SigninPage() {
                         </select>
                         <input
                             type="text"
-                            className="inputField"
+                            className="signupInputField"
                             placeholder='휴대폰번호를 입력해주세요'
                             onChange={(e) => setPhoneSuffix(e.target.value)}
                             value={phoneSuffix}
@@ -331,11 +331,12 @@ function SigninPage() {
                     <br></br>
                     <div >
                         <div className='infoText'>
-                            <h3>전화번호</h3><span style={{ color: 'blue' }}>선택사항</span>
+                            <h3>생년월일</h3><span style={{ color: 'blue' }}>선택사항</span>
                         </div>
                         <div>
                             {/* 년도 선택 */}
                             <select
+                                className='sigupSelectBox'
                                 value={year}
                                 onChange={(e) => setYear(e.target.value)}>
                                 {/* e는 이벤트객체, e요소를 setYear로 전달하여 year 업데이트 */}
@@ -349,6 +350,7 @@ function SigninPage() {
 
                             {/* 월 선택 */}
                             <select
+                                className='sigupSelectBox'
                                 value={month}
                                 onChange={(e) => setMonth(e.target.value)}
                                 disabled={!year}
@@ -363,6 +365,7 @@ function SigninPage() {
 
                             {/* 일 선택 */}
                             <select
+                                className='sigupSelectBox'
                                 value={day}
                                 onChange={(e) => setDay(e.target.value)}
                                 disabled={!month}
@@ -378,7 +381,7 @@ function SigninPage() {
                         </div>
                     </div>
                     <br></br>
-                    <button className="inputField" type='submit'>Signin</button>
+                    <button className="signupInputField" type='submit'>Signup</button>
 
                 </form>
             </div>
