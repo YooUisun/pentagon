@@ -11,6 +11,7 @@
     position: fixed;
 
     backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,16 +21,16 @@
 .background .modal-container {
     width: 450px;
     height: 550px;
-    padding: 10px;
-    background-color: #ffffff;
+    background-color: #151419;
+    border: 2px solid black;
 
     display: flex;
     flex-flow: column wrap;
     position: relative;
 }
 
-/* 이전,다음날로 이동 */
-.background .modal-container .changeDay {
+/* 탭 이동버튼 */
+.background .modal-container .changeTab {
     width: 10%;
     height: 100%;
     position: absolute;
@@ -40,7 +41,8 @@
     justify-content: center;
     align-items: center;
 
-    border: 2px solid green;
+    user-select:none;
+    color: #845ef1;
 
     &.left {
         left: 0px;
@@ -52,22 +54,53 @@
 
     &:hover {
         cursor: pointer;
-        background-color: #bdbdbd;
+        /* background-color: #bdbdbd; */
+        background-color: #37198a;
+    }
+}
+
+/* 탭 표시 컨테이너 */
+.background .modal-container .indicator-container {
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid red; */
+}
+
+/* 탭 표시 스타일 */
+.background .modal-container .indicator-container .indicator {
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background-color: #102c1f;
+    border-radius: 100%;
+
+    &.active {
+        background-color: #4be99f;
     }
 }
 
 /* 제목 */
 .background .modal-container .modalTitle {
-    height: 50px;
+    height: 75px;
+    padding: 10px;
     margin-bottom: 25px;
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+
+    background-color: #211a42;
+    color: #4be99f;
 }
 
-/* 텍스트 내용 */
+/* 텍스트 */
 .background .modal-container .modalText {
     width: 70%;
     height: 50px;
@@ -77,5 +110,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #464646;
+
+    /* border-bottom: 1px solid #464646; */
+    border-bottom: 1px solid #402b7c;
+    color: #38af77;
 }
