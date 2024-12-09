@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../assets/LoginPage.css';
 import { useNavigate } from 'react-router-dom';
+import LoginModal from '../../components/LoginModal';
 
 function LoginPage() {
     let [email, setEmail] = useState("");
@@ -28,7 +29,8 @@ function LoginPage() {
     let handleLogin = (event) => {
         event.preventDefault();  //폼 제출시 새로고침 방지
         let valid = true;
-        if (email != '' && password != '') {
+        window.scrollTo(0, 0);
+        if (email.trim() != '' && password.trim() != '') {
             if (!isValidEmail(email)) {
                 setEmailError("이메일 형식이 올바르지 않습니다.");
                 valid = false;  // 이메일 유효성 검사 실패
@@ -44,23 +46,37 @@ function LoginPage() {
                 setPasswordError(""); // 비밀번호가 유효하면 오류 메시지 제거
             }
 
-            // 유효성 검사 통과하면 로그인 처리
+            // 이메일과 비밀번호가 맞는지 확인
             if (valid) {
-                alert("로그인 성공!");
-                setEmail('');
-                setPassword('');
-                navigate('/');
+                let storedUser = JSON.parse(localStorage.getItem(email));
+                //getItem은 로컬스토리지에 저장된 값 가져오는 메서드(key입력)
+                //JSON.parse는 가져온 JSON문자열을 자바스크립트 객체로 변환하는 메서드
+                if (storedUser && storedUser.email === email && storedUser.password === password) {
+                    //조건에 storedUser 넣는 이유 = null,undefined 방지
+                    // 로그인 성공
+                    alert("로그인 성공!");                    
+                    navigate('/'); // 홈 화면으로 이동
+                } else {
+                    // 로그인 실패                    
+                    alert('회원 정보가 없습니다');
+                }
             }
-        } else if (email == ''){
+        } else if (email == '') {
             alert('이메일을 입력하세요');
-        } else if (password ==''){
+        } else if (password == '') {
             alert('비밀번호를 입력하세요');
         }
     };
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
     return (
         <div className='loginBox'>
             <form className='loginStyle'>
-                <label>Email</label>
+                <div className='loginInfo'>
+                    <label>Email</label><span className='findInfo' onClick={openModal}>이메일/비밀번호 찾기</span>
+                </div>
                 <input
                     type="text"
                     className="inputField"
@@ -80,6 +96,7 @@ function LoginPage() {
                 <br></br>
                 <button className="inputField" onClick={handleLogin}>Login</button>
             </form>
+            <LoginModal isOpen={isModalOpen} onClose={closeModal} />
         </div>
     )
 }

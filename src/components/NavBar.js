@@ -1,10 +1,17 @@
 import "../assets/NavBar.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 function NavBar() {
+    const location = useLocation(); // 현재 URL 정보 가져오기
+
+    useEffect(() => {
+        // 페이지가 변경될 때마다 스크롤을 맨 위로 이동시킴
+        window.scrollTo(0, 0);
+    }, [location]); // location이 변경될 때마다 실행
     return (
         <>
             <header className="header">
@@ -24,7 +31,7 @@ function NavBar() {
                         </Nav>
                     </Container>
                 </Navbar>
-            </header>            
+            </header>
         </>
     )
 }
