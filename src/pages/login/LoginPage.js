@@ -54,13 +54,11 @@ function LoginPage() {
                 if (storedUser && storedUser.email === email && storedUser.password === password) {
                     //조건에 storedUser 넣는 이유 = null,undefined 방지
                     // 로그인 성공
-                    alert("로그인 성공!");
-                    setEmail('');
-                    setPassword('');
+                    alert("로그인 성공!");                    
                     navigate('/'); // 홈 화면으로 이동
                 } else {
                     // 로그인 실패                    
-                    alert('로그인 정보가 없습니다');
+                    alert('회원 정보가 없습니다');
                 }
             }
         } else if (email == '') {

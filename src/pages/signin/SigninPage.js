@@ -63,7 +63,6 @@ function SigninPage() {
                 return;
             }
         }
-
         // 이메일이 중복되지 않으면 사용 가능
         alert('사용 가능한 이메일입니다.');
     };
@@ -186,24 +185,20 @@ function SigninPage() {
         //JSON.stringify 객체나 배열을 JSON문자열로 변환하는 메서드
         //로컬 스토리지는 문자열만 저장 가능 하기때문에 JSON.stringify으로 변환
 
-
+        window.scrollTo(0, 0);
         alert('회원가입이 완료되었습니다');
-        navigate('/Login');
-        setEmail('');
-        setPassword('');
-        setPasswordRetype('');
-        setNickName('');
-        setPhonePrefix('010');
-        setPhoneSuffix('');
-        setYear('');
-        setMonth('');
-        setDay('');
+        navigate('/Login');        
     };
 
     // 현재 년도와 월을 기준으로 선택 가능한 년,월,일을 설정
     let currentYear = new Date().getFullYear();
     let years = Array.from({ length: 100 }, (_, i) => currentYear - i); //100년전부터
+    //Array.from 배열생성 메서드, 첫번째인수=배열로변환할 객체, 두번째 인수= 배열을 만드는데 사용되는 맵 함수
     //길이가 100인 배열을 생성. 배열의 각 항목에 대해 (_, i) => currentYear - i 함수를 적용.
+    //(_, i) => currentYear - i는 배열의 각항목을 변환하는 함수
+    //첫번째 인자는 배열의 값이지만 사용하지 않으므로 _로 표기, 두번째인자 i는 인덱스
+    //i = 0 일때 currentYear -0 -> 현재연도
+    //i = 1 일때 currentYear -1 -> 작년연도
     let months = Array.from({ length: 12 }, (_, i) => i + 1);
     // i가 0부터 11이므로 +1 해야 1~12월
 
@@ -232,7 +227,7 @@ function SigninPage() {
                 <form className='formStyle' onSubmit={handleSignin}>
                     <br></br>
                     <div className='infoText'>
-                        <h3>기본정보</h3><span>필수사항</span>
+                        <h3>기본정보</h3><span style={{ color: 'red' }}>필수사항</span>
                     </div>
                     <label>Email</label>
                     <input
