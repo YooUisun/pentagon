@@ -40,7 +40,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
+    z-index: 1;
     user-select:none;
     color: #845ef1;
 
@@ -57,6 +58,29 @@
         /* background-color: #bdbdbd; */
         background-color: #37198a;
     }
+}
+
+.background .modal-container .tabWrap{
+
+    overflow: hidden;
+    &.animating {
+        animation-name: tabAnime;
+        animation-duration: 0.3s;
+    }
+}
+
+@keyframes tabAnime {
+0% {
+    opacity: 1;
+    margin-left: 30px;
+    /* transform: translateX(10px); */
+}
+50% {
+    opacity: 0.3;
+}
+100% {
+    opacity: 1;
+}
 }
 
 /* 탭 표시 컨테이너 */
