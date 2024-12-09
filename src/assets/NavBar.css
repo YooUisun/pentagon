@@ -20,6 +20,7 @@
 
 .main-logo-title {
     cursor: pointer;
+    user-select: none;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -44,6 +45,7 @@
     z-index: 10;
     width: auto;
     margin-top: 5px;
+    user-select: none;
 }
 
 .side-navlink {

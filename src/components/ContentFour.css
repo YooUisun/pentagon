@@ -55,6 +55,7 @@
 
 .learn-more-button3 p{
     margin-top: 5px;
+    user-select: none;
 }
 
 .learn-more-button3:hover {
