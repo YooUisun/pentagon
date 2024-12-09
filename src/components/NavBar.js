@@ -3,6 +3,8 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 
 function NavBar( { isLoggedIn, setIsLoggedIn }) {
@@ -29,8 +31,8 @@ function NavBar( { isLoggedIn, setIsLoggedIn }) {
                         </Navbar.Brand>
                         <div class="search-container">
                             <input type="text" class="search-box" placeholder="검색..."/>
-                                <button class="search-btn">
-                                    🔍
+                                <button className="search-btn">
+                                    <FontAwesomeIcon icon={faMagnifyingGlass} style={{ verticalAlign: 'middle', marginRight: '8px'}}/>
                                 </button>
                         </div>
                         <Nav className="nav-links" style={{ marginRight: '50px' }}>
