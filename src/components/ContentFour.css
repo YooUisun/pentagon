@@ -35,6 +35,9 @@
 }
 
 .learn-more-button3 {
+    width: 150px;
+    height: 50px;
+    display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #28a745;
@@ -42,7 +45,12 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.learn-more-button3 p{
+    margin-top: 5px;
 }
 
 .learn-more-button3:hover {
@@ -65,14 +73,10 @@
     transition-delay: 0s; /* logoimage2와 page4-title은 동시에 애니메이션 */
 }
 
-.logoimage2 {
-    transition-delay: 0.1s;
-}
-
 .page4-description {
-    transition-delay: 0.3s; /* 1초 후에 page4-description이 애니메이션 시작 */
+    transition-delay: 0.2s; /* 1초 후에 page4-description이 애니메이션 시작 */
 }
 
 .learn-more-button3 {
-    transition-delay: 0.4s;
+    transition-delay: 0.3s;
 }
