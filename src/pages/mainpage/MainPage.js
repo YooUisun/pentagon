@@ -17,6 +17,7 @@ import SigninPage from '../signin/SigninPage';
 import ExerciseMain from '../exerciseMain/ExerciseMain';
 import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
 import NotFoundPage from '../../components/NotFoundPage';
+import Notice from '../../components/Notice';
 
 
 function MainPage() {
@@ -58,6 +59,7 @@ function MainPage() {
                 <Route path="/details3" element={<DetailPage03 />} />
 
                 {/* 다른 페이지들 */}
+                <Route path="/Notice" element={<Notice/>}/>
                 <Route path="/MainPage" element={<MainPage/>}/>
                 <Route path="/Ai" element={<Ai />} />
                 <Route path="/Login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />

@@ -28,10 +28,16 @@
     color: black;
 }
 
-.inputField{
+.signupInputField{
+    width: 400px;
     border-radius: 5px;
     font-size: 20px;
     border: 1px solid #ccc;
+    margin-top: 5px;
+}
+.signupInputField:active{  
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
 }
 .phone {
     display: flex;
@@ -67,4 +73,7 @@
 .infoText{
     display: flex !important;
     justify-content: space-between;
+}
+.sigupSelectBox{
+    margin-right: 10px;
 }

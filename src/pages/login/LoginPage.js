@@ -83,19 +83,21 @@ function LoginPage({ setIsLoggedIn }) {
                     className="inputField"
                     value={email}
                     onChange={onEmailHandler}
+                    placeholder='이메일'
                 />
                 {emailError && <div className="error-message">{emailError}</div>}
-
-                <label>Password</label>
+            
+                <label className='loginInfo'>Password</label>
                 <input
                     type="password"
                     className="inputField"
                     value={password}
                     onChange={onPasswordHandler}
+                    placeholder='비밀번호'
                 />
                 {passwordError && <div className="error-message">{passwordError}</div>}
                 <br></br>
-                <button className="inputField" onClick={handleLogin}>Login</button>
+                <button className="loginBut" onClick={handleLogin}>Login</button>
             </form>
             <LoginModal isOpen={isModalOpen} onClose={closeModal} />
         </div>
