@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 
-function NavBar() {
+function NavBar( { isLoggedIn, setIsLoggedIn }) {
     const location = useLocation(); // 현재 URL 정보 가져오기
+
+    const handleLogout=()=>{
+        setIsLoggedIn(false); // 로그아웃 상태로 전환
+        alert("로그아웃 되었습니다.");
+    }
 
     useEffect(() => {
         // 페이지가 변경될 때마다 스크롤을 맨 위로 이동시킴
@@ -26,8 +31,27 @@ function NavBar() {
                             <Nav.Link as={Link} to="/ExcerciseMain" className="side-navlink">운동</Nav.Link>
                             <Nav.Link className="side-navlink">기록</Nav.Link>
                             <Nav.Link as={Link} to="/Ai" className="side-navlink">상담</Nav.Link>
-                            <Nav.Link as={Link} to="/Login" className="side-navlink">로그인</Nav.Link>
-                            <Nav.Link as={Link} to="/Signin" className="side-navlink">회원가입</Nav.Link>
+                            {isLoggedIn ? (
+                            <>
+                                <Nav.Link
+                                onClick={handleLogout}
+                                className="side-navlink"
+                                style={{ cursor: "pointer" }}
+                            >
+                                로그아웃
+                            </Nav.Link>
+                            </>
+                        ) : (
+                            <>
+                            <Nav.Link as={Link} to="/Login" className="side-navlink">
+                                로그인
+                            </Nav.Link>
+                        
+                            <Nav.Link as={Link} to="/Signin" className="side-navlink">
+                            회원가입
+                            </Nav.Link>
+                        </>
+                        )}
                         </Nav>
                     </Container>
                 </Navbar>

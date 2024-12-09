@@ -1,5 +1,5 @@
 //메인페이지
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './MainPage.css';
 import Footer from '../../components/Footer'; // Footer 컴포넌트 import.
@@ -27,10 +27,13 @@ function MainPage() {
         });
     };
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태 관리
+    const [isSignupDelete, setIsSignupDelete ] = useState(true); // 회원가입 없애고 나타내기
+
     return (
         <> {/* 여러 부모 요소를 사용하기 위함 */}
-            {/* 헤더 영역 */}
-            <NavBar />
+            {/* 헤더 영역 */} {/* NavBar에 로그인 상태 전달 */}
+            <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}  />
             <Routes>
                 <Route
                     path="/"
@@ -57,7 +60,7 @@ function MainPage() {
                 {/* 다른 페이지들 */}
                 <Route path="/MainPage" element={<MainPage/>}/>
                 <Route path="/Ai" element={<Ai />} />
-                <Route path="/Login" element={<LoginPage />} />
+                <Route path="/Login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
                 <Route path="/Signin" element={<SigninPage />} />
                 <Route path="/ExcerciseMain" element={<ExerciseMain />} />
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
