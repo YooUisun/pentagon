@@ -71,6 +71,7 @@
 .search-container {
     position: relative;
     display: inline-flex;
+    flex-direction: column;  /* 검색 기록을 input 아래에 표시 */
 }
 
 .search-box {
@@ -96,4 +97,33 @@
 .search-box:focus {
     outline: none;
     background-color: #f4f4f4; /* 포커스 시 배경색 변경 */
+}
+.search-history {
+    position: absolute;
+    top: 40px;  /* input 바로 아래에 표시 */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    }
+
+.search-history ul {
+    list-style: none;    
+    padding: 0;
+}
+
+.search-history li {
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-history li:hover {
+    background-color: #f0f0f0;
 }
