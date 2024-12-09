@@ -8,11 +8,6 @@
     background-color: white;
 }
 
-#page2-title {
-    color: black;
-    font-size: 50px;
-}
-
 .content2{
     flex: 1;
 }
@@ -21,12 +16,13 @@
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-left: 180px;
+    margin-left: 140px;
+    white-space: nowrap;
 }
 
 .page2-description {
     font-size: 18px;
-    margin-left: 180px;
+    margin-left: 140px;
 }
 
 .logoimage1 {
@@ -37,6 +33,9 @@
 }
 
 .learn-more-button {
+    width: 150px;
+    height: 50px;
+    display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #28a745;
@@ -45,9 +44,26 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
-    margin-left: 180px;
+    margin-left: 140px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.learn-more-button p{
+    margin-top: 5px;
 }
 
 .learn-more-button:hover {
     background-color: #218838;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px); /* 처음에는 아래로 이동 */
+    transition: opacity 1.3s ease-in-out, transform 1.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* 최종 위치로 */
 }

@@ -18,6 +18,11 @@
     /* 헤더 부분이 화면에서 맨 위에 위치하도록 설정 */
 }
 
+.main-logo-title {
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+}
+
 .navbar {
     width: 100%;
     display: flex;
@@ -38,7 +43,7 @@
     position: relative;
     z-index: 10;
     width: auto;
-    behavior: 'smooth';
+    margin-top: 5px;
 }
 
 .side-navlink {

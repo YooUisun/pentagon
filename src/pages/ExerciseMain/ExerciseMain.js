@@ -11,7 +11,6 @@ import '../../assets/ExerciseMain.css';
 
 
 
-
 function ExerciseMain() {
 
     return (

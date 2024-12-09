@@ -8,13 +8,15 @@ import ContentTwo from '../../components/ContentTwo'; // 두번째 콘텐츠 컴
 import ContentThree from '../../components/ContentThree'; // 세번째 콘텐츠 컴포넌트 import.
 import ContentFour from '../../components/ContentFour'; // 네번째 콘텐츠 컴포넌트 import.
 import NavBar from '../../components/NavBar';
-import DetailPage01 from '../../pages/exerciseMain/DetailPage01';
-import DetailPage02 from '../../pages/exerciseMain/DetailPage02';
-import DetailPage03 from '../../pages/exerciseMain/DetailPage03';
+import DetailPage01 from '../exerciseMain/DetailPage01';
+import DetailPage02 from '../exerciseMain/DetailPage02';
+import DetailPage03 from '../exerciseMain/DetailPage03';
 import Ai from '../ai/Ai';
 import LoginPage from '../login/LoginPage';
 import SigninPage from '../signin/SigninPage';
 import ExerciseMain from '../exerciseMain/ExerciseMain';
+import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
+import NotFoundPage from '../../components/NotFoundPage';
 
 
 function MainPage() {
@@ -53,10 +55,13 @@ function MainPage() {
                 <Route path="/details3" element={<DetailPage03 />} />
 
                 {/* 다른 페이지들 */}
+                <Route path="/MainPage" element={<MainPage/>}/>
                 <Route path="/Ai" element={<Ai />} />
                 <Route path="/Login" element={<LoginPage />} />
                 <Route path="/Signin" element={<SigninPage />} />
                 <Route path="/ExcerciseMain" element={<ExerciseMain />} />
+                <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
+                <Route path="/not-found-page" element={<NotFoundPage/>} />
             </Routes>
 
             {/* Footer 컴포넌트 */}

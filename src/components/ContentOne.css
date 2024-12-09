@@ -35,12 +35,16 @@
 }
 
 #introduce-page1 h1 {
-    font-size: 60px;
+    font-size: 80px;
     margin: 0.5rem 0;
 }
 
 #introduce-page1 h2 {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin: 0.5rem 0;
     color: #ccc;
+}
+
+.font-change {
+    font-family: 'Oswald', sans-serif;
 }

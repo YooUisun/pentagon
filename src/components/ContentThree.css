@@ -62,3 +62,14 @@
 .learn-more-button2:hover {
     background-color: #218838;
 }
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.3s ease-in-out, transform 1.3s ease-in-out; /* 부드러운 애니메이션 */
+}
+
+.slide-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* 최종 위치 */
+}
