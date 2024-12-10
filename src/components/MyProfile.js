@@ -1,37 +1,18 @@
-import React from "react";
+import React from 'react';
+import './MyProfile.css';
 
-const MyProfile = ({ onClose }) => {
-return (
-    <div style={styles.overlay}>
-        <div style={styles.modal}>
-        <h2>Modal 창</h2>
-        <p>여기에 내용을 입력하세요!</p>
-        <button onClick={onClose}>닫기</button>
+    function MyProfile() {
+        return (
+            <div className="my-profile-modal">
+                <div className="modal-header">
+                <h2>My Profile</h2>
+            </div>
+            <div className="modal-content">
+                <p>프로필 내용</p>
+                {/* 프로필 정보나 기능을 추가할 공간 */}
+            </div>
         </div>
-    </div>
-);
-};
-
-const styles = {
-overlay: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    },
-modal: {
-    background: "#fff",
-    padding: "20px",
-    borderRadius: "8px",
-    maxWidth: "500px",
-    width: "100%",
-    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-    },
-};
+    );
+}
 
 export default MyProfile;

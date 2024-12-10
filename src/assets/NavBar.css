@@ -1,5 +1,5 @@
 .header {
-    background-color: #171a27;
+    background-color: black;
     width: 100%;
     height: 70px;
     display: flex;
@@ -47,6 +47,7 @@
     width: auto;
     /* margin-top: 10px; */
     user-select: none;
+    left: 45px;
 }
 
 .side-navlink {
@@ -131,7 +132,26 @@
 }
 
 .profile-background {
-    background-color: white;
-    width: 40px;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6C718A;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 12px;
+    margin-top: 6px;
+}
+
+#usericon {
+    font-size: 1.7rem;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
+.modal-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }

@@ -1,0 +1,26 @@
+.my-profile-modal {
+    position: fixed;
+    top: 100%; /* 모달을 아이콘 아래로 위치 */
+    left: 50%;
+    z-index: 1000; /* 모달을 화면 위로 올림 */
+    width: 330px; /* 모달 너비 */
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-content {
+    padding: 16px;
+    text-align: left;
+}

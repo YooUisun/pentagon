@@ -16,18 +16,19 @@
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-left: 140px;
+    margin-left: 100px;
     white-space: nowrap;
-    color: #1A1D2C; 
+    color: #1A1D2C;
 }
 
 .page2-description {
     font-size: 18px;
-    margin-left: 140px;
+    margin-left: 100px;
     color: #3A3F57;
 }
 
 .logoimage1 {
+    height: 350px;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -49,7 +50,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 140px;
+    margin-left: 100px;
     text-align: center;
     text-decoration: none;
 }
