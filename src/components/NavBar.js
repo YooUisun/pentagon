@@ -1,10 +1,6 @@
 import "../assets/NavBar.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
-<<<<<<< HEAD
 import React, { useEffect, useRef, useState } from 'react';
-=======
-import React, { useEffect, useState } from 'react';
->>>>>>> d5a3c0db6d35361a92795c0d8309f9fe823b8040
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -142,28 +138,6 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                             <Nav.Link as={Link} to= "/RecordMain" className="side-navlink">기록</Nav.Link>
                             <Nav.Link as={Link} to="/Ai" className="side-navlink">상담</Nav.Link>
                             {isLoggedIn ? (
-<<<<<<< HEAD
-                                <>
-                                    <Nav.Link
-                                        onClick={handleLogout}
-                                        className="side-navlink"
-                                        style={{ cursor: "pointer" }}
-                                    >
-                                        로그아웃
-                                    </Nav.Link>
-                                </>
-                            ) : (
-                                <>
-                                    <Nav.Link as={Link} to="/Login" className="side-navlink">
-                                        로그인
-                                    </Nav.Link>
-
-                                    <Nav.Link as={Link} to="/Signin" className="side-navlink">
-                                        회원가입
-                                    </Nav.Link>
-                                </>
-                            )}
-=======
                             <>
                                 <Nav.Link
                                 onClick={handleLogout}
@@ -190,7 +164,6 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                             </Nav.Link>
                         </>
                         )}
->>>>>>> d5a3c0db6d35361a92795c0d8309f9fe823b8040
                         </Nav>
                     </Container>
                 </Navbar>
