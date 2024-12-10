@@ -5,7 +5,7 @@
     gap: 20px;
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: #A9ADC4;
 }
 
 .content2{
@@ -18,11 +18,13 @@
     margin-bottom: 20px;
     margin-left: 140px;
     white-space: nowrap;
+    color: #1A1D2C; 
 }
 
 .page2-description {
     font-size: 18px;
     margin-left: 140px;
+    color: #3A3F57;
 }
 
 .logoimage1 {
@@ -42,7 +44,7 @@
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #28a745;
+    background-color: #3A3F57;
     color: white;
     border: none;
     border-radius: 5px;
@@ -58,7 +60,7 @@
 }
 
 .learn-more-button:hover {
-    background-color: #218838;
+    background-color: #6C718A;
 }
 
 .slide-up {

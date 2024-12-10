@@ -146,19 +146,20 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                             >
                                 로그아웃
                             </Nav.Link>
+                            <div className="profile-background">
                             <Nav.Link
                             onClick={openModal}
-                            className="my-profile side-navlink"
+                            className="side-navlink"
                             style={{ cursor: "pointer" }}
-                            > <FontAwesomeIcon icon={faUser} size="1x"/>
+                            > <FontAwesomeIcon icon={faUser} style={{ fontSize: '1.8rem' }} className="profile"/>
                             </Nav.Link>
+                            </div>
                             </>
                         ) : (
                             <>
                             <Nav.Link as={Link} to="/Login" className="side-navlink">
                                 로그인
                             </Nav.Link>
-                        
                             <Nav.Link as={Link} to="/Signin" className="side-navlink">
                             회원가입
                             </Nav.Link>

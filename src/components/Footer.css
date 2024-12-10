@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     height: 35vh;
-    background-color: #222;
+    background-color: #171a27;
     padding-top: 25px;    
 }
 
@@ -41,11 +41,11 @@
 }
 
 .nav-item {
-    color: #A09A9A;
+    color: #A9ADC4;
 }
 
 .nav-items .ft-nav-link {
-    color: #A09A9A;
+    color: #A9ADC4;
     text-decoration: none;
     font-size: 20px;
     transition: color 0.5s ease;
@@ -63,7 +63,7 @@
 }
 
 .social-icon {
-    color: #A09A9A;
+    color: #A9ADC4;
     font-size: 60px;
     transition: color 0.5s ease;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './ContentThree.css';
-
+import { Link } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
 
 function ContentThree() {
     useEffect(() => {
@@ -44,7 +44,7 @@ function ContentThree() {
                     <p className='content3 slide-up'>
                         당신의 값진 노력으로 이뤄낸 성과들을 분석하여 데이터 형식으로 분석하여드립니다.
                     </p>
-                    <button className="learn-more-button2 slide-up">자세히 보기</button> {/* 버튼 누르면 운동 메인 페이지로 */}
+                    <Link to="/RecordMain" className="learn-more-button2 slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
                 </div>
             </div>
         </div>
