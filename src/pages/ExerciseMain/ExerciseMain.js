@@ -65,8 +65,8 @@ function ExerciseMain() {
 
                         <Card className="m-4" style={{ width: '22rem' }} >
                             <Card.Img variant="top" src={highLevelImage} style={{ height: '220px', objectFit: 'cover' }} />
-                            <Card.Body style={{color:'white'}}>
-                                <Card.Title style={{color:'red'}}>고급 프로그램</Card.Title>
+                            <Card.Body style={{color:'white', }}>
+                                <Card.Title className='titleStyle'>고급 프로그램</Card.Title>
                                 <Card.Text>대,소 근육밸런스와 근육의 조화발달, 프리웨이트를 이용한 발달 과정</Card.Text>
                                 <Link to="/details3">
                                     <Button className='buttonStyle2'>자세히 알아보기</Button>

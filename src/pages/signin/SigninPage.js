@@ -187,7 +187,7 @@ function SigninPage() {
 
         window.scrollTo(0, 0);
         alert('회원가입이 완료되었습니다');
-        navigate('/Login');        
+        navigate('/Login');
     };
 
     // 현재 년도와 월을 기준으로 선택 가능한 년,월,일을 설정
@@ -226,158 +226,166 @@ function SigninPage() {
                 <h1>회원가입</h1>
                 <form className='formStyle' onSubmit={handleSignin}>
                     <br></br>
-                    <div className='infoText'>
-                        <h3>기본정보</h3><span style={{ color: 'red' }}>필수사항</span>
-                    </div>
-                    <label>Email</label>
-                    <input
-                        type="text"
-                        id='email'
-                        value={email}
-                        placeholder='honggildong@naver.com'
-                        onChange={handleEmailChange}
-                    />
-                    <div className={emailValid ? "success" : "hide"}>
-                        사용할 수 있는 이메일 형식입니다
-                    </div>
-                    <div className={!emailValid && email.length > 0 ? "failure" : "hide"}>
-                        이메일 형식이어야 합니다
-                    </div>
-                    <button
-                        className="signupInputField"
-                        type='button'
-                        onClick={(event) => {
-                            event.preventDefault();
-                            if (email === '') {
-                                alert('이메일을 입력해주세요');
-                                return;
-                            }
-                            checkEmailDuplicate(email); // 이메일 중복 확인 함수 호출
-                        }}
-                    >
-                        이메일 중복 확인
-                    </button>
+                    <div className='info'>
+                        <div className='infoText'>
+                            <h3>기본정보</h3><span style={{ color: 'red' }}>필수사항</span>
+                        </div>
+                        <label>Email</label>
 
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        id='password'
-                        value={password}
-                        onChange={handlePasswordChange}
-                        placeholder='******'
-                    />
-                    <div className={!passwordValid && password.length > 0 ? "strongPassword" : "hide"}>
-                        8글자 이상, 영문, 숫자, 특수문자를 사용하세요
-                    </div>
+                        <input
+                            type="text"
+                            id='email'
+                            value={email}
+                            placeholder='honggildong@naver.com'
+                            onChange={handleEmailChange}
+                        />
+                        <div className={emailValid ? "success" : "hide"}>
+                            사용할 수 있는 이메일 형식입니다
+                        </div>
+                        <div className={!emailValid && email.length > 0 ? "failure" : "hide"}>
+                            이메일 형식이어야 합니다
+                        </div>
+                        <button
+                            className="signupInputField"
+                            type='button'
+                            onClick={(event) => {
+                                event.preventDefault();
+                                if (email === '') {
+                                    alert('이메일을 입력해주세요');
+                                    return;
+                                }
+                                checkEmailDuplicate(email); // 이메일 중복 확인 함수 호출
+                            }}
+                        >
+                            이메일 중복 확인
+                        </button>
 
-                    <label>Password 확인</label>
-                    <input
-                        type="password"
-                        id='password-retype'
-                        value={passwordRetype}
-                        onChange={handlePasswordRetypeChange}
-                        placeholder='******'
-                    />
-                    <div className={`mismatch ${!passwordMatch ? 'show' : ''}`}>
-                        비밀번호가 일치하지 않습니다
-                    </div>
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            id='password'
+                            value={password}
+                            onChange={handlePasswordChange}
+                            placeholder='******'
+                        />
+                        <div className={!passwordValid && password.length > 0 ? "strongPassword" : "hide"}>
+                            8글자 이상, 영문, 숫자, 특수문자를 사용하세요
+                        </div>
 
+                        <label>Password 확인</label>
+                        <input
+                            type="password"
+                            id='password-retype'
+                            value={passwordRetype}
+                            onChange={handlePasswordRetypeChange}
+                            placeholder='******'
+                        />
+                        <div className={`mismatch ${!passwordMatch ? 'show' : ''}`}>
+                            비밀번호가 일치하지 않습니다
+                        </div>
+                    </div>
                     <br></br>
-                    <div className='infoText'>
-                        <h3>닉네임</h3><span style={{ color: 'red' }}>필수사항</span>
-                    </div>
-                    <input
-                        type="text"
-                        className="signupInputField"
-                        value={nickName}
-                        onChange={handleNickNameChange}
-                        placeholder='닉네임'
-                    />
-                    <div className="error">
-                        {nickNameError && <span>{nickNameError}</span>}
-                    </div>
-                    <button
-                        className="signupInputField"
-                        type='button'
-                        onClick={(event) => {
-                            event.preventDefault();
-                            const error = isValidNickName(nickName); // isValidNickName 함수 호출
-                            if (error) {
-                                alert(error); // 유효하지 않으면 에러 메시지 출력
-                                return; // 유효하지 않으면 중복 확인을 진행하지 않음
-                            }
-                            checkNickNameDuplicate(nickName)
-                        }}>닉네임 중복 확인</button>
+                    <div className='info'>
+                        <div className='infoText'>
+                            <h3>닉네임</h3><span style={{ color: 'red' }}>필수사항</span>
+                        </div>
 
-                    <br></br>
-                    <div className='infoText'>
-                        <h3>전화번호</h3><span style={{ color: 'blue' }}>선택사항</span>
-                    </div>
-                    <div className='phone'>
-                        <select onChange={(e) => setPhonePrefix(e.target.value)} value={phonePrefix}>
-                            <option value='010'>010</option>
-                            <option value='011'>011</option>
-                            <option value='016'>016</option>
-                            <option value='017'>017</option>
-                        </select>
                         <input
                             type="text"
                             className="signupInputField"
-                            placeholder='휴대폰번호를 입력해주세요'
-                            onChange={(e) => setPhoneSuffix(e.target.value)}
-                            value={phoneSuffix}
+                            value={nickName}
+                            onChange={handleNickNameChange}
+                            placeholder='닉네임'
                         />
+                        <div className="error">
+                            {nickNameError && <span>{nickNameError}</span>}
+                        </div>
+                        <button
+                            className="signupInputField"
+                            type='button'
+                            onClick={(event) => {
+                                event.preventDefault();
+                                const error = isValidNickName(nickName); // isValidNickName 함수 호출
+                                if (error) {
+                                    alert(error); // 유효하지 않으면 에러 메시지 출력
+                                    return; // 유효하지 않으면 중복 확인을 진행하지 않음
+                                }
+                                checkNickNameDuplicate(nickName)
+                            }}>닉네임 중복 확인</button>
                     </div>
                     <br></br>
-                    <div >
+                    <div className='info'>
                         <div className='infoText'>
-                            <h3>생년월일</h3><span style={{ color: 'blue' }}>선택사항</span>
+                            <h3>전화번호</h3><span style={{ color: 'blue' }}>선택사항</span>
                         </div>
+                        <div className='phone'>
+                            <select onChange={(e) => setPhonePrefix(e.target.value)} value={phonePrefix}>
+                                <option value='010'>010</option>
+                                <option value='011'>011</option>
+                                <option value='016'>016</option>
+                                <option value='017'>017</option>
+                            </select>
+                            <input
+                                type="text"
+                                className="signupInputField"
+                                placeholder='휴대폰번호를 입력해주세요'
+                                onChange={(e) => setPhoneSuffix(e.target.value)}
+                                value={phoneSuffix}
+                            />
+                        </div>
+                    </div>
+                    <br></br>
+                    <div className='info'>
                         <div>
-                            {/* 년도 선택 */}
-                            <select
-                                className='sigupSelectBox'
-                                value={year}
-                                onChange={(e) => setYear(e.target.value)}>
-                                {/* e는 이벤트객체, e요소를 setYear로 전달하여 year 업데이트 */}
-                                <option value="">년도 선택</option>
-                                {years.map((yearOption, index) => (
-                                    <option key={index} value={yearOption}>
-                                        {yearOption}
-                                    </option>
-                                ))}
-                            </select>
-
-                            {/* 월 선택 */}
-                            <select
-                                className='sigupSelectBox'
-                                value={month}
-                                onChange={(e) => setMonth(e.target.value)}
-                                disabled={!year}
-                            >
-                                <option value="">월 선택</option>
-                                {months.map((monthOption, index) => (
-                                    <option key={index} value={monthOption}>
-                                        {monthOption}
-                                    </option>
-                                ))}
-                            </select>
-
-                            {/* 일 선택 */}
-                            <select
-                                className='sigupSelectBox'
-                                value={day}
-                                onChange={(e) => setDay(e.target.value)}
-                                disabled={!month}
-                            >
-                                <option value="">일 선택</option>
-                                {year && month &&
-                                    daysInMonth(year, month).map((dayOption, index) => (
-                                        <option key={index} value={dayOption}>
-                                            {dayOption}
+                            <div className='infoText'>
+                                <h3>생년월일</h3><span style={{ color: 'blue' }}>선택사항</span>
+                            </div>
+                            <div>
+                                {/* 년도 선택 */}
+                                <select
+                                    className='sigupSelectBox'
+                                    value={year}
+                                    onChange={(e) => setYear(e.target.value)}>
+                                    {/* e는 이벤트객체, e요소를 setYear로 전달하여 year 업데이트 */}
+                                    <option value="">년도 선택</option>
+                                    {years.map((yearOption, index) => (
+                                        <option key={index} value={yearOption}>
+                                            {yearOption}
                                         </option>
                                     ))}
-                            </select>
+                                </select>
+
+                                {/* 월 선택 */}
+                                <select
+                                    className='sigupSelectBox'
+                                    value={month}
+                                    onChange={(e) => setMonth(e.target.value)}
+                                    disabled={!year}
+                                >
+                                    <option value="">월 선택</option>
+                                    {months.map((monthOption, index) => (
+                                        <option key={index} value={monthOption}>
+                                            {monthOption}
+                                        </option>
+                                    ))}
+                                </select>
+
+                                {/* 일 선택 */}
+                                <select
+                                    className='sigupSelectBox'
+                                    value={day}
+                                    onChange={(e) => setDay(e.target.value)}
+                                    disabled={!month}
+                                >
+                                    <option value="">일 선택</option>
+                                    {year && month &&
+                                        daysInMonth(year, month).map((dayOption, index) => (
+                                            <option key={index} value={dayOption}>
+                                                {dayOption}
+                                            </option>
+                                        ))}
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <br></br>

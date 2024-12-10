@@ -32,7 +32,7 @@
 }
 
 .back4 {
-    background-color: #F05454 #FFB570 #FFE6CC #2A9D8F;
+    background-color: #F05454 #ffb570 #FFE6CC #2A9D8F;
 }
 
 .back5 {
@@ -44,11 +44,11 @@
 }
 
 .back7 {
-    background-color: #24283F #8B8C89 #EF8354 #F5F5F5;
+    background-color: #545e97 #8B8C89 #e47e53 #F5F5F5;
 }
 
 .back8 {
-    background-color: #1F1F1F #4E4E50 #D4AF37 #EAEAEA;
+    background-color: #1F1F1F #4E4E50 #D4AF37 #c1b3b3;
 }
 
 .m-4 {
@@ -69,6 +69,7 @@
 .buttonStyle2 {
     background-color: #1F1F1F !important;
     border: 1px solid #EAEAEA !important;
+    font-size: 13px !important;
 }
 
 .buttonStyle2:hover {
@@ -80,4 +81,10 @@
     background-color: #1f1f1f52 !important;
     transform: scale(0.95);
     transition: transform 0.1s ease-out;
+}
+
+.titleStyle{
+    color: rgba(15, 14, 20) !important;
+    font-size: 26px !important;
+    font-weight: bold !important;
 }
