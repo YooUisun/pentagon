@@ -23,7 +23,7 @@
     height: 550px;
     background-color: #151419;
     border: 2px solid black;
-
+    z-index: 100;
     display: flex;
     flex-flow: column wrap;
     position: relative;
