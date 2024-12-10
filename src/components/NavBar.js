@@ -1,19 +1,24 @@
 import "../assets/NavBar.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
+import MyProfile from './MyProfile';
 
 
 function NavBar( { isLoggedIn, setIsLoggedIn }) {
     const location = useLocation(); // 현재 URL 정보 가져오기
+    const [isModalOpen, setIsModalOpen] = useState(false); // Modal 상태 관리
 
     const handleLogout=()=>{
         setIsLoggedIn(false); // 로그아웃 상태로 전환
         alert("로그아웃 되었습니다.");
     }
+
+    const openModal=()=>setIsModalOpen(true); // Modal 열기
+    const closeModal=()=>setIsModalOpen(false); // Modal 닫기
 
     useEffect(() => {
         // 페이지가 변경될 때마다 스크롤을 맨 위로 이동시킴
@@ -49,6 +54,12 @@ function NavBar( { isLoggedIn, setIsLoggedIn }) {
                             >
                                 로그아웃
                             </Nav.Link>
+                            <Nav.Link
+                            onClick={openModal}
+                            className="my-profile side-navlink"
+                            style={{ cursor: "pointer" }}
+                            > <FontAwesomeIcon icon={faUser} size="1x"/>
+                            </Nav.Link>
                             </>
                         ) : (
                             <>
@@ -65,8 +76,11 @@ function NavBar( { isLoggedIn, setIsLoggedIn }) {
                     </Container>
                 </Navbar>
             </header>
+
+            {/* Modal 컴포넌트 */}
+            {isModalOpen && <MyProfile onClose={closeModal}/>}
         </>
-    )
+    );
 }
 
 export default NavBar;
