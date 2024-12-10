@@ -146,7 +146,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
             </div>
 
             {/* 제출 버튼 */}
-            <div className="summit_button">
+            <div className="submit_button">
                 <button onClick={handleSubmit}>제출</button>
             </div>
         </div>
