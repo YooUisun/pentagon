@@ -34,7 +34,6 @@
 
 .mn-container .contentWrap {
     max-width: 95%;
-    /* border: 2px solid blue; */
     display: flex;
     justify-content: space-around;
 }
@@ -54,7 +53,8 @@
     }
 
     &.active {
-        background-color: #2949ff;
+        color: #ff6600;
+        background-color: #111d64;
         opacity: 1;
     }
 }
@@ -69,8 +69,7 @@
     justify-content: center;
     align-items: center;
 
-    color: #ff6600;
-    
+    /* color: #ff6600; */
 }
 
 /* 운동이미지 */
@@ -83,23 +82,17 @@
     margin: auto;
     width: 40%;
     padding: 5px;
+    color: white;
     margin-bottom: 10px;
     border-bottom: 2px solid rgba(255, 238, 0, 0.8);
-
-    &:hover {
-        border-bottom: 2px solid rgba(255, 0, 0, 0.8);
-    }
 }
 
 /* 운동설명 */
 .mn-container .contentWrap .contText {
     height: 55px;
-    /* padding: 10px; */
-    /* display: flex;
-    align-items: center;
-    border: 2px solid red; */
+    padding: 10px;
+    color: #FFFFFF;
 }
-
 
 
 /* ExDetail.js */
@@ -107,7 +100,6 @@
 .dc-container {
     width: 95%;
     padding: 10px;
-    /* border: 2px solid orange; */
     color: white;
 
     display: flex;
@@ -125,13 +117,14 @@
     margin-bottom: 35px;
 
     max-width: 65%;
-    /* max-height: 75%; */
+    max-height: 50%;
 }
 
 /* 운동 간단설명 */
 .dc-container .dcText {
     padding: 25px;
     color: orange;
+    line-height: 160%;
     font-size: 20px;
 }
 
