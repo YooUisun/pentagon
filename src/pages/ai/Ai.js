@@ -19,6 +19,7 @@ function Ai() {
     const [error, setError] = useState(null);  // 에러 상태
     const [error2, setError2] = useState(null);
     const [error3, setError3] = useState(null);
+    const [activeCard, setActiveCard] = useState(null);
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms)); // 딜레이 두고 요청
 
     // GPT API에 질문을 보내고 답변을 받는 함수
@@ -83,105 +84,117 @@ function Ai() {
         };     
         await retryRequest(1, 0);
     };
-
+    const handleCardClick = (cardName) => {
+        setActiveCard(prevCard => prevCard === cardName ? null : cardName); // 이미 활성화된 카드 클릭시 비활성화
+    };
     return (
         <div style={{ marginTop: '70px' }}>
-            <Row className="justify-content-center aiback">
-                <Card  className="d-flex flex-row aicard">
-                    <Card.Img variant="top" src={Horseking} className='cardImg' />
+            <Row className="justify-content-center aiback" >
+                <Card  className="d-flex flex-row aicard" >
+                    <Card.Img variant="top" src={Horseking} className='cardImg' onClick={() => handleCardClick('horseking')}/>
                     <Card.Body style={{ height: '100px' }}>
-                        <Card.Title>말왕 트레이너</Card.Title>
-                        <div className="d-flex">
-                            <div style={{ width: '50%' }}>
-                                <textarea
-                                    rows="5"
-                                    style={{ width: '100%' }}
-                                    placeholder="여기에 질문을 입력하세요..."
-                                    value={inputText}
-                                    onChange={(e) => setInputText(e.target.value)} // 입력한 값을 상태로 설정
-                                />
-                                <br />
-                                <div className='aiRespon'>
-                                    <button onClick={() => getGPTResponse(inputText, setResponseText, setLoading, setError)} disabled={loading}>질문하기</button>
-                                    {loading && <p style={{ marginLeft: '30px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
-                                    {error && <p className='errMessege'>{error}</p>} {/* 에러 메시지 표시 */}
+                        <Card.Title style={{fontSize:'26px'}}>말왕 트레이너</Card.Title>
+                        {activeCard === 'horseking' ? (
+                            <div className="d-flex">
+                                <div style={{ width: '50%' }}>
+                                    <textarea
+                                        rows="5"
+                                        style={{ width: '100%' }}
+                                        placeholder="여기에 질문을 입력하세요..."
+                                        value={inputText}
+                                        onChange={(e) => setInputText(e.target.value)} // 입력한 값을 상태로 설정
+                                    />
+                                    <br />
+                                    <div className='aiRespon'>
+                                        <button onClick={() => getGPTResponse(inputText, setResponseText, setLoading, setError)} disabled={loading}>질문하기</button>
+                                        {loading && <p style={{ marginLeft: '30px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
+                                        {error && <p className='errMessege'>{error}</p>} {/* 에러 메시지 표시 */}
+                                    </div>
+                                </div>
+                                <div className='aiRespon2'>
+                                    <textarea
+                                        rows="5"
+                                        style={{ width: '100%' }}
+                                        value={responseText} // GPT의 답변을 상태로 표시
+                                        readOnly
+                                    />
                                 </div>
                             </div>
-                            <div className='aiRespon2'>
-
-                                <textarea
-                                    rows="5"
-                                    style={{ width: '100%' }}
-                                    value={responseText} // GPT의 답변을 상태로 표시
-                                    readOnly
-                                />
-                            </div>
-                        </div>
+                        ) : (
+                            <p style={{fontSize:'20px'}}>초급자분들 PT 환영, 경력 10년, 자격증 다수 보유 </p> // 이미지 클릭 전 소개글 표시
+                        )}
                     </Card.Body>
                 </Card>
 
                 <Card className="d-flex flex-row aicard">
-                    <Card.Img variant="top" src={Kimegg} className='cardImg' />
+                    <Card.Img variant="top" src={Kimegg} className='cardImg' onClick={() => handleCardClick('kimegg')}/>
                     <Card.Body style={{ height: '100px' }}>
-                        <Card.Title>김계란 트레이너</Card.Title>
-                        <div className="d-flex">
-                            <div style={{ width: '50%' }}>
-                                <textarea
-                                    rows="5"
-                                    style={{ width: '100%' }}
-                                    placeholder="여기에 질문을 입력하세요..."
-                                    value={inputText2}
-                                    onChange={(e) => setInputText2(e.target.value)} // 입력한 값을 상태로 설정
-                                />
-                                <br />
-                                <div className='aiRespon'>
-                                    <button onClick={() => getGPTResponse(inputText2, setResponseText2, setLoading2, setError2)} disabled={loading2}>질문하기</button>
-                                    {loading2 && <p style={{ marginLeft: '10px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
-                                    {error2 && <p style={{ color: 'red', marginLeft: '10px' }}>{error2}</p>} {/* 에러 메시지 표시 */}
+                        <Card.Title style={{fontSize:'26px'}}>김계란 트레이너</Card.Title>
+                        {activeCard === 'kimegg' ? (
+                            <div className="d-flex">
+                                <div style={{ width: '50%' }}>
+                                    <textarea
+                                        rows="5"
+                                        style={{ width: '100%' }}
+                                        placeholder="여기에 질문을 입력하세요..."
+                                        value={inputText2}
+                                        onChange={(e) => setInputText2(e.target.value)} // 입력한 값을 상태로 설정
+                                    />
+                                    <br />
+                                    <div className='aiRespon'>
+                                        <button onClick={() => getGPTResponse(inputText2, setResponseText2, setLoading2, setError2)} disabled={loading2}>질문하기</button>
+                                        {loading2 && <p style={{ marginLeft: '30px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
+                                        {error2 && <p className='errMessege'>{error2}</p>} {/* 에러 메시지 표시 */}
+                                    </div>
+                                </div>
+                                <div className='aiRespon2'>
+                                    <textarea
+                                        rows="5"
+                                        style={{ width: '100%' }}
+                                        value={responseText2} // GPT의 답변을 상태로 표시
+                                        readOnly
+                                    />
                                 </div>
                             </div>
-                            <div className='aiRespon2'>
-
-                                <textarea
-                                    rows="5"
-                                    style={{ width: '100%' }}
-                                    value={responseText2} // GPT의 답변을 상태로 표시
-                                    readOnly
-                                />
-                            </div>
-                        </div>
+                        ) : (
+                            <p style={{fontSize:'20px'}}>운동 유튜버 겸 엔터테이먼트 사장. 아이돌 하고 싶은분 연락주세요</p> // 이미지 클릭 전 소개글 표시
+                        )}
                     </Card.Body>
                 </Card>
 
                 <Card className="d-flex flex-row aicard">
-                    <Card.Img variant="top" src={Kimjongguk} className='cardImg' />
+                    <Card.Img variant="top" src={Kimjongguk} className='cardImg' onClick={() => handleCardClick('kimjongguk')}/>
                     <Card.Body style={{ height: '100px' }}>
-                        <Card.Title>김종국 트레이너</Card.Title>
-                        <div className="d-flex">
-                            <div style={{ width: '50%' }}>
-                                <textarea
-                                    rows="5"
-                                    style={{ width: '100%' }}
-                                    placeholder="여기에 질문을 입력하세요..."
-                                    value={inputText3}
-                                    onChange={(e) => setInputText3(e.target.value)} // 입력한 값을 상태로 설정
-                                />
-                                <br />
-                                <div className='aiRespon'>
-                                    <button onClick={() => getGPTResponse(inputText3, setResponseText3, setLoading3, setError3)} disabled={loading3}>질문하기</button>
-                                    {loading3 && <p style={{ marginLeft: '10px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
-                                    {error3 && <p style={{ color: 'red', marginLeft: '10px' }}>{error3}</p>} {/* 에러 메시지 표시 */}
+                        <Card.Title style={{fontSize:'26px'}}>김종국 트레이너</Card.Title>
+                        {activeCard === 'kimjongguk' ? (
+                            <div className="d-flex">
+                                <div style={{ width: '50%' }}>
+                                    <textarea
+                                        rows="5"
+                                        style={{ width: '100%' }}
+                                        placeholder="여기에 질문을 입력하세요..."
+                                        value={inputText3}
+                                        onChange={(e) => setInputText3(e.target.value)} // 입력한 값을 상태로 설정
+                                    />
+                                    <br />
+                                    <div className='aiRespon'>
+                                        <button onClick={() => getGPTResponse(inputText3, setResponseText3, setLoading3, setError3)} disabled={loading3}>질문하기</button>
+                                        {loading3 && <p style={{ marginLeft: '30px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
+                                        {error3 && <p className='errMessege'>{error3}</p>} {/* 에러 메시지 표시 */}
+                                    </div>
+                                </div>
+                                <div className='aiRespon2'>
+                                    <textarea
+                                        rows="5"
+                                        style={{ width: '100%' }}
+                                        value={responseText3} // GPT의 답변을 상태로 표시
+                                        readOnly
+                                    />
                                 </div>
                             </div>
-                            <div className='aiRespon2'>
-                                <textarea
-                                    rows="5"
-                                    style={{ width: '100%' }}
-                                    value={responseText3} // GPT의 답변을 상태로 표시
-                                    readOnly
-                                />
-                            </div>
-                        </div>
+                        ) : (
+                            <p style={{fontSize:'20px'}}>런닝맨 경력 10년 넘음. 이름표 뜯기 고수.</p> // 이미지 클릭 전 소개글 표시
+                        )}
                     </Card.Body>
                 </Card>
             </Row>

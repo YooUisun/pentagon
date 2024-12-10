@@ -16,7 +16,7 @@
 .aiRespon{
     display: flex ;
     align-items: center;
-    position: relative;
+    position: relative;    
 }
 
 .aiRespon2{
@@ -27,14 +27,18 @@
 .aicard{
     width: 60rem !important;
     margin: 17px !important;
-    margin-top: 50px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
     border-radius: 30px !important;
     background-color: rgba(255, 255, 255, 0.713) !important;
     padding: 0px !important;
+    transform: none;  /* 클릭 시 변형 방지 */
+    box-shadow: none;  /* 클릭 시 그림자 제거 */
 }
 
 .errMessege{
     color: red;
     margin-left: 30px;
+    margin-bottom: 0px;
     
 }
