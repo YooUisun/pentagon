@@ -18,6 +18,7 @@ import ExerciseMain from '../exerciseMain/ExerciseMain';
 import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
 import NotFoundPage from '../../components/NotFoundPage';
 import Notice from '../../components/Notice';
+import RecordMain from '../record/RecordMain';
 
 
 function MainPage() {
@@ -67,6 +68,7 @@ function MainPage() {
                 <Route path="/ExcerciseMain" element={<ExerciseMain />} />
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
                 <Route path="/not-found-page" element={<NotFoundPage/>} />
+                <Route path="/RecordMain" element={<RecordMain/>} />
             </Routes>
 
             {/* Footer 컴포넌트 */}

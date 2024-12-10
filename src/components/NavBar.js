@@ -130,7 +130,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                         <Nav className="nav-links" style={{ marginRight: '50px' }}>
                             <Nav.Link as={Link} to="/Notice" className="side-navlink">공지사항</Nav.Link>
                             <Nav.Link as={Link} to="/ExcerciseMain" className="side-navlink">운동</Nav.Link>
-                            <Nav.Link className="side-navlink">기록</Nav.Link>
+                            <Nav.Link as={Link} to= "/RecordMain" className="side-navlink">기록</Nav.Link>
                             <Nav.Link as={Link} to="/Ai" className="side-navlink">상담</Nav.Link>
                             {isLoggedIn ? (
                                 <>
