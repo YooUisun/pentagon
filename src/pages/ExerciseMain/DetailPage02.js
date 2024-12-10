@@ -1,13 +1,15 @@
 import '../../assets/DetailPage.css'
-import testimage from '../../assets/testimage.png'
 import ExDescription from './ExDescription';
 import ExContentBox from './ExContentBox';
 import { useState } from 'react';
 import DcData from './DcData';
 import {DetailModal, DetailModalTitle, DetailModalText, DetailModalTab} from './DetailModal';
 
+import benchpress from '../../assets/benchpress.jpg';
+import deadlift from '../../assets/deadlift.jpg';
+import stepup from '../../assets/stepup.jpg';
+
 function DetailPage02() {
-    let image = testimage;
 
     // easy : 푸시업, 싯업
     // normal : 벤치프레스, 데드리프트, 밴드스텝업
@@ -18,29 +20,29 @@ function DetailPage02() {
         {
             id: '003',
             name: '벤치프레스',
-            imageURL: image,
-            content: '설명',
+            imageURL: benchpress,
+            content: '대흉근, 삼두근',
             flag: true
         },
 
         {
             id: '004',
             name: '데드리프트',
-            imageURL: image,
-            content: '설명',
+            imageURL: deadlift,
+            content: '광배근, 둔근, 전완근',
             flag: false
         },
 
         {
             id: '005',
             name: '밴드스텝업',
-            imageURL: image,
-            content: '설명',
+            imageURL: stepup,
+            content: '허벅지, 종아리',
             flag: false
         }
     ]);
     
-    // 운동가이드 설명칸 데이터
+    // 운동가이드 설명칸 데이터 필터링
     const [dcData, setDcData] = useState(DcData.filter(DcData => DcData.difficulty == 'normal'));
         
     // contentData.flag : true인 id값 가져오기

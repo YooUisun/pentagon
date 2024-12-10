@@ -1,13 +1,14 @@
 import '../../assets/DetailPage.css'
-import testimage from '../../assets/testimage.png'
 import ExDescription from './ExDescription';
 import ExContentBox from './ExContentBox';
 import { useState } from 'react';
 import DcData from './DcData';
 import {DetailModal, DetailModalTitle, DetailModalText, DetailModalTab} from './DetailModal';
 
+import pushup from '../../assets/pushup.jpg';
+import situp from '../../assets/situp.jpg';
+
 function DetailPage01() {
-    let image = testimage;
 
     // easy : 푸시업, 싯업
     // normal : 벤치프레스, 데드리프트, 밴드스텝업
@@ -18,22 +19,21 @@ function DetailPage01() {
         {
             id: '001',
             name: '푸시업',
-            imageURL: image,
-            content: '설명',
+            imageURL: pushup,
+            content: '대흉근',
             flag: true
         },
 
         {
             id: '002',
             name: '싯업',
-            imageURL: image,
-            content: '설명',
+            imageURL: situp,
+            content: '장요근',
             flag: false
         }
     ]);
     
-    // 운동가이드 설명칸 데이터
-    // 해당 난이도 객체들만 dcData로 복사
+    // 운동가이드 설명 데이터 필터링
     const [dcData, setDcData] = useState(DcData.filter(DcData => DcData.difficulty == 'easy'));
     
     // contentData.flag : true인 id값 가져오기

@@ -6,8 +6,12 @@ import { useState } from 'react';
 import DcData from './DcData';
 import {DetailModal, DetailModalTitle, DetailModalText, DetailModalTab} from './DetailModal';
 
+import benchpress from '../../assets/benchpress.jpg';
+import squat from '../../assets/squat.jpg';
+import rowing from '../../assets/rowing.jpeg';
+
 function DetailPage03() {
-    let image = testimage;
+    // let image = testimage;
 
     // easy : 푸시업, 싯업
     // normal : 벤치프레스, 데드리프트, 밴드스텝업
@@ -18,24 +22,24 @@ function DetailPage03() {
         {
             id: '006',
             name: '벤치프레스',
-            imageURL: image,
-            content: '설명',
+            imageURL: benchpress,
+            content: '대흉근, 삼두근',
             flag: true
         },
 
         {
             id: '007',
             name: '바벨스쿼트',
-            imageURL: image,
-            content: '설명',
+            imageURL: squat,
+            content: '대퇴근, 대둔근',
             flag: false
         },
 
         {
             id: '008',
             name: '바벨로우',
-            imageURL: image,
-            content: '설명',
+            imageURL: rowing,
+            content: '광배근, 삼각근, 이두근',
             flag: false
         }
     ]);
