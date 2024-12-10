@@ -1,14 +1,83 @@
-
 .centered-row {
     width: 101%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url(./image/background.png);
-    background-size: cover; /* 화면에 맞게 배경 이미지를 크기 조절 */
-    background-position: center center; /* 배경 이미지가 화면 중앙에 오도록 설정 */
-    background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
-    height: 100vh; /* 페이지의 높이를 100%로 설정 */
-    margin: 0;    
+    background-image: url(./image/back2.jpeg);
+    background-size: cover;
+    /* 화면에 맞게 배경 이미지를 크기 조절 */
+    background-position: center center;
+    /* 배경 이미지가 화면 중앙에 오도록 설정 */
+    background-repeat: no-repeat;
+    /* 이미지가 반복되지 않도록 설정 */
+    height: 100vh;
+    /* 페이지의 높이를 100%로 설정 */
+    margin: 0;
+}
+
+.bac1k {
+    background-color:
+        #A4C3B2 #C4A4B2 #DAD7E2 #E2E8F0;
+}
+
+.back2 {
+    background-color:
+        #D4AF37 #6C757D #E5E5E5 #121212;
+}
+
+.back3 {
+    background-color:
+        #4CAF50 #FFD166 #8D99AE #EDF2F4;
+}
+
+.back4 {
+    background-color: #F05454 #FFB570 #FFE6CC #2A9D8F;
+}
+
+.back5 {
+    background-color: #1C1C1E #383838 #F2A365 #E5E5E5
+}
+
+.back6 {
+    background-color: #3B2F2F #D2A679 #FFB84C #FFFFFF;
+}
+
+.back7 {
+    background-color: #24283F #8B8C89 #EF8354 #F5F5F5;
+}
+
+.back8 {
+    background-color: #1F1F1F #4E4E50 #D4AF37 #EAEAEA;
+}
+
+.m-4 {
+    background-color: rgba(255, 255, 255, 0.131) !important;
+    padding-top: 25px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    border-radius: 10px !important;
+    border: 1px solid #4E4E50 !important;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.buttonStyle2 {
+    background-color: #1F1F1F !important;
+    border: 1px solid #EAEAEA !important;
+}
+
+.buttonStyle2:hover {
+    background-color: #1f1f1f52 !important;
+
+}
+
+.buttonStyle2:active {
+    background-color: #1f1f1f52 !important;
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
 }
