@@ -40,27 +40,37 @@
     font-size: 4.5rem;
     margin: 0;
     font-weight: bold;
+    color: #b5b9d1;
 }
 
-.text-container #content3 {
+.text-container .content3 {
     font-size: 1.2rem;
-    line-height: 1.6;
     margin-top: 1rem;
+    color: #A9ADC4;
 }
 
 .learn-more-button2 {
+    width: 150px;
+    height: 50px;
+    display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #28a745;
+    background-color: #3A3F57;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.learn-more-button2 p{
+    margin-top: 5px;
+    user-select: none;
 }
 
 .learn-more-button2:hover {
-    background-color: #218838;
+    background-color: #6C718A;
 }
 
 .slide-up {
