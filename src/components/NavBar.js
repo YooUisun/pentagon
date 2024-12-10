@@ -1,7 +1,7 @@
 import "../assets/NavBar.css";
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import MyProfile from './MyProfile';
@@ -10,6 +10,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
     const [isModalOpen, setIsModalOpen] = useState(false); // Modal 상태 관리
     const modalRef = useRef(null);
     const userIconRef = useRef(null);
+    const navigate = useNavigate();
 
     const location = useLocation(); // 현재 URL 정보 가져오기
 
@@ -78,6 +79,16 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
         setSearchHistory((prevHistory) => prevHistory.filter((historyItem) => historyItem !== item));
     };
 
+    const checkLoginStatus=(path)=>{
+        if (!isLoggedIn) {
+            alert("로그인 후 이용할 수 있습니다.")
+            navigate("/Login");
+        } else {
+            navigate(path)
+        }
+    };
+
+
     return (
         <>
             <header className="header">
@@ -115,9 +126,9 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                         </div>
                         <Nav className="nav-links" style={{ marginRight: '50px' }}>
                             <Nav.Link as={Link} to="/Notice" className="side-navlink">공지사항</Nav.Link>
-                            <Nav.Link as={Link} to="/ExcerciseMain" className="side-navlink">운동</Nav.Link>
-                            <Nav.Link as={Link} to="/RecordMain" className="side-navlink">기록</Nav.Link>
-                            <Nav.Link as={Link} to="/Ai" className="side-navlink">상담</Nav.Link>
+                            <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/ExcerciseMain')}>운동</Nav.Link>
+                            <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/RecordMain')}>기록</Nav.Link>
+                            <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/Ai')}>상담</Nav.Link>
                             {isLoggedIn ? (
                                 <>
                                     <Nav.Link onClick={handleLogout} className="side-navlink">로그아웃</Nav.Link>
