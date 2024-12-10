@@ -54,8 +54,8 @@ function LoginPage({ setIsLoggedIn }) {
                 if (storedUser && storedUser.email === email && storedUser.password === password) {
                     //조건에 storedUser 넣는 이유 = null,undefined 방지
                     // 로그인 성공
-                    alert("로그인 성공!");  
-                    setIsLoggedIn(true);                  
+                    alert("로그인 성공!");
+                    setIsLoggedIn(true);
                     navigate('/'); // 홈 화면으로 이동
                 } else {
                     // 로그인 실패                    
@@ -85,8 +85,13 @@ function LoginPage({ setIsLoggedIn }) {
                     onChange={onEmailHandler}
                     placeholder='이메일'
                 />
-                {emailError && <div className="error-message">{emailError}</div>}
-            
+                <div className='erm'>
+                    {emailError && (
+                        <div className={`error-message-container ${emailError ? 'show' : ''}`}>
+                            <div className="error-message">{emailError}</div>
+                        </div>
+                    )}
+                </div>
                 <label className='loginInfo'>Password</label>
                 <input
                     type="password"
@@ -95,8 +100,13 @@ function LoginPage({ setIsLoggedIn }) {
                     onChange={onPasswordHandler}
                     placeholder='비밀번호'
                 />
-                {passwordError && <div className="error-message">{passwordError}</div>}
-                <br></br>
+                <div className='erm'>
+                {passwordError && (
+                    <div className={`error-message-container ${passwordError ? 'show' : ''}`}>
+                        <div className="error-message">{passwordError}</div>
+                    </div>
+                )}
+                </div>
                 <button className="loginBut" onClick={handleLogin}>Login</button>
             </form>
             <LoginModal isOpen={isModalOpen} onClose={closeModal} />

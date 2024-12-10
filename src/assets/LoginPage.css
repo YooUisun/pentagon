@@ -74,6 +74,26 @@
     transition: transform 0.1s ease-out; /* 애니메이션 효과를 주어 부드럽게 눌린 느낌 */
 }
 
+.error-message-container {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message-container.show {
+    
+    opacity: 1;  /* 보이도록 설정 */
+}
+
+/* 에러 메시지 스타일 */
 .error-message {
     width: 300px;
+    color: red;  /* 빨간색 */
+    font-size: 16px;
+}
+.erm{
+    margin-top: -5px;
+    height: 35px;
 }
