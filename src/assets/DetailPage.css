@@ -7,7 +7,7 @@
 /* DetailPage.js */
 /* detailpage 전체 컨테이너 */
 .mn-container {
-    width: 100vw;
+    width: 100%;
     background-color: #252525;
     display: flex;
     flex-flow: row wrap;
@@ -40,10 +40,11 @@
 /* 운동컴포넌트 컨테이너 */
 .mn-container .contentWrap .contContainer {
     width: 100%;
-    margin: 10px;
+    margin: 35px;
     color: white;
     text-align: center;
-    background-color: black;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    /* border: 1px solid hsl(0, 0%, 70%); */
     opacity: 0.7;
 
     &:hover {
@@ -166,4 +167,20 @@
     height: 50px;
 
     color: red;
+}
+
+.back5 {
+    background-color: #1C1C1E #383838 #F2A365 #E5E5E5
+}
+
+.back6 {
+    background-color: #3B2F2F #D2A679 #FFB84C #FFFFFF;
+}
+
+.back7 {
+    background-color: #24283F #8B8C89 #EF8354 #F5F5F5;
+}
+
+.back8 {
+    background-color: #1F1F1F #4E4E50 #D4AF37 #EAEAEA;
 }

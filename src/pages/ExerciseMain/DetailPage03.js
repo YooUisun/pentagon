@@ -1,5 +1,4 @@
 import '../../assets/DetailPage.css'
-import testimage from '../../assets/testimage.png'
 import ExDescription from './ExDescription';
 import ExContentBox from './ExContentBox';
 import { useState } from 'react';
@@ -11,7 +10,6 @@ import squat from '../../assets/squat.jpg';
 import rowing from '../../assets/rowing.jpeg';
 
 function DetailPage03() {
-    // let image = testimage;
 
     // easy : 푸시업, 싯업
     // normal : 벤치프레스, 데드리프트, 밴드스텝업
