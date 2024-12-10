@@ -82,7 +82,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
             <header className="header">
                 <Navbar className="navbar">
                     <Container className="navbar-container">
-                        <Navbar.Brand style={{ color: 'white', marginLeft: '50px' }}>
+                        <Navbar.Brand style={{ color: 'white' }}>
                             <Nav.Link as={Link} to="/" >
                                 <h1 className="main-logo-title">Pentagon</h1>
                             </Nav.Link>
@@ -132,7 +132,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                                 </div>
                             )}
                         </div>
-                        <Nav className="nav-links" style={{ marginRight: '50px' }}>
+                        <Nav className="nav-links" style={{ marginRight: '10px' }}>
                             <Nav.Link as={Link} to="/Notice" className="side-navlink">공지사항</Nav.Link>
                             <Nav.Link as={Link} to="/ExcerciseMain" className="side-navlink">운동</Nav.Link>
                             <Nav.Link as={Link} to= "/RecordMain" className="side-navlink">기록</Nav.Link>

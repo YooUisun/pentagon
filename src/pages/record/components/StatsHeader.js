@@ -10,19 +10,22 @@ export default function StatsHeader({ data }) {
 
     return (
         <div style={{ height: '25%' }}>
+
             <div className="stats_content_main">
+                
                 <div>
                     <div className="stats_content_box">총 운동 시간
-
-                        <p>{Number(totalTime)} 분</p>
-
-
+                        <p style={ {fontSize : '22px', fontWeight : 'bold', color : '#bb86fc'}}>{Number(totalTime)} 분</p>
                     </div>
+
                     <div className="stats_content_box">총 세트수
-                        <p>{Number(totalSets)} 세트</p>
+                        <p style={ {fontSize : '22px', fontWeight : 'bold', color : '#bb86fc'}}>{Number(totalSets)} 세트</p>
                     </div>
+                    
                 </div>
+                
             </div>
+
         </div>
     )
 }

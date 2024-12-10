@@ -60,7 +60,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
     return (
         <div className="recordModal_container">
             <div className="recordModal_content_detail">
-                <h3>오늘의 운동</h3>
+                <h3 style={ {color : 'white', fontSize : '20px'}}>오늘의 운동</h3>
                 <select name="exercise" value={title} onChange={handleTitleChange}>
                     <option value="" disabled>
                         운동을 선택하세요
@@ -103,7 +103,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
             </div>
 
             <div className="recordModal_content_detail">
-                <h3>날짜</h3>
+                <h3 style={ {color : '#ffffff', fontSize : '20px'}}>날짜</h3>
                 <div>{value}</div> {/* YYYYMMDD 형식으로 표시 */}
             </div>
 
