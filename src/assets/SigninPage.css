@@ -3,17 +3,21 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    background-color: #c4c6d2;
 }
 .signinBox{
     margin-top: 120px;
     margin-bottom: 70px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 500px;
-    height: 1000px;    
+    height: 100%;    
     flex-direction: column;
-    background-color: white;
+    background-color: #adafc0;
+    border-radius: 20px;
 }
 
 .formStyle{
@@ -80,7 +84,7 @@
 .infoText{
     display: flex !important;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .sigupSelectBox{
     margin-right: 10px;

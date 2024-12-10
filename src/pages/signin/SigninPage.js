@@ -388,7 +388,7 @@ function SigninPage() {
                             </div>
                         </div>
                     </div>
-                    <br></br>
+                    
                     <button className="signupInputField" type='submit'>Signup</button>
 
                 </form>
