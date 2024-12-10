@@ -103,8 +103,8 @@ function Ai() {
                                 <br />
                                 <div className='aiRespon'>
                                     <button onClick={() => getGPTResponse(inputText, setResponseText, setLoading, setError)} disabled={loading}>질문하기</button>
-                                    {loading && <p style={{ marginLeft: '10px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
-                                    {error && <p style={{ color: 'red', marginLeft: '10px' }}>{error}</p>} {/* 에러 메시지 표시 */}
+                                    {loading && <p style={{ marginLeft: '30px' }}>로딩 중...</p>} {/* 로딩 상태 표시 */}
+                                    {error && <p className='errMessege'>{error}</p>} {/* 에러 메시지 표시 */}
                                 </div>
                             </div>
                             <div className='aiRespon2'>
