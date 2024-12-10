@@ -83,7 +83,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                 <Navbar className="navbar">
                     <Container className="navbar-container">
                         <Navbar.Brand style={{ color: 'white', marginLeft: '50px' }}>
-                            <Nav.Link as={Link} to="/MainPage" >
+                            <Nav.Link as={Link} to="/" >
                                 <h1 className="main-logo-title">Pentagon</h1>
                             </Nav.Link>
                         </Navbar.Brand>
