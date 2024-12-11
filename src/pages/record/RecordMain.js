@@ -57,9 +57,9 @@ export default function RecordMain() {
     }, [workoutData]); // workoutData가 변경될 때마다 실행
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        
             <div className="recordMain">
-                <h1>My Workout Diary</h1>
+            
                 <section className="contents">
                     <div className="myWork">
                         <Calendar
@@ -88,6 +88,6 @@ export default function RecordMain() {
                     </div>
                 </section>
             </div>
-        </div>
+        
     );
 }
