@@ -9,6 +9,7 @@ import {
     Tooltip,
     Legend,
     RadarController,
+    layouts,
 } from 'chart.js';
 
 ChartJS.register(
@@ -37,7 +38,7 @@ const RadarChart = ({ data1 }) => {
                 label: '부위별 운동 횟수',
                 data: workoutData,
                 fill: true,
-                backgroundColor: 'rgb(236, 223, 204)',
+                backgroundColor: '#bb86fc',
                 borderColor: 'rgb(31, 49, 111)',
                 borderWidth: 0.1,
             },
@@ -47,18 +48,26 @@ const RadarChart = ({ data1 }) => {
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+            padding: {
+                top: 35,
+                bottom: 50,
+                left: 0,
+                right: 0,
+            }
+        },
         scales: {
             r: {
                 grid: {
-                    color: 'black', // 내부 6각형 선의 색상
-                    lineWidth: 4, // 내부 선의 두께
+                    color: '#121212', // 내부 6각형 선의 색상
+                    lineWidth: 3, // 내부 선의 두께
                 },
                 ticks: {
                     display: false, // 축에 표시되는 숫자 숨기기
                 },
                 pointLabels: {
                     font: {
-                        size: 14, // 축 라벨 폰트 크기
+                        size: 12, // 축 라벨 폰트 크기
                         family: 'Arial', //폰트종류
                     },
                     color: 'white', //축라벨 폰트색상
@@ -69,12 +78,14 @@ const RadarChart = ({ data1 }) => {
         },
         plugins: {
             legend: {
-                position: 'top',
+                position: 'bottom',
                 labels: {
                     font: {
-                        size: 16, // 범례 폰트 크기
+                        size: 15, // 범례 폰트 크기
                     },
                     color: 'white', // 범례 폰트 색상
+                    padding: 10,
+                    boxWidth: 10,
                 },
             },
             title: {

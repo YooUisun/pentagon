@@ -14,8 +14,7 @@ export default function Statistics({ data, setData1 }) {
             <StatsHeader data={data} />
 
             <div className="stats_content_container">
-                <h1>일반</h1>
-                <Tabs>
+                <Tabs style={ {marginTop : '40px'}}>
                     <TabList>
                         <Tab><CiMemoPad /></Tab>
                         <Tab><RiPieChartFill /></Tab>
