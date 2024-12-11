@@ -143,7 +143,6 @@ function PrivacyPolicyPage() {
             <h3 className="Privacy-section-title">제11조 (개인정보 처리방침의 적용일 및 변경)</h3>
             <p className="privacy-policy-text">이 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 공지할 것입니다.</p> 
         </div>
-        <Footer/>
         </>
     )
 }

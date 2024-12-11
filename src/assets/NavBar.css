@@ -21,7 +21,7 @@
 .main-logo-title {
     position: relative; /* 밑줄을 위치시키기 위해 필요한 속성 */
     display: inline-block; /* 텍스트의 높이를 맞추기 위해 inline-block 처리 */
-    font-size: 24px; /* 폰트 크기는 필요에 따라 조정 */
+    font-size: 34px; /* 폰트 크기는 필요에 따라 조정 */
     font-weight: bold; /* 필요에 따라 굵기 조정 */
     color: #ffffff; /* 기본 텍스트 색 */
     text-decoration: none; /* 기본 밑줄 제거 */
