@@ -29,6 +29,9 @@
 }
 
 .mn-container .page-title h1{
+    font-size: 55px;
+    font-weight: bold;
+
     &.easy {
         background: linear-gradient(to top left, #feffc6, #d8db32);
         -webkit-background-clip: text;
