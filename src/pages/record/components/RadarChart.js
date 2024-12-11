@@ -22,11 +22,11 @@ ChartJS.register(
     RadarController
 );
 
-const RadarChart = ({ data1 }) => {
+const RadarChart = ({ selData }) => {
 
     const categories = ['등', '어깨', '가슴', '팔', '복근', '허벅지'];
     const workoutData = categories.map((categories) => {
-        return data1.filter((item) => item.type === categories).length;
+        return selData.filter((item) => item.type === categories).length;
     })
 
     //    console.log(workoutData);
@@ -81,7 +81,7 @@ const RadarChart = ({ data1 }) => {
                 position: 'bottom',
                 labels: {
                     font: {
-                        size: 15, // 범례 폰트 크기
+                        size: 12, // 범례 폰트 크기
                     },
                     color: 'white', // 범례 폰트 색상
                     padding: 10,

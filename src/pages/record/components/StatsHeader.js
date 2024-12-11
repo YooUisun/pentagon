@@ -1,11 +1,11 @@
 
 
-export default function StatsHeader({ data }) {
+export default function StatsHeader({ selData }) {
 
 
     // reduce함수 => 배열.reduce(콜백, (누적값, 현재값) => {누적값 + 현재값, 초기값} )
-    const totalTime = data.reduce((sum, item) => sum + item.time, 0);
-    const totalSets = data.reduce((sum, item) => sum + item.sets, 0);
+    const totalTime = selData.reduce((sum, item) => sum + item.time, 0);
+    const totalSets = selData.reduce((sum, item) => sum + item.sets, 0);
 
 
     return (
