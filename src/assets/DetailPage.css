@@ -7,8 +7,8 @@
 /* DetailPage.js */
 /* detailpage 전체 컨테이너 */
 .mn-container {
-    width: 100vw;
-    background-color: #252525;
+    width: 100%;
+    background-color: #1a1a1a;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -29,7 +29,23 @@
 }
 
 .mn-container .page-title h1{
-    color: #FFED00;
+    &.easy {
+        background: linear-gradient(to top left, #feffc6, #d8db32);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.normal {
+        background: linear-gradient(to top left, #c0ccff, #3251db);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.hard {
+        background: linear-gradient(to top left, #ffb5b5, #ff3434);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 .mn-container .contentWrap {
@@ -41,20 +57,24 @@
 /* 운동컴포넌트 컨테이너 */
 .mn-container .contentWrap .contContainer {
     width: 100%;
-    margin: 10px;
+    margin: 35px;
     color: white;
     text-align: center;
-    background-color: black;
+    background-color: #59595933;
+    border: 1px solid #2e2e2e;
+    border-radius: 15px;
     opacity: 0.7;
 
     &:hover {
         cursor: pointer;
+        border: 1px solid #3b3b3b;
         opacity: 1;
     }
 
     &.active {
-        color: #ff6600;
-        background-color: #111d64;
+        color: #FFFFFF;
+        background-color: #3b3b3b;
+        /* background-color: #0f163b; */
         opacity: 1;
     }
 }
@@ -84,14 +104,14 @@
     padding: 5px;
     color: white;
     margin-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 238, 0, 0.8);
+    border-bottom: 2px solid #03dac6;
 }
 
 /* 운동설명 */
 .mn-container .contentWrap .contText {
     height: 55px;
     padding: 10px;
-    color: #FFFFFF;
+    color: #c9c9c9;
 }
 
 
@@ -99,7 +119,7 @@
 /* description 전체컨테이너 */
 .dc-container {
     width: 95%;
-    padding: 10px;
+    padding: 10px 50px 10px 50px;
     color: white;
 
     display: flex;
@@ -113,20 +133,37 @@
 /* 운동 방법 이미지 */
 .dc-container .dcImg {
     margin: 0 auto;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-bottom: 75px;
 
-    max-width: 65%;
+    max-width: 50%;
     max-height: 50%;
+    border-radius: 20px;
 }
 
 /* 운동 간단설명 */
 .dc-container .dcText {
     padding: 25px;
-    color: orange;
-    line-height: 160%;
+    color: hsl(39, 75%, 73%);
+    line-height: 180%;
     font-size: 20px;
+    opacity: 0.2;
+
+    &.textAnime {
+        animation-name: textAnime;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
 }
+
+@keyframes textAnime {
+    0% {
+        opacity: 0.2;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+    }
+    }
 
 /* 글 간격 */
 /* 운동이름 */
@@ -150,6 +187,7 @@
 .dc-container p {
     margin-bottom: 25px;
     font-size: 18px;
+    color: #B0B0B0;
 }
 
 
@@ -165,6 +203,8 @@
 .mn-container .btnContainer button {
     width: 100px;
     height: 50px;
+
+    font-size: 30px;
 
     color: red;
 }

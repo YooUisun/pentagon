@@ -1,5 +1,4 @@
 import '../../assets/DetailPage.css'
-import testimage from '../../assets/testimage.png'
 import ExDescription from './ExDescription';
 import ExContentBox from './ExContentBox';
 import { useState } from 'react';
@@ -11,7 +10,6 @@ import squat from '../../assets/squat.jpg';
 import rowing from '../../assets/rowing.jpeg';
 
 function DetailPage03() {
-    // let image = testimage;
 
     // easy : 푸시업, 싯업
     // normal : 벤치프레스, 데드리프트, 밴드스텝업
@@ -63,7 +61,7 @@ function DetailPage03() {
         <>
             <div className='mn-container'>
                 <div className='page-title'>
-                    <h1>숙련자 프로그램</h1>
+                    <h1 className='hard'>숙련자 프로그램</h1>
                 </div>
                 <div className='contentWrap'>
                     {/* 운동 컴포넌트 */}
@@ -130,6 +128,14 @@ function DetailPage03() {
                             <DetailModalText>10분 휴식</DetailModalText>
                             <DetailModalText>바벨스쿼트 3세트</DetailModalText>
                             <DetailModalText>바벨로우 2세트</DetailModalText>
+                        </DetailModalTab>
+
+                        <DetailModalTab>
+                            <DetailModalTitle>4일차</DetailModalTitle>
+                            <DetailModalText>스트레칭</DetailModalText>
+                            <DetailModalText>벤치프레스 1세트</DetailModalText>
+                            <DetailModalText>5분 휴식</DetailModalText>
+                            <DetailModalText>바벨스쿼트 1세트</DetailModalText>
                         </DetailModalTab>
                     </DetailModal>
                 )}
