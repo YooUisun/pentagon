@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import './ContentFour.css';
 import title4 from '../../src/assets/image/page4title.jpg';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
-function ContentFour() {
+function ContentFour({ isLoggedIn }) {
+    const navigate = useNavigate();
     useEffect(() => {
         const observerOptions = { 
             root: null, // Viewport 전체를 root로 설정
@@ -40,6 +41,15 @@ function ContentFour() {
         };
     }, []);
 
+    const checkLoginStatus=()=>{
+        if (isLoggedIn === false) {
+            alert("로그인 후 이용할 수 있습니다.")
+            navigate("/Login");
+        } else {
+            navigate("/RecordMain", { state: { isLoggedIn } });
+        }
+    };
+
     return (
         <div id="introduce-page4">
             <div className="logoimage2 slide-up">
@@ -55,7 +65,9 @@ function ContentFour() {
                 <p className="page4-description slide-up">
                 AI 전문가들의 조언에 따라 더 효과적이고 효율적으로 운동 목표와 계획을 수립해나가세요.
                 </p>
-                <Link to="/Ai" className="learn-more-button3 slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 Ai 상담 페이지로 */}
+                <button to="/Ai"
+                className="learn-more-button3 slide-up"
+                onClick={checkLoginStatus}><p>자세히 보기</p></button> {/* 버튼 누르면 Ai 상담 페이지로 */}
             </div>
         </div>
     )

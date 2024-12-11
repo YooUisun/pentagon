@@ -61,6 +61,7 @@
     /* 글자 색상 */
     text-decoration: none;
     z-index: 20;
+    margin-top: 5px;
 }
 
 .side-navlink:hover {
@@ -140,13 +141,13 @@
     height: 44px;
     border-radius: 50%;
     margin-left: 12px;
-    margin-top: 6px;
+    margin-top: 3px;
 }
 
 #usericon {
     font-size: 1.7rem;
-    margin-top: 5px;
-    margin-right: 2px;
+    margin-left: 7px;
+    margin-bottom: 3px;
 }
 
 .modal-container {
