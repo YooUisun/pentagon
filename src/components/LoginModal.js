@@ -63,9 +63,11 @@ const LoginModal = ({ isOpen, onClose }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <h2>이메일/비밀번호 찾기</h2>
+                <h3 style={{marginLeft:'50px'}}>이메일/비밀번호 찾기</h3>
+                <br></br>
                 <input
                     type="email"
+                    className='modalInput'
                     placeholder="이메일을 입력하세요"
                     value={email}
                     onChange={handleEmailChange}
@@ -83,7 +85,7 @@ const LoginModal = ({ isOpen, onClose }) => {
                 <br></br>
                 <button className='modalStyle' onClick={handleDeleteAllData} style={{ marginTop: '50px' }}>회원정보 전부 삭제</button>
             </div>
-            <button onClick={handleClose} style={{ marginBottom: '350px', borderRadius:'5px' }}>닫기</button>
+            <button onClick={handleClose} className='closeBut' style={{ marginBottom: '350px' }}>X</button>
         </div>
     );
 };
