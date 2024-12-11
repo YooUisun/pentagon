@@ -13,7 +13,7 @@ export default function RecordMain() {
         setSelectDay(value); // 선택된 날짜 업데이트
     };
 
-    const dataUpdate1 = (newRecord) => {
+    const dataUpdate = (newRecord) => {
         const date = selectDay; // 'YYYY-MM-DD' 형식
         if (!date) return;
 
@@ -28,7 +28,7 @@ export default function RecordMain() {
 
         setWorkoutDays((prevDays) => [...new Set([...prevDays, date])]); // 중복 제거
     };
-
+    
     const getSelectedDayData = () => {
         return workoutData[selectDay] || [];
     };
@@ -68,22 +68,13 @@ export default function RecordMain() {
                         />
                         <RecordModal
                             value={selectDay}
-                            dataUpdate1={dataUpdate1} // 운동 기록 추가 로직
+                            dataUpdate={dataUpdate} // 운동 기록 추가 로직
                         />
                     </div>
                     <div className="statisticContent">
                         <Statistics
-                            data={getSelectedDayData()} // 선택된 날짜의 데이터 전달
-                            setData={(newData) => {
-                                setWorkoutData((prevData) => ({
-                                    ...prevData,
-                                    [selectDay]: newData,
-                                }));
-                            }}
-                            selectedDay={selectDay}
-                            workoutDays={workoutDays}
-                            setWorkoutDays={setWorkoutDays}
-                            setData1={handleDeleteWorkout} // 삭제 시 초록불 업데이트
+                            selData={getSelectedDayData()} // 선택된 날짜의 데이터 전달
+                            handleDeleteWorkout={handleDeleteWorkout} // 삭제 시 초록불 업데이트
                         />
                     </div>
                 </section>

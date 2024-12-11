@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
 
-export default function RecordModal({ value, dataUpdate1 }) {
+export default function RecordModal({ value, dataUpdate }) {
     // 상태 관리
     const [title, setTitle] = useState(""); // 운동 입력값
     const [time, setTime] = useState(""); // 기간 입력값
@@ -48,7 +48,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
             type,
         };
 
-        dataUpdate1(newRecord); // 부모 컴포넌트에 새로운 기록 전달
+        dataUpdate(newRecord); // 부모 컴포넌트에 새로운 기록 전달
 
         // 입력값 초기화
         setTitle("");

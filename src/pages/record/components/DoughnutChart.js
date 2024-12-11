@@ -9,13 +9,13 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DoughnutChart = ({ data1 }) => {
+const DoughnutChart = ({ selData }) => {
 
     const categories = ['등', '어깨', '가슴', '팔', '복근', '허벅지'];
 
     // reduce함수를 통해 acc객체에 key, value값 대입함
     // ex) countSets = {등 : 3} 이런식으로 저장됨
-    const countSets = data1.reduce((acc, item) => {
+    const countSets = selData.reduce((acc, item) => {
         acc[item.type] = (acc[item.type] || 0) + item.sets;
         return acc;
     }, {});
@@ -54,7 +54,7 @@ const DoughnutChart = ({ data1 }) => {
                 position: 'bottom',
                 labels: {
                     font: {
-                        size: 15, // 폰트 사이즈
+                        size: 12, // 폰트 사이즈
                         family: 'Arial', // 폰트종류
                     },
                     color: 'white',
