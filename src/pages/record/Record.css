@@ -114,7 +114,7 @@
 .recordModal_container {
     width: 100%;
     text-align: center;
-    margin: 50px 0 0 0;
+    margin-top: 20px;
     color: #b0b0b0;
     background-color: #1e1e1e;
     border-bottom: 1px solid #272727;
@@ -137,7 +137,7 @@
 .exercise_select_box:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
     /* 그림자 더 강조 */
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     /* 살짝 떠오르는 효과 */
 }
 
@@ -156,6 +156,46 @@
     border-radius: 10px;
 }
 
+/* ------------------------운동시간 의선----------- */
+.workout_time_input_box1 {
+    font-size: 15px;
+    color: #ffffff;
+    width: 160px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
+
+/* ------------------------세트 의선----------- */
+.workout_time_input_box2 {
+    font-size: 15px;
+    color: #ffffff;
+    width: 160px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
+/* ------------------------무게 의선----------- */
+.workout_time_input_box3 {
+    font-size: 15px;
+    color: #ffffff;
+    width: 160px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
 /* -------------제출버튼 의선-------------------- */
 * {
     -webkit-box-sizing: border-box;
@@ -272,7 +312,7 @@
 /* 캘린더 백그라운드  */
 .calendar-container {
     width: 100%;
-    height: 55%;
+    height: 50%;
     margin: 0 auto;
     padding: 20px;
     background-color: #1e1e1e;
@@ -314,7 +354,7 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     /* 7일씩 그리드 */
-    grid-gap: 10px;
+    grid-gap: 3px;
     margin-top: 5px;
 }
 
@@ -323,8 +363,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     /* background: #1B1833; */
     background-color: #121212;
     border-radius: 5px;

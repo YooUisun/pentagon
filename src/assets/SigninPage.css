@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #c4c6d2;
+    background-color: #121212;
 }
 .signinBox{
     margin-top: 120px;
@@ -16,7 +16,7 @@
     width: 500px;
     height: 100%;    
     flex-direction: column;
-    background-color: #adafc0;
+    background-color: white;
     border-radius: 20px;
 }
 
@@ -31,7 +31,7 @@
 .signupInputField{
     width: 100%;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 18px;
     border: 1px solid #ccc;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -42,7 +42,7 @@
 }
 .phone {
     display: flex;
-    align-items: center;    
+    align-items: center;     
 }
 
 .phone select{
@@ -87,7 +87,7 @@
     margin-bottom: 10px;
 }
 .sigupSelectBox{
-    margin-right: 10px;
+    margin-right: 10px;    
 }
 .info{
     border: 1px solid rgba(0, 0, 0, 0.281);
@@ -95,5 +95,5 @@
     height: 100%;    
     border-radius: 10px;
     padding: 10px;
-    background-color: rgba(132, 124, 114, 0.104);
+    background-color: white;
 }

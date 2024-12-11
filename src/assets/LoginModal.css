@@ -60,3 +60,7 @@
     color: #721c24;  /* 빨간색 글자 */
     border: 1px solid #f5c6cb;  /* 빨간색 테두리 */
 }
+
+.modalStyle{
+    border-radius: 5px;
+}

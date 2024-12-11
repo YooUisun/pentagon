@@ -15,15 +15,38 @@
     /* 화면 오른쪽 */
     z-index: 5;
     /* 헤더 부분이 화면에서 맨 위에 위치하도록 설정 */
+    border: 1px solid #757575;
+}
+/* ----------------의선 main title nav bar 수정 */
+.main-logo-title {
+    position: relative; /* 밑줄을 위치시키기 위해 필요한 속성 */
+    display: inline-block; /* 텍스트의 높이를 맞추기 위해 inline-block 처리 */
+    font-size: 24px; /* 폰트 크기는 필요에 따라 조정 */
+    font-weight: bold; /* 필요에 따라 굵기 조정 */
+    color: #ffffff; /* 기본 텍스트 색 */
+    text-decoration: none; /* 기본 밑줄 제거 */
 }
 
-.main-logo-title {
-    cursor: pointer;
-    user-select: none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 1px;
-    font-weight: bold;
+.main-logo-title:hover {
+    color: #ffffff; /* 마우스를 올렸을 때 텍스트 색상 변경 */
 }
+
+.main-logo-title::after {
+    content: ''; /* 가상의 밑줄 요소 */
+    position: absolute;
+    bottom: 0; /* 텍스트의 아래에 위치 */
+    left: 0;
+    width: 100%; /* 텍스트 너비에 맞게 밑줄 길이 설정 */
+    height: 3px; /* 밑줄 두께 */
+    background-color: #007bff; /* 밑줄 색상 */
+    transform: scaleX(0); /* 초기에는 밑줄이 보이지 않도록 설정 */
+    transition: transform 0.3s ease; /* 밑줄 애니메이션 */
+}
+
+.main-logo-title:hover::after {
+    transform: scaleX(1); /* hover 상태에서 밑줄을 나타나게 함 */
+}
+
 
 .navbar {
     width: 100%;
@@ -47,20 +70,42 @@
     width: auto;
     /* margin-top: 10px; */
     user-select: none;
-    left: 45px;
+    left: 45px;    
 }
+
+/* ----------------------------의선 side-nav bar 수정------------- */
 
 .side-navlink {
     position: relative;
     font-size: 1rem !important;
-    /* 글자 크기 */
-    /* 부트스트랩 링크때문에 important 안하면 상위스타일이 덮어 씌워져서 스타일 적용 안됨*/
     padding-right: 15px !important;
-    /* 글자간의 간격 */
     color: white !important;
-    /* 글자 색상 */
     text-decoration: none;
     z-index: 20;
+    display: inline-block; /* 여러 개의 링크가 있을 때 텍스트가 가로로 배치되도록 설정 */
+}
+
+/* hover 시 텍스트 색상 변경 및 떠오르는 효과 */
+.side-navlink:hover {
+    color: #007bff; /* 마우스를 올렸을 때 텍스트 색상 변경 */
+}
+
+/* 밑줄 가상 요소 */
+.side-navlink::after {
+    content: ''; /* 가상의 밑줄 요소 */
+    position: absolute;
+    bottom: 0; /* 텍스트의 아래에 위치 */
+    left: 0;
+    width: 100%; /* 텍스트 너비에 맞게 밑줄 길이 설정 */
+    height: 2px; /* 밑줄 두께 */
+    background-color: #007bff; /* 밑줄 색상 */
+    transform: scaleX(0); /* 초기에는 밑줄이 보이지 않도록 설정 */
+    transition: transform 0.3s ease; /* 밑줄 애니메이션 */
+}
+
+/* hover 시 밑줄 애니메이션 */
+.side-navlink:hover::after {
+    transform: scaleX(1); /* hover 상태에서 밑줄을 나타나게 함 */
 }
 
 .side-navlink:hover {
@@ -84,7 +129,7 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     transition: background-color 0.3s ease;
-    background-color: #A9ADC4;
+    background-color: white;
 }
 
 .search-btn {
@@ -105,10 +150,10 @@
     position: absolute;
     top: 40px;  /* input 바로 아래에 표시 */
     left: 0;
-    width: 100%;
-    background-color: #fff;
+    width: 100%;    
+    background-color: white;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-height: 200px;
     overflow-y: auto;
@@ -139,19 +184,18 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    margin-left: 12px;
-    margin-top: 6px;
+    margin-left: 20px;
 }
 
 #usericon {
     font-size: 1.7rem;
-    margin-top: 5px;
-    margin-right: 2px;
+    margin-top: 2px;
+    margin-left: 7px;
 }
 
 .modal-container {
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 130%;
+    left: 25%;
     transform: translateX(-50%);
 }
