@@ -61,7 +61,7 @@
     /* 글자 색상 */
     text-decoration: none;
     z-index: 20;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .side-navlink:hover {
