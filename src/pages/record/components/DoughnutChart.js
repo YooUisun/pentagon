@@ -33,21 +33,14 @@ const DoughnutChart = ({ data1 }) => {
                 label: '부위별 세트수',
                 data: totalSets, // 데이터 동적으로 변환
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 84, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(153, 102, 255, 0.5)',
-                    'rgba(255, 159, 640, 0.5)',
+                    '#BB86FC',
+                    '#03DAC6',
+                    '#FF6D00',
+                    '#FFC400',
+                    '#3700B3',
+                    '#CF6679',
                 ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                ],
+                borderColor: '#121212',
                 borderWidth: 2,
             },
         ],
@@ -58,12 +51,11 @@ const DoughnutChart = ({ data1 }) => {
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                position: 'top',
+                position: 'bottom',
                 labels: {
                     font: {
-                        size: 16, // 폰트 사이즈
+                        size: 15, // 폰트 사이즈
                         family: 'Arial', // 폰트종류
-                        weight: 'bold', //폰트두께
                     },
                     color: 'white',
                 },

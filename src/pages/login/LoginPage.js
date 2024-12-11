@@ -57,10 +57,11 @@ function LoginPage({ setIsLoggedIn }) {
                     alert("로그인 성공!");
                     setIsLoggedIn(true);
                     navigate('/'); // 홈 화면으로 이동
-                    const loginUser = { email, password, nickName,  }
                 } else {
                     // 로그인 실패                    
-                    alert('회원 정보가 없습니다');
+                    alert('비밀번호가 일치하지 않습니다');
+                } else{
+                    alert('회원정보가 없습니다');
                 }
             }
         } else if (email == '') {

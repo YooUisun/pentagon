@@ -18,10 +18,11 @@
 }
 
 .main-logo-title {
-    margin-left: -40px;
     cursor: pointer;
     user-select: none;
-    font-family: 'Oswald', sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 .navbar {
@@ -44,19 +45,19 @@
     position: relative;
     z-index: 10;
     width: auto;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     user-select: none;
     left: 45px;
 }
 
 .side-navlink {
     position: relative;
-    font-size: 1.4rem !important;
+    font-size: 1rem !important;
     /* 글자 크기 */
     /* 부트스트랩 링크때문에 important 안하면 상위스타일이 덮어 씌워져서 스타일 적용 안됨*/
-    padding: 15px !important;
+    padding-right: 15px !important;
     /* 글자간의 간격 */
-    color: #A9ADC4 !important;
+    color: white !important;
     /* 글자 색상 */
     text-decoration: none;
     z-index: 20;
