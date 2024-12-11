@@ -15,6 +15,7 @@
     /* 화면 오른쪽 */
     z-index: 5;
     /* 헤더 부분이 화면에서 맨 위에 위치하도록 설정 */
+    border: 1px solid #757575;
 }
 /* ----------------의선 main title nav bar 수정 */
 .main-logo-title {
@@ -69,7 +70,7 @@
     width: auto;
     /* margin-top: 10px; */
     user-select: none;
-    left: 45px;
+    left: 45px;    
 }
 
 /* ----------------------------의선 side-nav bar 수정------------- */
@@ -128,7 +129,7 @@
     border: 1px solid #ccc;
     border-radius: 20px;
     transition: background-color 0.3s ease;
-    background-color: #A9ADC4;
+    background-color: white;
 }
 
 .search-btn {
@@ -149,10 +150,10 @@
     position: absolute;
     top: 40px;  /* input 바로 아래에 표시 */
     left: 0;
-    width: 100%;
-    background-color: #fff;
+    width: 100%;    
+    background-color: white;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-height: 200px;
     overflow-y: auto;
@@ -183,19 +184,18 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    margin-left: 12px;
-    margin-top: 6px;
+    margin-left: 20px;
 }
 
 #usericon {
     font-size: 1.7rem;
-    margin-top: 5px;
-    margin-right: 2px;
+    margin-top: 2px;
+    margin-left: 7px;
 }
 
 .modal-container {
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 130%;
+    left: 25%;
     transform: translateX(-50%);
 }

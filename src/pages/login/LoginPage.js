@@ -51,16 +51,18 @@ function LoginPage({ setIsLoggedIn }) {
                 let storedUser = JSON.parse(localStorage.getItem(email));
                 //getItem은 로컬스토리지에 저장된 값 가져오는 메서드(key입력)
                 //JSON.parse는 가져온 JSON문자열을 자바스크립트 객체로 변환하는 메서드
-                if (storedUser && storedUser.email === email && storedUser.password === password) {
+                if (storedUser === null) {
+                    alert('회원정보가 없습니다')
+                } else if (storedUser && storedUser.email === email && storedUser.password === password) {
                     //조건에 storedUser 넣는 이유 = null,undefined 방지
                     // 로그인 성공
                     alert("로그인 성공!");
                     setIsLoggedIn(true);
                     navigate('/'); // 홈 화면으로 이동
-                } else if(storedUser.password !== password) {
+                } else if (storedUser.password !== password) {
                     // 로그인 실패                    
                     alert('비밀번호가 일치하지 않습니다');
-                } else{
+                } else {
                     alert('회원정보가 없습니다');
                 }
             }
@@ -103,11 +105,11 @@ function LoginPage({ setIsLoggedIn }) {
                     placeholder='비밀번호'
                 />
                 <div className='erm'>
-                {passwordError && (
-                    <div className={`error-message-container ${passwordError ? 'show' : ''}`}>
-                        <div className="error-message">{passwordError}</div>
-                    </div>
-                )}
+                    {passwordError && (
+                        <div className={`error-message-container ${passwordError ? 'show' : ''}`}>
+                            <div className="error-message">{passwordError}</div>
+                        </div>
+                    )}
                 </div>
                 <button className="loginBut" onClick={handleLogin}>Login</button>
             </form>

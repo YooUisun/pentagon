@@ -77,13 +77,13 @@ const LoginModal = ({ isOpen, onClose }) => {
                         {errorMessage && <p>{errorMessage}</p>}
                     </div>
                 </div>
-                <button onClick={handleFindEmail}>이메일 찾기</button>
+                <button className='modalStyle' onClick={handleFindEmail}>이메일 찾기</button>
                 <br></br>
-                <button onClick={handleFindPassword}>비밀번호 찾기</button>
+                <button className='modalStyle' onClick={handleFindPassword}>비밀번호 찾기</button>
                 <br></br>
-                <button onClick={handleDeleteAllData} style={{ marginTop: '50px' }}>회원정보 전부 삭제</button>
+                <button className='modalStyle' onClick={handleDeleteAllData} style={{ marginTop: '50px' }}>회원정보 전부 삭제</button>
             </div>
-            <button onClick={handleClose} style={{ marginBottom: '350px' }}>닫기</button>
+            <button onClick={handleClose} style={{ marginBottom: '350px', borderRadius:'5px' }}>닫기</button>
         </div>
     );
 };
