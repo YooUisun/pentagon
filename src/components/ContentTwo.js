@@ -57,7 +57,7 @@ function ContentTwo() {
                     <br />
                     펜타곤에서 효율적인 운동과 안전을 동시에 경험해보세요.
                 </p>
-                <Link to="/ExcerciseMain" className="learn-more-button"><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
+                <Link to="/ExcerciseMain" className="learn-more-button slide-up"><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
             </div>
             <div className="logoimage1 slide-up">
                 <img src={title2} alt="Logoimage" />

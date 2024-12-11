@@ -150,12 +150,12 @@
     opacity: 0;
     transform: translateY(60px);
     /* 처음에는 아래로 이동 */
-    transition: opacity 1.3s ease-in-out, transform 1.3s ease-in-out;
+    transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out;
     /* 부드러운 애니메이션 */
 }
 
 .slide-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(60px);
     /* 최종 위치로 */
 }
