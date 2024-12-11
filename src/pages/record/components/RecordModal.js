@@ -115,7 +115,7 @@ export default function RecordModal({ value, dataUpdate }) {
                     <div className="input_wrapper">
                         <input
                             className="workout_time_input_box1"
-                            type="number"
+                            type="text"
                             required
                             placeholder="최소 1분 이상"
                             value={time}
@@ -130,7 +130,7 @@ export default function RecordModal({ value, dataUpdate }) {
                     <div>세트(Set)</div>
                     <input
                         className="workout_time_input_box2"
-                        type="number"
+                        type="text"
                         placeholder="최대 20"
                         value={sets}
                         onChange={handleInputChange(setSets, 1, 20)}
@@ -143,7 +143,7 @@ export default function RecordModal({ value, dataUpdate }) {
                     <div>무게(Weight)</div>
                     <input
                         className="workout_time_input_box3"
-                        type="number"
+                        type="text"
                         placeholder="최대 500kg"
                         value={weight}
                         onChange={handleInputChange(setWeight, 1, 500)}
