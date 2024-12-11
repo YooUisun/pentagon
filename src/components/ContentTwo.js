@@ -52,7 +52,7 @@ function ContentTwo() {
                 <p className="page2-description slide-up"> 
                     초급, 중급, 고급 프로그램 세분화된 운동 프로그램등을 통해 자신의 몸과 정신을 기쁘게 하는 경험을 누려보세요.
                 </p>
-                    <Link to="/ExcerciseMain" className="learn-more-button slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
+                    <Link to="/ExcerciseMain" className="learn-more-button slide-up"><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
             </div>
             <div className="logoimage1 slide-up">
                 <img src={title2} alt="Logoimage"/>
