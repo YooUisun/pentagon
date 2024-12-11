@@ -8,23 +8,32 @@ function DetailModal({ children, toggleModal }) {
             toggleModal();
         }
     };
-    
+
     // 현재 탭
     const [currentTab, setCurrentTab] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    
+    const [animeDirection, setAnimeDirection] = useState("");
+
     // ▶ 클릭 시 다음 탭으로 이동
     const nextTab = () => {
         if (currentTab < children.length - 1) {
+            setAnimeDirection("right");
             setCurrentTab(currentTab + 1);
+            setIsAnimating(true);
+        } else {    // 마지막 탭에서 클릭 시 첫 번째 탭으로
+            setCurrentTab(0);
             setIsAnimating(true);
         }
     };
-    
+
     // ◀ 클릭 시 이전 탭으로 이동
     const prevTab = () => {
         if (currentTab > 0) {
+            setAnimeDirection("left");
             setCurrentTab(currentTab - 1);
+            setIsAnimating(true);
+        } else {    // 첫 번째 탭에서 클릭 시 마지막 탭으로
+            setCurrentTab(children.length - 1);
             setIsAnimating(true);
         }
     };
@@ -40,17 +49,17 @@ function DetailModal({ children, toggleModal }) {
                 <div className="changeTab left" onClick={prevTab}>◀</div>
                 <div className="changeTab right" onClick={nextTab}>▶</div>
 
-                {/* 현재 탭만 출력 */}
                 <div
-                    className={"tabWrap" + (isAnimating ? " animating" : "")}
+                    className={"tabWrap" + (isAnimating ? " animating " + (animeDirection) : "")}
                     onAnimationEnd={handleAnimationEnd}
                 >
+                    {/* 현재 탭만 출력 */}
                     {children[currentTab]}
                 </div>
 
                 <div className="indicator-container">
                     {children.map((item, index) => {
-                        return(
+                        return (
                             <div key={index} className={"indicator" + (index === currentTab ? " active" : "")}></div>
                         )
                     })}

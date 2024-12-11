@@ -61,7 +61,7 @@ function DetailPage02() {
         <>
             <div className='mn-container'>
                 <div className='page-title'>
-                    <h1>중급자 프로그램</h1>
+                    <h1 className='normal'>중급자 프로그램</h1>
                 </div>
                 <div className='contentWrap'>
                     {/* 운동 컴포넌트 */}

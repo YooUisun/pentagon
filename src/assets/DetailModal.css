@@ -21,12 +21,16 @@
 .background .modal-container {
     width: 450px;
     height: 550px;
-    background-color: #151419;
-    border: 2px solid black;
+    background-color: hsl(0, 0%, 12%);
+    border: 1px solid #2e2e2e;
 
     display: flex;
     flex-flow: column wrap;
     position: relative;
+
+    &:hover {
+        border: 1px solid #3b3b3b;
+    }
 }
 
 /* 탭 이동버튼 */
@@ -56,20 +60,27 @@
     &:hover {
         cursor: pointer;
         /* background-color: #bdbdbd; */
-        background-color: #37198a;
+        /* background-color: #aa8ef5; */
+        background-color: #3b3b3b;
+        color: #8052ff;
     }
 }
 
 .background .modal-container .tabWrap{
-
     overflow: hidden;
-    &.animating {
-        animation-name: tabAnime;
+
+    &.left {
+        animation-name: tabAnimeLeft;
+        animation-duration: 0.3s;
+    }
+
+    &.right{
+        animation-name: tabAnimeRight;
         animation-duration: 0.3s;
     }
 }
 
-@keyframes tabAnime {
+@keyframes tabAnimeRight {
 0% {
     opacity: 1;
     margin-left: 30px;
@@ -82,6 +93,20 @@
     opacity: 1;
 }
 }
+
+@keyframes tabAnimeLeft {
+    0% {
+        opacity: 1;
+        margin-right: 30px;
+        /* transform: translateX(10px); */
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
 
 /* 탭 표시 컨테이너 */
 .background .modal-container .indicator-container {
@@ -120,8 +145,10 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #211a42;
-    color: #4be99f;
+    background-color: #141414;
+    border-bottom: 1px solid #3b3b3b;
+    color: #FFFFFF;
+    /* color: #4be99f; */
 }
 
 /* 텍스트 */
@@ -136,6 +163,7 @@
     align-items: center;
 
     /* border-bottom: 1px solid #464646; */
-    border-bottom: 1px solid #402b7c;
-    color: #38af77;
+    border-bottom: 1px solid #ffffff20;
+    color: #bfbfbf;
+    /* color: #38af77; */
 }
