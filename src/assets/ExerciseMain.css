@@ -67,7 +67,7 @@
 }
 
 .buttonStyle2 {
-    background-color: #1F1F1F !important;
+    background-color: #121212 !important;
     border: 1px solid #EAEAEA !important;
     font-size: 13px !important;
 }
@@ -84,7 +84,7 @@
 }
 
 .titleStyle{
-    color: rgba(15, 14, 20) !important;
+    color: #FFFFFF !important;
     font-size: 26px !important;
     font-weight: bold !important;
 }

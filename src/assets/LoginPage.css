@@ -59,19 +59,20 @@
 }
 
 .loginBut {
-    background-color: #24283f;
+    background-color: #b0b0b0;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 20px;
     height: 40px;
     width: 300px;
-    margin: 10px 0 10px 0;
+    margin: 30px 0 10px 0;    
 }
 
 .loginBut:active {    
     transform: scale(0.95); /* 클릭 시 버튼이 살짝 축소되며 눌린 느낌 */
     transition: transform 0.1s ease-out; /* 애니메이션 효과를 주어 부드럽게 눌린 느낌 */
+    background-color: #03c04a;
 }
 
 .error-message-container {    
@@ -82,8 +83,7 @@
     transition: opacity 0.3s ease;
 }
 
-.error-message-container.show {
-    
+.error-message-container.show {    
     opacity: 1;  /* 보이도록 설정 */
 }
 
@@ -91,9 +91,9 @@
 .error-message {
     width: 300px;
     color: red;  /* 빨간색 */
-    font-size: 16px;
+    font-size: 16px;    
 }
 .erm{
     margin-top: -5px;
-    height: 35px;
+    height: 30px;
 }

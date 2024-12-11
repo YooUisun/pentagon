@@ -226,9 +226,9 @@ function SigninPage() {
                     <br></br>
                     <div className='info'>
                         <div className='infoText'>
-                            <h3>기본정보</h3><span style={{ color: 'red' }}>필수사항</span>
+                            <h4>기본정보</h4><span style={{ color: 'red' }}>필수사항</span>
                         </div>
-                        <label>Email</label>
+                        <label>이메일</label>
 
                         <input
                             type="text"
@@ -258,7 +258,7 @@ function SigninPage() {
                             이메일 중복 확인
                         </button>
 
-                        <label>Password</label>
+                        <label>비밀번호</label>
                         <input
                             type="password"
                             id='password'
@@ -270,7 +270,7 @@ function SigninPage() {
                             8글자 이상, 영문, 숫자, 특수문자를 사용하세요
                         </div>
 
-                        <label>Password 확인</label>
+                        <label>비밀번호 확인</label>
                         <input
                             type="password"
                             id='password-retype'
@@ -285,7 +285,7 @@ function SigninPage() {
                     <br></br>
                     <div className='info'>
                         <div className='infoText'>
-                            <h3>닉네임</h3><span style={{ color: 'red' }}>필수사항</span>
+                            <h4>닉네임</h4><span style={{ color: 'red' }}>필수사항</span>
                         </div>
 
                         <input
@@ -314,7 +314,7 @@ function SigninPage() {
                     <br></br>
                     <div className='info'>
                         <div className='infoText'>
-                            <h3>전화번호</h3><span style={{ color: 'blue' }}>선택사항</span>
+                            <h4>전화번호</h4><span style={{ color: 'blue' }}>선택사항</span>
                         </div>
                         <div className='phone'>
                             <select onChange={(e) => setPhonePrefix(e.target.value)} value={phonePrefix}>
@@ -336,7 +336,7 @@ function SigninPage() {
                     <div className='info'>
                         <div>
                             <div className='infoText'>
-                                <h3>생년월일</h3><span style={{ color: 'blue' }}>선택사항</span>
+                                <h4>생년월일</h4><span style={{ color: 'blue' }}>선택사항</span>
                             </div>
                             <div>
                                 {/* 년도 선택 */}
@@ -387,7 +387,7 @@ function SigninPage() {
                         </div>
                     </div>
                     
-                    <button className="signupInputField" type='submit'>Signup</button>
+                    <button className="signupInputField" type='submit'>회원가입</button>
 
                 </form>
             </div>
