@@ -37,7 +37,7 @@ function ContentThree() {
             <div id="introduce-page3">
                 {/* 텍스트 컨테이너 */}
                 <div className="text-container">
-                    <p id="title3" className='slide-up'>운동 기록 페이지</p>
+                    <p id="title3" className='slide-up'>Workout History</p>
                     <p className='content3 slide-up' >
                         매일 본인이 했던 운동을 펜타곤에서 기록해보세요.
                     </p>
