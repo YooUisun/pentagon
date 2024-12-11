@@ -124,7 +124,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                                 </div>
                             )}
                         </div>
-                        <Nav className="nav-links" style={{ marginRight: '50px' }}>
+                        <Nav className="nav-links" style={{ marginRight: '10px' }}>
                             <Nav.Link as={Link} to="/Notice" className="side-navlink">공지사항</Nav.Link>
                             <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/ExcerciseMain')}>운동</Nav.Link>
                             <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/RecordMain')}>기록</Nav.Link>
