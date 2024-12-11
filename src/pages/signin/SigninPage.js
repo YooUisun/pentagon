@@ -233,6 +233,7 @@ function SigninPage() {
                         <input
                             type="text"
                             id='email'
+                            className='signupInputField'
                             value={email}
                             placeholder='honggildong@naver.com'
                             onChange={handleEmailChange}
@@ -244,7 +245,7 @@ function SigninPage() {
                             이메일 형식이어야 합니다
                         </div>
                         <button
-                            className="signupInputField"
+                            className="signupInputField butSty"
                             type='button'
                             onClick={(event) => {
                                 event.preventDefault();
@@ -262,6 +263,7 @@ function SigninPage() {
                         <input
                             type="password"
                             id='password'
+                            className='signupInputField'
                             value={password}
                             onChange={handlePasswordChange}
                             placeholder='******'
@@ -274,6 +276,7 @@ function SigninPage() {
                         <input
                             type="password"
                             id='password-retype'
+                            className='signupInputField'
                             value={passwordRetype}
                             onChange={handlePasswordRetypeChange}
                             placeholder='******'
@@ -299,7 +302,7 @@ function SigninPage() {
                             {nickNameError && <span>{nickNameError}</span>}
                         </div>
                         <button
-                            className="signupInputField"
+                            className="butSty"
                             type='button'
                             onClick={(event) => {
                                 event.preventDefault();
@@ -387,7 +390,7 @@ function SigninPage() {
                         </div>
                     </div>
                     
-                    <button className="signupInputField" type='submit'>회원가입</button>
+                    <button className="butSty" type='submit' style={{marginLeft:'10px'}}>회원가입</button>
 
                 </form>
             </div>

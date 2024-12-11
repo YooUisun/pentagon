@@ -84,7 +84,7 @@ function LoginPage({ setIsLoggedIn }) {
                 </div>
                 <input
                     type="text"
-                    className="inputField"
+                    className="loginInputField"
                     value={email}
                     onChange={onEmailHandler}
                     placeholder='이메일'
@@ -99,7 +99,7 @@ function LoginPage({ setIsLoggedIn }) {
                 <label className='loginInfo'>Password</label>
                 <input
                     type="password"
-                    className="inputField"
+                    className="loginInputField"
                     value={password}
                     onChange={onPasswordHandler}
                     placeholder='비밀번호'
