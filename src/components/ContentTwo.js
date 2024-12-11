@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import './ContentTwo.css';
 import title2 from '../../src/assets/image/page2title.jpg';
 import { Link } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
-import { useNavigate } from 'react-router-dom';
 
-function ContentTwo({ isLoggedIn }) {
-    const navigate = useNavigate();
+function ContentTwo() {
+
     useEffect(() => {
         const observerOptions = { 
             root: null, // Viewport 전체를 root로 설정
@@ -41,15 +40,6 @@ function ContentTwo({ isLoggedIn }) {
         };
     }, []);
 
-    const checkLoginStatus=(path)=>{
-        if (!isLoggedIn) {
-            alert("로그인 후 이용할 수 있습니다.")
-            navigate("/Login");
-        } else {
-            navigate(path)
-        }
-    };
-    
     return (
         <div id="introduce-page2">
             <div className="content2">
@@ -62,7 +52,7 @@ function ContentTwo({ isLoggedIn }) {
                 <p className="page2-description slide-up"> 
                     초급, 중급, 고급 프로그램 세분화된 운동 프로그램등을 통해 자신의 몸과 정신을 기쁘게 하는 경험을 누려보세요.
                 </p>
-                    <Link onClick={() => checkLoginStatus('/ExcerciseMain')} className="learn-more-button slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
+                    <Link to="/ExcerciseMain" className="learn-more-button slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
             </div>
             <div className="logoimage1 slide-up">
                 <img src={title2} alt="Logoimage"/>
