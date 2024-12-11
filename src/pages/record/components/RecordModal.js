@@ -112,12 +112,16 @@ export default function RecordModal({ value, dataUpdate1 }) {
                 <div className="RecordModal_content_time">
                     <AiOutlineClockCircle />
                     <div>운동시간(Min)</div>
-                    <input
-                        type="number"
-                        placeholder="최소 1분 이상"
-                        value={time}
-                        onChange={handleInputChange(setTime, 1, 60)}
-                    />
+                    <div className="input_wrapper">
+                        <input
+                            className="workout_time_input_box1"
+                            type="number"
+                            required
+                            placeholder="최소 1분 이상"
+                            value={time}
+                            onChange={handleInputChange(setTime, 1, 60)}
+                        />
+                    </div>
                 </div>
 
                 {/* 세트 */}
@@ -125,6 +129,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
                     <LuClipboardList />
                     <div>세트(Set)</div>
                     <input
+                        className="workout_time_input_box2"
                         type="number"
                         placeholder="최대 20"
                         value={sets}
@@ -137,6 +142,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
                     <LuBicepsFlexed />
                     <div>무게(Weight)</div>
                     <input
+                        className="workout_time_input_box3"
                         type="number"
                         placeholder="최대 500kg"
                         value={weight}
@@ -152,6 +158,6 @@ export default function RecordModal({ value, dataUpdate1 }) {
                 </button>
             </div>
 
-        </div>
+        </div >
     );
 }
