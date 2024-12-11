@@ -7,7 +7,7 @@ import {DetailModal, DetailModalTitle, DetailModalText, DetailModalTab} from './
 
 import benchpress from '../../assets/benchpress.jpg';
 import deadlift from '../../assets/deadlift.jpg';
-import stepup from '../../assets/stepup.jpg';
+import stepup from '../../assets/stepup.jpeg';
 
 function DetailPage02() {
 

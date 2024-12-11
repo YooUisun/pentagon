@@ -98,7 +98,7 @@ function DetailPage03() {
                     <button
                         type='button'
                         onClick={toggleModal}
-                    >Modal</button>
+                    >Daily Routine</button>
                 </div>
 
                 {/* 모달창 */}
