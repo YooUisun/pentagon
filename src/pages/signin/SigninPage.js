@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../../assets/SigninPage.css';
 import { useNavigate } from 'react-router-dom';
 
-
-
 function SigninPage() {
     let navigate = useNavigate();
     let [year, setYear] = useState('');
@@ -388,7 +386,7 @@ function SigninPage() {
                             </div>
                         </div>
                     </div>
-                    <br></br>
+                    
                     <button className="signupInputField" type='submit'>Signup</button>
 
                 </form>

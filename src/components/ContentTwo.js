@@ -55,7 +55,7 @@ function ContentTwo() {
                     <Link to="/ExcerciseMain" className="learn-more-button slide-up"><p>자세히 보기</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
             </div>
             <div className="logoimage1 slide-up">
-                <img src={title2} alt="Logoimage" style={{ width: '400px', height: '450px' }}/>
+                <img src={title2} alt="Logoimage"/>
             </div>
         </div>
     )
