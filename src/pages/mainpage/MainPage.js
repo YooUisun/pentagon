@@ -48,9 +48,9 @@ function MainPage() {
                                 </button>
                             </div>
                             <ContentOne />
-                            <ContentTwo />
-                            <ContentThree />
-                            <ContentFour />
+                            <ContentTwo isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+                            <ContentThree isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                            <ContentFour isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                         </>
                     }
                 />
@@ -60,14 +60,14 @@ function MainPage() {
                 <Route path="/details3" element={<DetailPage03 />} />                
                 <Route path="/Notice" element={<Notice/>}/>
                 <Route path="/MainPage" element={<MainPage/>}/>
-                <Route path="/Ai" element={<Ai />} />
+                <Route path="/Ai" element={<Ai isLoggedIn={isLoggedIn} />} />
                 <Route path="/Login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
                 <Route path="/Signin" element={<SigninPage />} />
-                <Route path="/ExcerciseMain" element={<ExerciseMain />} />
+                <Route path="/ExcerciseMain" element={<ExerciseMain isLoggedIn={isLoggedIn}/>} />
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
                 <Route path="/not-found-page" element={<NotFoundPage/>} />
-                <Route path="/RecordMain" element={<RecordMain/>} />
                 <Route path="/Gpt" element={<Gpt/>} />
+                <Route path="/RecordMain" element={<RecordMain isLoggedIn={isLoggedIn}/>} />
             </Routes>
 
             {/* Footer 컴포넌트 */}

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import './ContentThree.css';
-import { Link } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
+import { Link, useNavigate } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
 
-function ContentThree() {
+function ContentThree({ isLoggedIn }) {
+    const navigate = useNavigate();
     useEffect(() => {
         // Intersection Observer 설정
         const observerOptions = {
@@ -31,6 +32,16 @@ function ContentThree() {
         };
     }, []);
 
+    const checkLoginStatus=()=>{
+        if (isLoggedIn === false) {
+            alert("로그인 후 이용할 수 있습니다.")
+            navigate("/Login");
+        } else {
+            navigate("/RecordMain", { state: { isLoggedIn } });
+        }
+    };
+
+
     return (    
         <div>
             {/* 배경 이미지 */}
@@ -44,8 +55,8 @@ function ContentThree() {
                     <p className='content3 slide-up'>
                         펜타곤은 당신의 지속가능한 성장을 위해 기록페이지를 제공합니다.
                     </p>
-                    <Link to="/RecordMain" className="learn-more-button2 slide-up"><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
-                </div>
+                    <Link to="/RecordMain" className="learn-more-button2 slide-up" onClick={checkLoginStatus}><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
+                    </div>
             </div>
         </div>
     )

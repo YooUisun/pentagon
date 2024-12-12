@@ -3,7 +3,7 @@ import '../../assets/LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 import LoginModal from '../../components/LoginModal';
 
-function LoginPage({ setIsLoggedIn }) {
+function LoginPage({ isLoggedIn, setIsLoggedIn }) {
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
     let [emailError, setEmailError] = useState("");
@@ -56,7 +56,6 @@ function LoginPage({ setIsLoggedIn }) {
                 } else if (storedUser && storedUser.email === email && storedUser.password === password) {
                     //조건에 storedUser 넣는 이유 = null,undefined 방지
                     // 로그인 성공
-                    alert("로그인 성공!");
                     setIsLoggedIn(true);
                     navigate('/'); // 홈 화면으로 이동
                 } else if (storedUser.password !== password) {
@@ -76,6 +75,8 @@ function LoginPage({ setIsLoggedIn }) {
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+
+    
     return (
         <div className='loginBox'>
             <form className='loginStyle'>

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import './ContentTwo.css';
 import title2 from '../../src/assets/image/page2title.jpg';
-import { Link } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
+import { Link, useNavigate } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
 
-function ContentTwo() {
+function ContentTwo({ isLoggedIn }) {
+    const navigate = useNavigate();
 
     useEffect(() => {
         const observerOptions = {
@@ -40,6 +41,15 @@ function ContentTwo() {
         };
     }, []);
 
+    const checkLoginStatus=()=>{
+        if (isLoggedIn === false) {
+            alert("로그인 후 이용할 수 있습니다.")
+            navigate("/Login");
+        } else {
+            navigate("/ExcerciseMain", { state: { isLoggedIn } });
+        }
+    };
+
     return (
         <div id="introduce-page2">
             <div className="content2">
@@ -57,7 +67,7 @@ function ContentTwo() {
                     <br />
                     펜타곤에서 효율적인 운동과 안전을 동시에 경험해보세요.
                 </p>
-                <Link to="/ExcerciseMain" className="learn-more-button"><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
+                <Link to="/ExcerciseMain" className="learn-more-button slide-up" onClick={checkLoginStatus}><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
             </div>
             <div className="logoimage1 slide-up">
                 <img src={title2} alt="Logoimage" />
