@@ -68,7 +68,10 @@ function ContentFour({ isLoggedIn }) {
                     <br/>
                     운동 목표 설정과 체계적인 계획을 경험해보세요.
                 </p>
-                <Link to="/Ai" className="learn-more-button3 slide-up"><p>View More</p></Link> {/* 버튼 누르면 Ai 상담 페이지로 */}
+                <Link to="/Ai" className="learn-more-button3 slide-up"onClick={(e) => {
+                        e.preventDefault(); // 기본 네비게이션 방지
+                        checkLoginStatus();
+                    }}><p>View More</p></Link> {/* 버튼 누르면 Ai 상담 페이지로 */}
             </div>
         </div>
     )
