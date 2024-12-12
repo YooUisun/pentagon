@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './ContentThree.css';
-import { useNavigate } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
+import { Link, useNavigate } from 'react-router-dom';  // react-router-dom에서 Link 컴포넌트 가져오기
 
 function ContentThree({ isLoggedIn }) {
     const navigate = useNavigate();
