@@ -19,6 +19,7 @@ import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
 import NotFoundPage from '../../components/NotFoundPage';
 import Notice from '../../components/Notice';
 import RecordMain from '../record/RecordMain';
+import Notice10001 from '../../components/Notice10001';
 
 
 function MainPage() {
@@ -69,6 +70,7 @@ function MainPage() {
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
                 <Route path="/not-found-page" element={<NotFoundPage/>} />
                 <Route path="/RecordMain" element={<RecordMain isLoggedIn={isLoggedIn}/>} />
+                <Route path="/Notice/10001" element={<Notice10001/>}/>
             </Routes>
 
             {/* Footer 컴포넌트 */}

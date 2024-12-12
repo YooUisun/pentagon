@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Tab } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Notice.css';
 
 function Notice() {
@@ -37,22 +37,29 @@ function Notice() {
             <Tab.Content>
                 <Tab.Pane eventKey="first">
                     <div className="notice-list" >
-                        <p className="notice-list-text" onClick={()=>handleDivClick('/')}>펜타곤 웹 페이지 최종 개설</p>
+                        <p className="notice-list-text" onClick={()=>handleDivClick('/not-found-page')}>펜타곤 웹 페이지 최종 개설</p>
                         <p className="notice-list-date">2024.12.12</p>
                     </div>
                     <div className="notice-list" >
-                        <p className="notice-list-text" onClick={()=>handleDivClick('/')} >펜타곤 개인정보처리방침 변경</p>
+                        <p className="notice-list-text" onClick={()=>handleDivClick('/not-found-page')} >펜타곤 개인정보처리방침 변경</p>
                         <p className="notice-list-date">2024.12.04</p>
                     </div>
                     <div className="notice-list" >
-                        <p className="notice-list-text" onClick={()=>handleDivClick('/')} >펜타곤 웹 페이지 개설</p>
+                        <p className="notice-list-text" onClick={()=>handleDivClick('/Notice/10001')} >펜타곤 웹 페이지 개설</p>
                         <p className="notice-list-date">2024.12.02</p>
                     </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
+                    <div className="notice-list" >
+                        <p className="notice-list-text" onClick={()=>handleDivClick('/not-found-page')}>Pentagon 웹페이지 점검 안내</p>
+                        <p className="notice-list-date">2024.12.11</p>
+                    </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
-                    <p>내용없음</p>
+                <div className="notice-list" >
+                        <p className="notice-list-text" onClick={()=>handleDivClick('/not-found-page')}>Pentagon 웹페이지 프론트엔드 프로젝트</p>
+                        <p className="notice-list-date">2024.12.13</p>
+                </div>
                 </Tab.Pane>
             </Tab.Content>
         </Tab.Container>
