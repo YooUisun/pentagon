@@ -32,7 +32,7 @@ function ContentThree({ isLoggedIn }) {
         };
     }, []);
 
-    const checkLoginStatus=()=>{
+    const checkLoginStatus = () => {
         if (isLoggedIn === false) {
             alert("로그인 후 이용할 수 있습니다.")
             navigate("/Login");
@@ -42,7 +42,7 @@ function ContentThree({ isLoggedIn }) {
     };
 
 
-    return (    
+    return (
         <div>
             {/* 배경 이미지 */}
             <div id="introduce-page3">
@@ -55,8 +55,12 @@ function ContentThree({ isLoggedIn }) {
                     <p className='content3 slide-up'>
                         펜타곤은 당신의 지속가능한 성장을 위해 기록페이지를 제공합니다.
                     </p>
-                    <Link to="/RecordMain" className="learn-more-button2 slide-up" onClick={checkLoginStatus}><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
-                    </div>
+                    <Link to="/RecordMain" className="learn-more-button2 slide-up" onClick={(e) => {
+                        e.preventDefault(); // 기본 네비게이션 방지
+                        checkLoginStatus();
+                    }}><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
+
+                </div>
             </div>
         </div>
     )

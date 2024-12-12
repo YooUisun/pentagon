@@ -145,7 +145,8 @@
 /* 에러 메시지 스타일 */
 .error-message {
     width: 300px;
-    color: red;
+    color: rgb(234, 12, 12);
+    font-weight: bold;
     /* 빨간색 */
     font-size: 16px;
 }

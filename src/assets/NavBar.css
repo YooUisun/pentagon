@@ -27,9 +27,6 @@
     text-decoration: none; /* 기본 밑줄 제거 */
 }
 
-.main-logo-title:hover {
-    color: #ffffff; /* 마우스를 올렸을 때 텍스트 색상 변경 */
-}
 
 .main-logo-title::after {
     content: ''; /* 가상의 밑줄 요소 */
@@ -40,7 +37,7 @@
     height: 3px; /* 밑줄 두께 */
     background-color: #007bff; /* 밑줄 색상 */
     transform: scaleX(0); /* 초기에는 밑줄이 보이지 않도록 설정 */
-    transition: transform 0.3s ease; /* 밑줄 애니메이션 */
+    transition: transform 0.3s ease; /* 밑줄 애니메이션 */    
 }
 
 .main-logo-title:hover::after {
@@ -88,6 +85,7 @@
 /* hover 시 텍스트 색상 변경 및 떠오르는 효과 */
 .side-navlink:hover {
     color: #007bff; /* 마우스를 올렸을 때 텍스트 색상 변경 */
+    font-weight: bold ;
 }
 
 /* 밑줄 가상 요소 */
@@ -101,6 +99,7 @@
     background-color: #007bff; /* 밑줄 색상 */
     transform: scaleX(0); /* 초기에는 밑줄이 보이지 않도록 설정 */
     transition: transform 0.3s ease; /* 밑줄 애니메이션 */
+    
 }
 
 /* hover 시 밑줄 애니메이션 */

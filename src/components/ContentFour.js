@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './ContentFour.css';
-import title4 from '../../src/assets/image/page4title.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 
 
@@ -53,14 +52,13 @@ function ContentFour({ isLoggedIn }) {
     return (
         <div id="introduce-page4">
             <div className="logoimage2 slide-up">
-                <img src={title4} alt="Logoimage" style={{ width: '400px', height: '450px' }} />
             </div>
             <div className="content4">
                 <h1 className="page4-title slide-up">
-                    AI 전문가 상담 서비스
+                    PT Consulting Service
                 </h1>
                 <p className="page4-description slide-up">
-                AI 전문가 상담 페이지에서는 다이어트, 벌크업, 재활 등 
+                상담 페이지에서는 다이어트, 벌크업, 재활 등 
                 <br/>
                 다양한 운동 목적에 맞춘 맞춤형 상담을 제공합니다.
                 </p>
@@ -69,7 +67,10 @@ function ContentFour({ isLoggedIn }) {
                     <br/>
                     운동 목표 설정과 체계적인 계획을 경험해보세요.
                 </p>
-                <Link to="/Ai" className="learn-more-button3 slide-up" onClick={checkLoginStatus}><p>View More</p></Link> {/* 버튼 누르면 Ai 상담 페이지로 */}
+                <Link to="/Ai" className="learn-more-button3 slide-up" onClick={(e) => {
+                    e.preventDefault(); // 기본 네비게이션 방지
+                    checkLoginStatus();
+                }}><p>View More</p></Link> {/* 버튼 누르면 Ai 상담 페이지로 */}
             </div>
         </div>
     )

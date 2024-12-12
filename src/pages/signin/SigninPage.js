@@ -245,7 +245,7 @@ function SigninPage() {
                             이메일 형식이어야 합니다
                         </div>
                         <button
-                            className="signupInputField butSty"
+                            className="butSty"
                             type='button'
                             onClick={(event) => {
                                 event.preventDefault();
