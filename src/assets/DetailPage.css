@@ -204,10 +204,19 @@
 
 /* 모달 버튼 */
 .mn-container .btnContainer button {
-    width: 100px;
+    width: 200px;
     height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to left, #c0ccff, #3251db);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* 부드러운 효과 */
 
-    font-size: 30px;
-
-    color: red;
+    &:hover {
+        background: linear-gradient(to left, #ffb5b5, #ff3434); /* Hover 시 색상 변경 */
+        transform: scale(1.1); /* Hover 시 크기 확대 */
+    }
 }
