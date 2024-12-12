@@ -8,6 +8,8 @@ import '../../assets/Ai.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
 
 function Ai() {
@@ -33,8 +35,8 @@ function Ai() {
                                 <FontAwesomeIcon icon={faInstagram} className='insta_icon' />
                             </a>
                         </div>
-
-                        <button className='help_btn'>상담 바로가기</button>
+                        <Nav.Link as={Link} to="/Gpt"><button className='help_btn'>상담 바로가기</button></Nav.Link>
+                        
                     </Card.Body>
                 </Card>
 
@@ -53,7 +55,7 @@ function Ai() {
                             </a>
                         </div>
 
-                        <button className='help_btn'>상담 바로가기</button>
+                        <Nav.Link as={Link} to="/Gpt"><button className='help_btn'>상담 바로가기</button></Nav.Link>
                     </Card.Body>
                 </Card>
 
@@ -72,7 +74,7 @@ function Ai() {
                             </a>
                         </div>
 
-                        <button className='help_btn'>상담 바로가기</button>
+                        <Nav.Link as={Link} to="/Gpt"><button className='help_btn'>상담 바로가기</button></Nav.Link>
                     </Card.Body>
                 </Card>
 

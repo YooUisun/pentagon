@@ -196,10 +196,7 @@
 
 /* 모달 버튼 컨테이너*/
 .mn-container .btnContainer {
-    /* width: 200px; */
-    /* margin: auto; */
     margin-bottom: 50px;
-    /* justify-content: center; */
 }
 
 /* 모달 버튼 */
@@ -208,15 +205,20 @@
     height: 50px;
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: black;
+    text-shadow: 1px 1px white;
+    letter-spacing: 1px;
+
     background: linear-gradient(to left, #c0ccff, #3251db);
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    transition: all 0.3s ease; /* 부드러운 효과 */
+    transition: all 0.3s ease;
 
     &:hover {
-        background: linear-gradient(to left, #ffb5b5, #ff3434); /* Hover 시 색상 변경 */
-        transform: scale(1.1); /* Hover 시 크기 확대 */
+        /* background: linear-gradient(to left, #ffb5b5, #ff3434); */
+        background: linear-gradient(to left, #ffb5b5, #ff3434);
+        
+        transform: scale(1.1);
     }
 }

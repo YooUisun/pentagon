@@ -16,7 +16,7 @@ function ContentOne(){
             </div>
             <div className="title-container">
                 <h1 className="mainpage_title">
-                운동에 관한 모든 것 <p style={ {fontFamily :'Franklin Gothic Medium', letterSpacing : '8px'  ,fontWeight : 'bold'}}>Pentagon</p>
+                <p style={ {fontFamily :'Franklin Gothic Medium', letterSpacing : '8px'  ,fontWeight : 'bold', fontSize:'100px'}}>Pentagon</p><p style={{fontSize:'40px'}}>운동에 관한 모든 것</p> 
                 </h1>
                 <h2 className="mainpage_title2">
                 펜타곤은 사용자 레벨에 맞는 운동 서비스를 제공합니다.<br/>

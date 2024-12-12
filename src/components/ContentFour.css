@@ -5,7 +5,10 @@
     gap: 20px;
     width: 100%;
     height: 100vh;
-    background-color: #ffffff;
+    background-image: url('../assets/image/contentfourback.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 #page4-title {
@@ -15,7 +18,9 @@
 
 .content4 {
     flex: 1;
-    margin-right: 100px;
+    margin-left: 145px;
+    margin-top: 40px;
+    color: #b5b9d1;
 }
 
 .page4-title {
@@ -26,17 +31,14 @@
 
 .page4-description {
     font-size: 18px;
-    color: #3A3F57;
+    color: #b5b9d1;
 }
 
 .logoimage2 {
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.logoimage2 img{
-    border-radius: 30px;
+    
 }
 /* ------------------Ai전문가 상담서비스 View More 버튼---------------------- */
 .learn-more-button3 {

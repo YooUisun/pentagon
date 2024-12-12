@@ -20,7 +20,7 @@ import NotFoundPage from '../../components/NotFoundPage';
 import Notice from '../../components/Notice';
 import RecordMain from '../record/RecordMain';
 import Notice10001 from '../../components/Notice10001';
-
+import Gpt from '../../components/Gpt';
 
 function MainPage() {
     const scrollToTop = () => {
@@ -55,12 +55,10 @@ function MainPage() {
                         </>
                     }
                 />
-                {/* 상세 페이지 */}
+                
                 <Route path="/details1" element={<DetailPage01 />} />
                 <Route path="/details2" element={<DetailPage02 />} />
-                <Route path="/details3" element={<DetailPage03 />} />
-
-                {/* 다른 페이지들 */}
+                <Route path="/details3" element={<DetailPage03 />} />                
                 <Route path="/Notice" element={<Notice/>}/>
                 <Route path="/MainPage" element={<MainPage/>}/>
                 <Route path="/Ai" element={<Ai isLoggedIn={isLoggedIn} />} />
@@ -69,6 +67,7 @@ function MainPage() {
                 <Route path="/ExcerciseMain" element={<ExerciseMain isLoggedIn={isLoggedIn}/>} />
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
                 <Route path="/not-found-page" element={<NotFoundPage/>} />
+                <Route path="/Gpt" element={<Gpt/>} />
                 <Route path="/RecordMain" element={<RecordMain isLoggedIn={isLoggedIn}/>} />
                 <Route path="/Notice/10001" element={<Notice10001/>}/>
             </Routes>
