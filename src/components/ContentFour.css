@@ -43,7 +43,7 @@
 /* ------------------Ai전문가 상담서비스 View More 버튼---------------------- */
 .learn-more-button3 {
     display: inline-block;
-    padding: 0.8em 2.8em;
+    padding: 0.5em 2.8em;
     border-radius: 50px;
     background: rgba(88, 143, 88, 0.541);
     color: #fff;
