@@ -19,7 +19,7 @@ import PrivacyPolicyPage from '../../components/PrivacyPolicyPage';
 import NotFoundPage from '../../components/NotFoundPage';
 import Notice from '../../components/Notice';
 import RecordMain from '../record/RecordMain';
-
+import Gpt from '../../components/Gpt';
 
 function MainPage() {
     const scrollToTop = () => {
@@ -54,12 +54,10 @@ function MainPage() {
                         </>
                     }
                 />
-                {/* 상세 페이지 */}
+                
                 <Route path="/details1" element={<DetailPage01 />} />
                 <Route path="/details2" element={<DetailPage02 />} />
-                <Route path="/details3" element={<DetailPage03 />} />
-
-                {/* 다른 페이지들 */}
+                <Route path="/details3" element={<DetailPage03 />} />                
                 <Route path="/Notice" element={<Notice/>}/>
                 <Route path="/MainPage" element={<MainPage/>}/>
                 <Route path="/Ai" element={<Ai />} />
@@ -69,6 +67,7 @@ function MainPage() {
                 <Route path="/Privacy-policy" element={<PrivacyPolicyPage/>} />
                 <Route path="/not-found-page" element={<NotFoundPage/>} />
                 <Route path="/RecordMain" element={<RecordMain/>} />
+                <Route path="/Gpt" element={<Gpt/>} />
             </Routes>
 
             {/* Footer 컴포넌트 */}

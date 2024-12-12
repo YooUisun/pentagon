@@ -16,6 +16,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
 
     const handleLogout = () => {
         setIsLoggedIn(false); // 로그아웃 상태로 전환
+        navigate('/');
         alert("로그아웃 되었습니다.");
     };
 
