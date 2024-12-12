@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './ContentFour.css';
 import title4 from '../../src/assets/image/page4title.jpg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function ContentFour({ isLoggedIn }) {

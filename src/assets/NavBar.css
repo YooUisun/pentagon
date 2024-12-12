@@ -107,7 +107,7 @@
 }
 
 .side-navlink:hover {
-    color: white !important;
+    font-weight: bold;
 }
 
 .inputSearch{
