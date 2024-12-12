@@ -184,7 +184,7 @@
     border-radius: 50%;
     margin-left: 12px;
     margin-top: 3px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #usericon {
@@ -192,12 +192,12 @@
     margin-left: 7px;
     margin-bottom: 3px;
     margin-top: 2px;
-    margin-left: 7px;
+    margin-left: 6px;
 }
 
 .profile-background .modal-container {
     position: absolute;
     top: 130%;
-    left: 25%;
+    left: 23%;
     transform: translateX(-50%);
 }

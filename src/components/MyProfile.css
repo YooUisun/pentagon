@@ -2,7 +2,7 @@
     position: fixed;
     top: 100%; /* 모달을 아이콘 아래로 위치 */
     left: 50%;
-    z-index: 1000; /* 모달을 화면 위로 올림 */
+    z-index: 1200; /* 모달을 화면 위로 올림 */
     width: 330px; /* 모달 너비 */
     height: 500px;
     background-color: white;
@@ -14,13 +14,16 @@
 }
 
 .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+    margin-top: 5px;
 }
 
 .modal-content {
+    display: block;
     padding: 16px;
     text-align: left;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: black;
 }

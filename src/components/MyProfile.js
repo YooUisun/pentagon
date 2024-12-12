@@ -1,19 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './MyProfile.css';
 
 function MyProfile() {
     
-    // localStorage에 user 객체를 JSON 문자열로 저장
-
     return (
         <div className="my-profile-modal">
             <div className="modal-header">
-                <h2>내 프로필</h2>
+                <h2 style={{ fontSize: '24px' }}>닉네임님, 환영합니다!</h2>
             </div>
             <div className="modal-content">
-                <div className="profile-info">
-
-                </div>
+                <p>내 프로필 Modal 구현중.</p>
+                <p>이곳에 내 정보가 표시됩니다.</p>
             </div>
         </div>
     );
