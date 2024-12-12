@@ -61,8 +61,14 @@ function SigninPage() {
                 return;
             }
         }
-        // 이메일이 중복되지 않으면 사용 가능
-        alert('사용 가능한 이메일입니다.');
+        if (!isValidEmail(email)) {
+            alert('이메일 형식이 올바르지 않습니다');
+            return;
+        } else {
+            // 이메일이 중복되지 않으면 사용 가능
+            alert('사용 가능한 이메일입니다.');
+        }
+
     };
     //닉네임 중복 확인 함수
     const checkNickNameDuplicate = (nickName) => {
@@ -389,8 +395,8 @@ function SigninPage() {
                             </div>
                         </div>
                     </div>
-                    
-                    <button className="butSty" type='submit' style={{marginLeft:'10px'}}>회원가입</button>
+
+                    <button className="butSty" type='submit' style={{ marginLeft: '10px' }}>회원가입</button>
 
                 </form>
             </div>
