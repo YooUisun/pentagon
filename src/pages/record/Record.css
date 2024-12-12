@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     height: 95%;
-    /* background-color: #2f314f; */
     background-color: #121212;
     width: 100%;
     margin-top: 70px;
@@ -49,8 +48,6 @@
     margin: auto;
     /* 중앙 정렬 */
 }
-
-/* 종원 12월 3일 작업 */
 
 /* 차트 style */
 .chart {
@@ -117,7 +114,7 @@
 .recordModal_container {
     width: 100%;
     text-align: center;
-    margin: 50px 0 0 0;
+    margin-top: 20px;
     color: #b0b0b0;
     background-color: #1e1e1e;
     border-bottom: 1px solid #272727;
@@ -140,7 +137,7 @@
 .exercise_select_box:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
     /* 그림자 더 강조 */
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     /* 살짝 떠오르는 효과 */
 }
 
@@ -159,6 +156,46 @@
     border-radius: 10px;
 }
 
+/* ------------------------운동시간 의선----------- */
+.workout_time_input_box1 {
+    font-size: 15px;
+    color: #ffffff;
+    width: 160px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
+
+/* ------------------------세트 의선----------- */
+.workout_time_input_box2 {
+    font-size: 15px;
+    color: #ffffff;
+    width: 160px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
+/* ------------------------무게 의선----------- */
+.workout_time_input_box3 {
+    font-size: 15px;
+    color: #ffffff;
+    width: 160px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+}
 /* -------------제출버튼 의선-------------------- */
 * {
     -webkit-box-sizing: border-box;
@@ -176,11 +213,11 @@
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
-    font-style:initial;
+    font-style: initial;
     cursor: pointer;
     margin: 20px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
@@ -200,6 +237,7 @@
 .btn-hover:focus {
     outline: none;
 }
+
 .btn-hover.color-8 {
     background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
     box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
@@ -210,10 +248,9 @@
 /* 통계 style */
 .stats_container {
     /* border: 3px solid blue; */
-    height: 90%;
     background-color: #1e1e1e;
     color: white;
-    border: 1px solid #757575;
+    border: 1px solid #272727;
     border-radius: 10px;
 }
 
@@ -238,7 +275,7 @@
 .stats_content_box {
     font-size: 25px;
     border-radius: 20px;
-    border: 1px solid #757575;
+    border: 1px solid #1E1E1E;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -275,10 +312,9 @@
 /* 캘린더 백그라운드  */
 .calendar-container {
     width: 100%;
-    height: 55%;
+    height: 52%;
     margin: 0 auto;
     padding: 20px;
-    /* background-color: #292E49; */
     background-color: #1e1e1e;
     border: 1px solid #272727;
     color: #fff;
@@ -310,18 +346,15 @@
     cursor: pointer;
 }
 
-
 .calendar-header button:hover {
-    /* background-color: black; */
     background-color: #bb86fc;
-
 }
 
 .calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     /* 7일씩 그리드 */
-    grid-gap: 10px;
+    grid-gap: 3px;
     margin-top: 5px;
 }
 
@@ -330,8 +363,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     /* background: #1B1833; */
     background-color: #121212;
     border-radius: 5px;
@@ -346,7 +379,8 @@
 }
 
 .calendar-day:hover {
-    background: gray;
+    background-color: #5a5a5a;
+    color: rgb(230, 12, 12);
 }
 
 /* 운동 했다는 표시  */
@@ -369,7 +403,6 @@
 /* 12월7일 의선 수정: 캘린더 초록불 스타일 추가 */
 /* 운동 데이터를 가진 날짜를 시각적으로 구분 */
 .workout-day {
-    /* background-color: #32cd32; 초록색 */
     color: white;
     background-color: #bb86fc;
     border-radius: 50%;
@@ -400,8 +433,9 @@
 /* -------------------------------------- */
 
 .Memo {
-    border: 1px solid #757575;
+    border: 1px solid #272727;
     /* 테두리 설정 */
+    /* #1E1E1E */
     background-color: #121212;
     border-radius: 5px;
     margin-top: 5px;
@@ -421,8 +455,9 @@
 .Memo_Number {
     width: 3%;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid #1E1E1E;
     text-align: center;
+    background-color: #272727;
     margin-left: 5px;
 }
 
@@ -432,11 +467,11 @@
 
 .Memo div button {
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid #1E1E1E;
     text-align: center;
     width: 4%;
     margin-right: 5px;
-    background-color: #757575;
+    background-color: #272727;
     color: white;
 
 }

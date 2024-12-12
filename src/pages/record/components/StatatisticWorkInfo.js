@@ -1,17 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-export default function StatatisticWorkInfo({ data, setData1 }) {
+export default function StatatisticWorkInfo({ selData, handleDeleteWorkout }) {
 
     function handleDel(index) {
-        let newData = [...data];
+        let newData = [...selData];
         newData.splice(index, 1);
-        setData1(newData); // 데이터 삭제 후 갱신
+        handleDeleteWorkout(newData); // 데이터 삭제 후 갱신
     }
 
     return (
         <>
-            {data.map((item, index) => {
+            {selData.map((item, index) => {
                 return (
                     <div className="Memo" key={index}>
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { LuClipboardList, LuBicepsFlexed } from "react-icons/lu";
 
-export default function RecordModal({ value, dataUpdate1 }) {
+export default function RecordModal({ value, dataUpdate }) {
     // 상태 관리
     const [title, setTitle] = useState(""); // 운동 입력값
     const [time, setTime] = useState(""); // 기간 입력값
@@ -48,7 +48,7 @@ export default function RecordModal({ value, dataUpdate1 }) {
             type,
         };
 
-        dataUpdate1(newRecord); // 부모 컴포넌트에 새로운 기록 전달
+        dataUpdate(newRecord); // 부모 컴포넌트에 새로운 기록 전달
 
         // 입력값 초기화
         setTitle("");
@@ -112,12 +112,16 @@ export default function RecordModal({ value, dataUpdate1 }) {
                 <div className="RecordModal_content_time">
                     <AiOutlineClockCircle />
                     <div>운동시간(Min)</div>
-                    <input
-                        type="number"
-                        placeholder="최소 1분 이상"
-                        value={time}
-                        onChange={handleInputChange(setTime, 1, 60)}
-                    />
+                    <div className="input_wrapper">
+                        <input
+                            className="workout_time_input_box1"
+                            type="text"
+                            required
+                            placeholder="최소 1분 이상"
+                            value={time}
+                            onChange={handleInputChange(setTime, 1, 60)}
+                        />
+                    </div>
                 </div>
 
                 {/* 세트 */}
@@ -125,7 +129,8 @@ export default function RecordModal({ value, dataUpdate1 }) {
                     <LuClipboardList />
                     <div>세트(Set)</div>
                     <input
-                        type="number"
+                        className="workout_time_input_box2"
+                        type="text"
                         placeholder="최대 20"
                         value={sets}
                         onChange={handleInputChange(setSets, 1, 20)}
@@ -137,7 +142,8 @@ export default function RecordModal({ value, dataUpdate1 }) {
                     <LuBicepsFlexed />
                     <div>무게(Weight)</div>
                     <input
-                        type="number"
+                        className="workout_time_input_box3"
+                        type="text"
                         placeholder="최대 500kg"
                         value={weight}
                         onChange={handleInputChange(setWeight, 1, 500)}
@@ -152,6 +158,6 @@ export default function RecordModal({ value, dataUpdate1 }) {
                 </button>
             </div>
 
-        </div>
+        </div >
     );
 }

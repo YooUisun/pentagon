@@ -54,15 +54,20 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
     useEffect(() => {
         const handleClickOutsideSearch = (event) => {
             if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
-                setIsHovered(false);
+                setIsHovered(false); //검색컨테이너 외부를 클릭하면 호버상태 해제
             }
         };
+        // 검색 컨테이너 외부를 클릭헀을때 실행 되는 함수
+        // searchContainerRef.current가 존재하는지 먼저 확인
+        // contains() 메서드를 사용해 클릭된 이벤트의 타겟이 검색 컨테이너 내부에 있지 않은지 체크
 
         document.addEventListener("mousedown", handleClickOutsideSearch);
         return () => {
             document.removeEventListener("mousedown", handleClickOutsideSearch);
-        };
-    }, []);
+        };// 언마운트시 이벤트 리스너 제거
+    }, []); 
+    // 문서 전체에 마우스 다운 이벤트 리스너를 추가
+    // 어디든 클릭하면 handleClickOutsideSearch 함수가 실행
 
     const handleSearch = () => {
         if (query && !searchHistory.includes(query)) {
@@ -115,8 +120,8 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                                 <div className="search-history">
                                     <ul>
                                         {searchHistory.map((item, index) => (
-                                            <li key={index}>
-                                                <span onClick={() => handleHistoryClick(item)}>{item}</span>
+                                            <li key={index} onClick={() => handleHistoryClick(item)}>
+                                                <span>{item}</span>
                                                 <button onClick={(e) => { e.stopPropagation(); handleHistoryDelete(item); }}>X</button>
                                             </li>
                                         ))}
@@ -124,7 +129,7 @@ function NavBar({ isLoggedIn, setIsLoggedIn }) {
                                 </div>
                             )}
                         </div>
-                        <Nav className="nav-links" style={{ marginRight: '10px' }}>
+                        <Nav className="nav-links">
                             <Nav.Link as={Link} to="/Notice" className="side-navlink">공지사항</Nav.Link>
                             <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/ExcerciseMain')}>운동</Nav.Link>
                             <Nav.Link className="side-navlink" onClick={() => checkLoginStatus('/RecordMain')}>기록</Nav.Link>

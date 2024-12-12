@@ -48,30 +48,109 @@
     margin-top: 1rem;
     color: #A9ADC4;
 }
-
+/* ------------------------Workout History View More 버튼------------------------------ */
 .learn-more-button2 {
-    width: 150px;
-    height: 50px;
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3A3F57;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 0.8em 2.8em;
+    border-radius: 50px;
+    background: rgba(88, 143, 88, 0.541);
+    color: #fff;
     text-align: center;
+    margin-right: 25px;
     text-decoration: none;
+    font-size: 1.05rem;
+    /* 폰트 크기 설정 */
+    height: 50px;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
 }
 
-.learn-more-button2 p{
-    margin-top: 3px;
-    user-select: none;
+.learn-more-button.button2--inverted {
+    background: #ECEFF1;
+    color: #37474f;
+}
+
+.learn-more-button2::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0.4;
+    -webkit-transform: scale3d(0.8, 0.5, 1);
+    transform: scale3d(0.8, 0.5, 1);
 }
 
 .learn-more-button2:hover {
-    background-color: #6C718A;
+    -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    color: #ECEFF1;
+    background-color: #3f51b5;
+    -webkit-animation: anim-learn-more-1 0.3s forwards;
+    animation: anim-learn-more-1 0.3s forwards;
 }
+
+.learn-more-button2.button--inverted:hover {
+    color: #ECEFF1;
+    background-color: #7986cb;
+}
+
+.learn-more-button2:hover::before {
+    -webkit-animation: anim-learn-more-2 0.3s 0.3s forwards;
+    animation: anim-learn-more-2 0.3s 0.3s forwards;
+}
+
+@-webkit-keyframes anim-learn-more-1 {
+    60% {
+        -webkit-transform: scale3d(0.8, 0.8, 1);
+        transform: scale3d(0.8, 0.8, 1);
+    }
+
+    85% {
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes anim-learn-more-1 {
+    60% {
+        -webkit-transform: scale3d(0.8, 0.8, 1);
+        transform: scale3d(0.8, 0.8, 1);
+    }
+
+    85% {
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@-webkit-keyframes anim-learn-more-2 {
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes anim-learn-more-2 {
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+/* ----------------------------------------------------------- */
 
 .slide-up {
     opacity: 0;
@@ -83,3 +162,5 @@
     opacity: 1;
     transform: translateY(0); /* 최종 위치 */
 }
+
+

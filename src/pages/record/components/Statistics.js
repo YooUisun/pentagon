@@ -7,11 +7,11 @@ import 'react-tabs/style/react-tabs.css';
 import { RiPieChartFill } from "react-icons/ri";
 import { CiMemoPad } from "react-icons/ci";
 
-export default function Statistics({ data, setData1 }) {
+export default function Statistics({ selData, handleDeleteWorkout }) {
     
     return (
         <div className="stats_container">
-            <StatsHeader data={data} />
+            <StatsHeader selData={selData} />
 
             <div className="stats_content_container">
                 <Tabs style={ {marginTop : '40px'}}>
@@ -21,15 +21,15 @@ export default function Statistics({ data, setData1 }) {
                     </TabList>
 
                     <TabPanel>
-                        <section>
-                            <StatatisticWorkInfo data={data} setData1={setData1} />
+                        <section style={ {height : '100%'}}>
+                            <StatatisticWorkInfo selData={selData} handleDeleteWorkout={handleDeleteWorkout} />
                         </section>
                     </TabPanel>
 
                     <TabPanel>
                         <section className="stats_content_chart">
-                            <RadarChart data1={data}/>
-                            <DoughnutChart data1={data}/>
+                            <RadarChart selData={selData}/>
+                            <DoughnutChart selData={selData}/>
                         </section>
                     </TabPanel>
                 </Tabs>

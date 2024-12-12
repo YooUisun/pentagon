@@ -48,16 +48,14 @@ function ContentThree({ isLoggedIn }) {
             <div id="introduce-page3">
                 {/* 텍스트 컨테이너 */}
                 <div className="text-container">
-                    <p id="title3" className='slide-up'>운동 레코드 페이지</p>
+                    <p id="title3" className='slide-up'>Workout History</p>
                     <p className='content3 slide-up' >
                         매일 본인이 했던 운동을 펜타곤에서 기록해보세요.
                     </p>
                     <p className='content3 slide-up'>
-                        당신의 값진 노력으로 이뤄낸 성과들을 분석하여 데이터 형식으로 분석하여드립니다.
+                        펜타곤은 당신의 지속가능한 성장을 위해 기록페이지를 제공합니다.
                     </p>
-                    <button to="/RecordMain"
-                    className="learn-more-button2 slide-up"
-                    onClick={checkLoginStatus}><p>자세히 보기</p></button> {/* 버튼 누르면 운동 메인 페이지로 */}
+                    <Link to="/RecordMain" className="learn-more-button2 slide-up"><p>View More</p></Link> {/* 버튼 누르면 운동 메인 페이지로 */}
                 </div>
             </div>
         </div>
