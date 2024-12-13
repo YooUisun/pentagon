@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/pentagon/static/css/main.87978a97.css",
+    "main.js": "/pentagon/static/js/main.79711414.js",
+    "static/js/453.77613b00.chunk.js": "/pentagon/static/js/453.77613b00.chunk.js",
+    "static/media/high-level.mp4": "/pentagon/static/media/high-level.e573bdad3f3b00c05b4b.mp4",
+    "static/media/mid-level2.mp4": "/pentagon/static/media/mid-level2.77df4c1b4f974a2dfaf6.mp4",
+    "static/media/MaintitleVideo.mp4": "/pentagon/static/media/MaintitleVideo.2113a42c2a581e970150.mp4",
+    "static/media/low-level.mp4": "/pentagon/static/media/low-level.398bc49956da8bea0858.mp4",
+    "static/media/page4title.jpg": "/pentagon/static/media/page4title.18b650135254c7280285.jpg",
+    "static/media/exdetail02.gif": "/pentagon/static/media/exdetail02.e94d82c6d2eea2837316.gif",
+    "static/media/page3title.jpg": "/pentagon/static/media/page3title.b884bc450b94f6947653.jpg",
+    "static/media/exdetail07.gif": "/pentagon/static/media/exdetail07.0fdcd50885a5a78d7e7e.gif",
+    "static/media/exdetail05.gif": "/pentagon/static/media/exdetail05.af52fcff6e1d175ab0a8.gif",
+    "static/media/exdetail01.webp": "/pentagon/static/media/exdetail01.c2475ae5a33741ff4d37.webp",
+    "static/media/exdetail03.webp": "/pentagon/static/media/exdetail03.db63cee30664f3cf7ed4.webp",
+    "static/media/exdetail06.webp": "/pentagon/static/media/exdetail06.8a08ccba1bcb180e2650.webp",
+    "static/media/exdetail04.webp": "/pentagon/static/media/exdetail04.adf1346e5332457fa04a.webp",
+    "static/media/login.webp": "/pentagon/static/media/login.79557505d99f32138ac8.webp",
+    "static/media/contentfourback.jpg": "/pentagon/static/media/contentfourback.265abeb497ab1d853342.jpg",
+    "static/media/pushup.jpg": "/pentagon/static/media/pushup.3d6e917da0be1dfe02a1.jpg",
+    "static/media/deadlift.jpg": "/pentagon/static/media/deadlift.3adc369b6130d61c2694.jpg",
+    "static/media/back2.jpeg": "/pentagon/static/media/back2.c97ca91b738daf2e14e0.jpeg",
+    "static/media/benchpress.jpg": "/pentagon/static/media/benchpress.5e70eda89b1e566917e8.jpg",
+    "static/media/stepup.jpeg": "/pentagon/static/media/stepup.6f935c4e1ad39d662732.jpeg",
+    "static/media/situp.jpg": "/pentagon/static/media/situp.63ccaeb271f46eff7fb1.jpg",
+    "static/media/rowing.jpeg": "/pentagon/static/media/rowing.e14dc26e0c46e8344bc3.jpeg",
+    "static/media/squat.jpg": "/pentagon/static/media/squat.939351248a23819deac5.jpg",
+    "static/media/kimegg.jpg": "/pentagon/static/media/kimegg.1d359e4f178e5d587fb6.jpg",
+    "static/media/page2title.jpg": "/pentagon/static/media/page2title.c2aed99a40556979eed9.jpg",
+    "static/media/kimjongguk.jpg": "/pentagon/static/media/kimjongguk.e6df19370dbcd7b8e9c7.jpg",
+    "static/media/page2title.webp": "/pentagon/static/media/page2title.1f00973d214b7c797dd2.webp",
+    "static/media/horseking.jpg": "/pentagon/static/media/horseking.7784c039a7bdf1036677.jpg",
+    "index.html": "/pentagon/index.html",
+    "main.87978a97.css.map": "/pentagon/static/css/main.87978a97.css.map",
+    "main.79711414.js.map": "/pentagon/static/js/main.79711414.js.map",
+    "453.77613b00.chunk.js.map": "/pentagon/static/js/453.77613b00.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87978a97.css",
+    "static/js/main.79711414.js"
+  ]
+}
