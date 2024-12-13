@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pentagon/static/css/main.87978a97.css",
-    "main.js": "/pentagon/static/js/main.79711414.js",
+    "main.js": "/pentagon/static/js/main.d04a89ff.js",
     "static/js/453.77613b00.chunk.js": "/pentagon/static/js/453.77613b00.chunk.js",
     "static/media/high-level.mp4": "/pentagon/static/media/high-level.e573bdad3f3b00c05b4b.mp4",
     "static/media/mid-level2.mp4": "/pentagon/static/media/mid-level2.77df4c1b4f974a2dfaf6.mp4",
@@ -33,11 +33,11 @@
     "static/media/horseking.jpg": "/pentagon/static/media/horseking.7784c039a7bdf1036677.jpg",
     "index.html": "/pentagon/index.html",
     "main.87978a97.css.map": "/pentagon/static/css/main.87978a97.css.map",
-    "main.79711414.js.map": "/pentagon/static/js/main.79711414.js.map",
+    "main.d04a89ff.js.map": "/pentagon/static/js/main.d04a89ff.js.map",
     "453.77613b00.chunk.js.map": "/pentagon/static/js/453.77613b00.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87978a97.css",
-    "static/js/main.79711414.js"
+    "static/js/main.d04a89ff.js"
   ]
 }
