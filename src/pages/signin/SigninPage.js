@@ -21,13 +21,20 @@ function SigninPage() {
     //이메일 형식 유효성검증
     function isValidEmail(str) {
         return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|co)$/.test(str);
-    }   //  ^abc 문자열이 abc로 시작하는데 확인
+    }   //  ^abc 문자열이 abc로 시작하는데 확인  $는 문자열의 끝을 나타냄 ^시작 $끝
     //  ^\\d 문자열이 숫자로 시작하는지 확인
+    // $/.test(str): 주어진 str이 정규표현식에 일치하는지 확인하는 함수 true, false 반환
 
     //비밀번호 8글자이상, 영문, 숫자, 특수문자 사용
     function strongPassword(str) {
         return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(str);
-    }
+    } 
+    //^(?=.*[A-Za-z]): 문자열의 시작에서 하나 이상의 알파벳이 반드시 포함되어야 함.
+    //(?=.*\d): 하나 이상의 숫자가 반드시 포함되어야 함.
+    //(?=.*[@$!%*#?&]): 특수문자 중 하나가 반드시 포함
+    //[A-Za-z\d@$!%*#?&]{8,}: 알파벳, 숫자, 또는 특수문자가 포함된 문자열이
+    //  8자 이상이어야 한다는 조건.
+
     //비밀번호와 비밀번호 확인 일치
     function isMatch(password1, password2) {
         return password1 === password2;
