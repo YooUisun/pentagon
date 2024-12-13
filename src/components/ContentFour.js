@@ -46,7 +46,7 @@ function ContentFour({ isLoggedIn }) {
             alert("로그인 후 이용할 수 있습니다.")
             navigate("/Login");
         } else {
-            navigate("/RecordMain", { state: { isLoggedIn } });
+            navigate("/Ai", { state: { isLoggedIn } });
         }
     };
 
