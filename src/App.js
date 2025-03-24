@@ -9,7 +9,6 @@ function App() {
   return (
     <div>      
       <MainPage />      
-      {/* <Users /> */}
     </div>
   );
 }
